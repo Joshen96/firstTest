@@ -173,10 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8488ae8fb885cac41b943da770a856e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  talkManager: {fileID: 0}
+  talkManager: {fileID: 7863810937265753327, guid: c6a5e5bfc152067479b9430c68969580, type: 3}
   talkindex: 0
   NPC_id: {fileID: 126605498351691555}
-  uiMenu: {fileID: 0}
+  uiMenu: {fileID: 3565487050998902415, guid: 29d0145bd78efbd40a6e5f5fb89ab398, type: 3}
 --- !u!114 &126605498351691555
 MonoBehaviour:
   m_ObjectHideFlags: 0
