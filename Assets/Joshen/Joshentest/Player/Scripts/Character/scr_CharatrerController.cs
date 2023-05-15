@@ -13,12 +13,13 @@ public class scr_CharatrerController : MonoBehaviour
     private Vector3 newCameraRotation;
     private Vector3 newCharacterRotation;
 
-
+    
 
 
     [Header("Referemces")]
     public Transform cameraHolder;
     public Transform feetTransform;
+    
 
     [Header("setting")]
     public PlayerSettingsModel playerSettings;
@@ -90,8 +91,9 @@ public class scr_CharatrerController : MonoBehaviour
         CalculateMovement();
         CalculateJump();
         CalculateStance();
-
+        
     }
+
 
     private void CalculateView()
     {
