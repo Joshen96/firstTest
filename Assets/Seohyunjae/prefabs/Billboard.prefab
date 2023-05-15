@@ -316,6 +316,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1270917425939846547}
   - component: {fileID: 8636590298907423691}
+  - component: {fileID: 7383759015244366157}
+  - component: {fileID: 7383759015244366156}
   m_Layer: 0
   m_Name: Billboard
   m_TagString: Untagged
@@ -330,7 +332,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270917425939846544}
-  m_LocalRotation: {x: -0, y: -0.7181654, z: -0, w: 0.69587255}
+  m_LocalRotation: {x: 0, y: -0.7181628, z: 0, w: 0.6958752}
   m_LocalPosition: {x: 2.1430812, y: 3.0000005, z: 6.74092}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -353,6 +355,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTr: {fileID: 0}
+--- !u!65 &7383759015244366157
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270917425939846544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7383759015244366156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270917425939846544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dfc52cccdbee354fa4e5cc0e43caa30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiMenu: {fileID: 0}
+  productInfoList: []
 --- !u!1 &1270917426415101849
 GameObject:
   m_ObjectHideFlags: 0
