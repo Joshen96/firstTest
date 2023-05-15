@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Mapmanager : MonoBehaviour
 {
-    [SerializeField]
-    TriggerOn ground_collider = null;
+    
     [SerializeField]
     GameObject player_obj = null;
     

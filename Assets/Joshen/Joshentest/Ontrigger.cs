@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerOn : MonoBehaviour
+public class Ontrigger: MonoBehaviour
 {
     public static bool isPlayground;
     public static bool isClass1;
