@@ -482,6 +482,7 @@ GameObject:
   - component: {fileID: 948405438424095021}
   - component: {fileID: 1734258014055680863}
   - component: {fileID: 8083670536322176404}
+  - component: {fileID: 8083670536322176405}
   m_Layer: 0
   m_Name: FrontRightWheel
   m_TagString: Untagged
@@ -496,7 +497,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856612621556059544}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.846593, y: 0.3695242, z: 1.47955}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -618,10 +619,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: VM_Menu_Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 3840069120099420545, guid: 6da0a73ae22b0504882dff105aeaea71, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3840069120099420549, guid: 6da0a73ae22b0504882dff105aeaea71, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -728,8 +725,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7856647043146122637}
   - {fileID: 7671413316784282619}
+  - {fileID: 7856647043146122637}
   - {fileID: 8572727331404409717}
   - {fileID: 6227607878234662261}
   m_Father: {fileID: 7781842843260551795}
@@ -975,6 +972,7 @@ GameObject:
   - component: {fileID: 28636840470937362}
   - component: {fileID: 225782446253450023}
   - component: {fileID: 7348393410229133074}
+  - component: {fileID: 7348393410229133075}
   m_Layer: 0
   m_Name: RearRightWheel
   m_TagString: Untagged
@@ -1117,18 +1115,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: path
       objectReference: {fileID: 0}
+    - target: {fileID: 5276200131690524316, guid: b492b11ab7f448d4d9cad9dd1bbb920d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5276200131690524317, guid: b492b11ab7f448d4d9cad9dd1bbb920d, type: 3}
       propertyPath: car
       value: 
       objectReference: {fileID: 3311311802228799277}
-    - target: {fileID: 5276200131690524317, guid: b492b11ab7f448d4d9cad9dd1bbb920d, type: 3}
-      propertyPath: speed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5276200132301052469, guid: b492b11ab7f448d4d9cad9dd1bbb920d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 9.11
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b492b11ab7f448d4d9cad9dd1bbb920d, type: 3}
 --- !u!1 &5867909465297977021
@@ -1189,6 +1183,7 @@ GameObject:
   - component: {fileID: 3794951909124996893}
   - component: {fileID: 2278303061674584080}
   - component: {fileID: 4298496386858726696}
+  - component: {fileID: 6708706858318450784}
   m_Layer: 0
   m_Name: FrontLeftWheel
   m_TagString: Untagged
@@ -1196,6 +1191,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6708706858318450784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6708706858318450783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b910fafb9eef4364b9a18872af760ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheel: {fileID: 6708706858318450783}
+  xspeed: 2
 --- !u!4 &7096574665744124992
 Transform:
   m_ObjectHideFlags: 0
@@ -1253,6 +1262,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7348393410229133075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163942239546241865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b910fafb9eef4364b9a18872af760ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheel: {fileID: 4163942239546241865}
+  xspeed: 2
 --- !u!4 &7671413316784282619
 Transform:
   m_ObjectHideFlags: 0
@@ -1266,7 +1289,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1783117279209646101}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7781842843260551795
 Transform:
@@ -1298,7 +1321,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1783117279209646101}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &8083670536322176404
 MeshRenderer:
@@ -1342,6 +1365,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8083670536322176405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856612621556059544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b910fafb9eef4364b9a18872af760ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheel: {fileID: 856612621556059544}
+  xspeed: 2
 --- !u!1 &8149568199026304481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,6 +1414,7 @@ GameObject:
   - component: {fileID: 9188640839707398193}
   - component: {fileID: 2555658442950105424}
   - component: {fileID: 1590566987961217934}
+  - component: {fileID: 9188640839707398194}
   m_Layer: 0
   m_Name: RearLeftWheel
   m_TagString: Untagged
@@ -1479,6 +1517,20 @@ Transform:
   m_Father: {fileID: 2037541478580826239}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9188640839707398194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8288384950719897672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b910fafb9eef4364b9a18872af760ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheel: {fileID: 8288384950719897672}
+  xspeed: 2
 --- !u!23 &9211899666176254250
 MeshRenderer:
   m_ObjectHideFlags: 0
