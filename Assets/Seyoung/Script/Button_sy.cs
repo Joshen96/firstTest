@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class Button_sy : MonoBehaviour
 {
-    int test = 10;
+
 }
