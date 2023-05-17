@@ -285,6 +285,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1474591340}
     - target: {fileID: 126605498351691552, guid: d9afb8b0c835f4e4daf3f9804924f69a, type: 3}
+      propertyPath: Playercam
+      value: 
+      objectReference: {fileID: 1474591340}
+    - target: {fileID: 126605498351691552, guid: d9afb8b0c835f4e4daf3f9804924f69a, type: 3}
       propertyPath: talkManager
       value: 
       objectReference: {fileID: 1463307130}
@@ -748,6 +752,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2470523744629183517, guid: 910076f7b0475cb47b46bb417fecdfb1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2470523745936958182, guid: 910076f7b0475cb47b46bb417fecdfb1, type: 3}
       propertyPath: m_Name
       value: Player_test
@@ -1283,6 +1291,10 @@ PrefabInstance:
       objectReference: {fileID: 1013626673}
     - target: {fileID: 126605498351691552, guid: d9afb8b0c835f4e4daf3f9804924f69a, type: 3}
       propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1474591340}
+    - target: {fileID: 126605498351691552, guid: d9afb8b0c835f4e4daf3f9804924f69a, type: 3}
+      propertyPath: Playercam
       value: 
       objectReference: {fileID: 1474591340}
     - target: {fileID: 126605498351691552, guid: d9afb8b0c835f4e4daf3f9804924f69a, type: 3}

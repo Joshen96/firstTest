@@ -7,7 +7,7 @@ public class TalkManager : MonoBehaviour
 {
     Dictionary<int, string[]> talkData;
     static Dictionary<int, Transform[]> lookData;
-
+    public Camera Playercam;
     
     public Transform[] target; 
 
@@ -23,8 +23,8 @@ public class TalkManager : MonoBehaviour
     {
         talkData.Add(1000, new string[] { "안녕?","여기는 운동장이에요" });
         lookData.Add(1000, new Transform[] { target[0], target[1] });
-        talkData.Add(2000, new string[] { "안녕?","여기는 교실1이에요","문을 열어봐요" });
-        lookData.Add(2000, new Transform[] { target[2], target[3], target[4] });
+        talkData.Add(2000, new string[] { "안녕?","여기는 교실1이에요","문을 열어봐요" ,"하하","문열어","빨리!"});
+        lookData.Add(2000, new Transform[] { target[2], target[3], target[4] , target[2], target[4] });
         talkData.Add(3000, new string[] { "안녕?","여기는 교실1이에요","낄낄" });
         lookData.Add(3000, new Transform[] { target[0], target[1] });
 
@@ -42,6 +42,7 @@ public class TalkManager : MonoBehaviour
     {
         if(_lookIdex == lookData[_id].Length)
         {
+            Npc.CamReset(Playercam);
             return null;
         }
         else

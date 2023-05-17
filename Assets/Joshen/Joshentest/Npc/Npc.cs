@@ -17,6 +17,9 @@ public class Npc : MonoBehaviour
     private UI_npc uiMenu = null; //컴포넌트 받기위해 드래그로 
     bool isAction = false;
     public Camera Playercam;
+    //public GameObject Playercamobj;
+    Transform nowTranform;
+
 
     private void Update()
     {
@@ -25,6 +28,13 @@ public class Npc : MonoBehaviour
             Talk(NPC_id.id);
 
         }
+        if (nowTranform !=null)
+        {
+            StartCoroutine(camMove(nowTranform));
+        }
+        
+
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,9 +56,10 @@ public class Npc : MonoBehaviour
         {
             uiMenu.gameObject.SetActive(false);
             uiMenu.transform.GetChild(0).gameObject.GetComponent<Text>().text = " ";
-            
-            Playercam.transform.rotation = Playercam.gameObject.GetComponentInParent<Transform>().rotation;
-            
+            CamReset(Playercam);
+            talkindex = 0;
+            lookindex = 0;
+
         }
     }
 
@@ -60,13 +71,29 @@ public class Npc : MonoBehaviour
         if(talkData == null) 
         {
             talkindex = 0;
-            lookindex = 0;
+            
             uiMenu.gameObject.SetActive(false);
             isAction = false;
             return;
         }
+        if(lookData == null)
+        {
+            lookindex = 0;
+
+        }
         uiMenu.transform.GetChild(0).gameObject.GetComponent<Text>().text = talkData;
-        Playercam.transform.LookAt(lookData);
+
+        /*
+        Vector3 delta = lookData.position - Playercam.transform.position;
+        Quaternion rot = Quaternion.LookRotation(delta);
+        Playercam.transform.rotation = Quaternion.Slerp(Playercam.transform.rotation, rot, 5 * Time.deltaTime);
+        */
+
+        //StartCoroutine(camMove(lookData));
+        nowTranform = lookData;
+        //Playercam.transform.LookAt(lookData);
+        //Playercam.transform.rotation.z = 0;
+
         lookindex++;
         talkindex++;
 
@@ -75,7 +102,28 @@ public class Npc : MonoBehaviour
     {
         Talk(NPC_id.id);
     }
-    
+ 
+    public static void CamReset(Camera _Playercam)
+    {
+        GameObject cam = _Playercam.gameObject.transform.parent.gameObject;
+
+        _Playercam.transform.rotation = cam.transform.rotation;
+        _Playercam.transform.position = cam.transform.position;
+    }
+
+    IEnumerator camMove(Transform _lookData)
+    {
+        if (_lookData == null)
+        {
+            yield return null;
+        }
+        Vector3 dir = _lookData.transform.position - Playercam.transform.position;
+
+
+        //Playercam.transform.rotation = Quaternion.Lerp(Playercam.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
+        //Playercam.transform.rotation = Quaternion.Lerp(Playercam.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
+        yield return Playercam.transform.rotation = Quaternion.Lerp(Playercam.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);  
+    }
 }
 
 
