@@ -61,19 +61,20 @@ public class Npc : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             uiMenu.gameObject.SetActive(false);
-            uiMenu.transform.GetChild(0).gameObject.GetComponent<Text>().text = " ";
+            uiMenu.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = " ";
             NPCReset(this.gameObject.transform.GetChild(0).gameObject);
             talkindex = 0;
             lookindex = 0;
             animindex = 0;
         }
+
     }
 
     void Talk(int _id)
     {
        string talkData =  talkManager.GetTalk(_id, talkindex);
        Transform lookData = talkManager.GetLook(_id, lookindex);
-        int animData = talkManager.GetAnim(_id, animindex);
+       string animData = talkManager.GetAnim(_id, animindex);
         
         if(talkData == null) 
         {
@@ -88,15 +89,17 @@ public class Npc : MonoBehaviour
             lookindex = 0;
 
         }
-        if (animData == 100)
+        if (animData == "idle")
         {
             animindex = 0;
         }
-        uiMenu.transform.GetChild(0).gameObject.GetComponent<Text>().text = talkData;
+        uiMenu.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = talkData;
 
 
         Debug.Log("Å×½ºÆ®"+ animData);
-        animator.SetInteger("state", animData);
+        animator.SetTrigger(animData);
+        
+        
 
         /*
         Vector3 delta = lookData.position - Playercam.transform.position;
