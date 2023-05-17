@@ -89,7 +89,7 @@ public class Npc : MonoBehaviour
             lookindex = 0;
 
         }
-        if (animData == "idle")
+        if (animData == "null")
         {
             animindex = 0;
         }
