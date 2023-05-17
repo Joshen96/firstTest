@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227943527}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -376,10 +376,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1391142285527366359, guid: 9b36f24960fae434eae6f7e5b6bb5cc5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2831935146574088688, guid: 9b36f24960fae434eae6f7e5b6bb5cc5, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -430,11 +426,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b36f24960fae434eae6f7e5b6bb5cc5, type: 3}
---- !u!1 &1816414360 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8904802691775425137, guid: 9b36f24960fae434eae6f7e5b6bb5cc5, type: 3}
-  m_PrefabInstance: {fileID: 1816414359}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1816414361 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1391142285527366359, guid: 9b36f24960fae434eae6f7e5b6bb5cc5, type: 3}
@@ -452,4 +443,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7039fa7983dfe664f847a967d8f9cc2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: {fileID: 1816414360}
