@@ -8,7 +8,7 @@ public class TalkManager : MonoBehaviour
 {
     Dictionary<int, string[]> talkData;
     static Dictionary<int, Transform[]> lookData;
-    Dictionary<int, int[]> animData;
+    Dictionary<int, string[]> animData;
     //public Camera Playercam;
     
     public Transform[] target; 
@@ -17,7 +17,7 @@ public class TalkManager : MonoBehaviour
     {
         talkData = new Dictionary<int, string[]>();
         lookData = new Dictionary<int, Transform[]>();
-        animData = new Dictionary<int, int[]>();
+        animData = new Dictionary<int, string[]>();
         GernerateData();
 
     }
@@ -28,9 +28,9 @@ public class TalkManager : MonoBehaviour
         lookData.Add(1000, new Transform[] { target[0], target[1] });
 
 
-        talkData.Add(2000, new string[] { "안녕?","여기는 교실1이에요","문을 열어봐요" ,"하하","문열어","빨리!"});
+        talkData.Add(2000, new string[] { "안녕?","여기는 교실1이에요","문을 열어봐요" ,"춤추기하하","문열어","빨리!"});
         lookData.Add(2000, new Transform[] { target[0], target[1], target[2] , target[0], target[2] });
-        animData.Add(2000, new int[] {0, 0, 1, 0, 1, 0 });
+        animData.Add(2000, new string[] {"greeting","pointing","pointing","dancing","pointing","idle" });
 
 
 
@@ -57,11 +57,11 @@ public class TalkManager : MonoBehaviour
         else
             return lookData[_id][_lookIdex];
     }
-    public int GetAnim(int _id, int _animIdex)
+    public string GetAnim(int _id, int _animIdex)
     {
         if(_animIdex == animData[_id].Length)
         {
-            return 100;
+            return "idle";
 
         }
         else
