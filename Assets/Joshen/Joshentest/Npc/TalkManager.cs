@@ -61,7 +61,7 @@ public class TalkManager : MonoBehaviour
     {
         if(_animIdex == animData[_id].Length)
         {
-            return "idle";
+            return "null";
 
         }
         else
