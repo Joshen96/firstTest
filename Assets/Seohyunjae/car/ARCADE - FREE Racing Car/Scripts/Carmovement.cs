@@ -12,10 +12,14 @@ public class Carmovement : MonoBehaviour
     private void Start()
     {
         car.transform.position = paths[0].transform.position;
+       
+        
+        
 
     }
     private void Update()
     {
+
 
         car.transform.position = Vector3.MoveTowards(car.transform.position, paths[i].transform.position, speed * Time.deltaTime);
         car.transform.LookAt(paths[i]);
@@ -28,13 +32,19 @@ public class Carmovement : MonoBehaviour
         {
             i= 0;
         }
-       
+        
+
+        
+        
+
     }
 
 
     public void carMove()
     {
         car.transform.position = Vector3.MoveTowards(car.transform.position, paths[i].transform.position, speed * Time.deltaTime);
+        
+
     }
 
 } 
