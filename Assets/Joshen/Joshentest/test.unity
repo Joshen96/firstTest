@@ -260,6 +260,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &455427043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2470523745936958182, guid: 910076f7b0475cb47b46bb417fecdfb1, type: 3}
+  m_PrefabInstance: {fileID: 1038636843}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &491366704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -268,9 +273,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 383528560}
     m_Modifications:
     - target: {fileID: 126605498351691552, guid: d9afb8b0c835f4e4daf3f9804924f69a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 455427043}
+    - target: {fileID: 126605498351691552, guid: d9afb8b0c835f4e4daf3f9804924f69a, type: 3}
       propertyPath: uiMenu
       value: 
       objectReference: {fileID: 1013626673}
+    - target: {fileID: 126605498351691552, guid: d9afb8b0c835f4e4daf3f9804924f69a, type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1474591340}
     - target: {fileID: 126605498351691552, guid: d9afb8b0c835f4e4daf3f9804924f69a, type: 3}
       propertyPath: talkManager
       value: 
@@ -934,6 +947,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7863810937265753327, guid: c6a5e5bfc152067479b9430c68969580, type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1474591340}
+    - target: {fileID: 7863810937265753327, guid: c6a5e5bfc152067479b9430c68969580, type: 3}
+      propertyPath: target.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863810937265753327, guid: c6a5e5bfc152067479b9430c68969580, type: 3}
+      propertyPath: target.Array.data[0]
+      value: 
+      objectReference: {fileID: 2143129996}
+    - target: {fileID: 7863810937265753327, guid: c6a5e5bfc152067479b9430c68969580, type: 3}
+      propertyPath: target.Array.data[1]
+      value: 
+      objectReference: {fileID: 501219007}
+    - target: {fileID: 7863810937265753327, guid: c6a5e5bfc152067479b9430c68969580, type: 3}
+      propertyPath: target.Array.data[2]
+      value: 
+      objectReference: {fileID: 491366705}
+    - target: {fileID: 7863810937265753327, guid: c6a5e5bfc152067479b9430c68969580, type: 3}
+      propertyPath: target.Array.data[3]
+      value: 
+      objectReference: {fileID: 954560249}
+    - target: {fileID: 7863810937265753327, guid: c6a5e5bfc152067479b9430c68969580, type: 3}
+      propertyPath: target.Array.data[4]
+      value: 
+      objectReference: {fileID: 1556794590}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6a5e5bfc152067479b9430c68969580, type: 3}
 --- !u!114 &1463307130 stripped
@@ -947,6 +988,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0955e2b00f191448e13b4a955b19fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!20 &1474591340 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2470523744629183506, guid: 910076f7b0475cb47b46bb417fecdfb1, type: 3}
+  m_PrefabInstance: {fileID: 1038636843}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1556794590 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2810109353043423208, guid: 33a7e848ce42e7b43a917cdab018b9cc, type: 3}
+  m_PrefabInstance: {fileID: 1900634033}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1699159511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1223,9 +1274,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1701083325}
     m_Modifications:
     - target: {fileID: 126605498351691552, guid: d9afb8b0c835f4e4daf3f9804924f69a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 455427043}
+    - target: {fileID: 126605498351691552, guid: d9afb8b0c835f4e4daf3f9804924f69a, type: 3}
       propertyPath: uiMenu
       value: 
       objectReference: {fileID: 1013626673}
+    - target: {fileID: 126605498351691552, guid: d9afb8b0c835f4e4daf3f9804924f69a, type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1474591340}
     - target: {fileID: 126605498351691552, guid: d9afb8b0c835f4e4daf3f9804924f69a, type: 3}
       propertyPath: talkManager
       value: 
