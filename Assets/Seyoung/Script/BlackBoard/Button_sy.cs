@@ -16,7 +16,6 @@ public class Button_sy : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text_Btn5 = null;
 
     [SerializeField] private BlackBoardManager_sy blackboardManager = null;
-    [SerializeField] private InputField_sy inputField = null;
 
     public void SetButtonText(string _className, int _questionNum) // ClassName과 questionNum에 따라 알맞은 버튼 셋팅
     {
