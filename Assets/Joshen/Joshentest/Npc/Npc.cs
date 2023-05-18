@@ -16,12 +16,18 @@ public class Npc : MonoBehaviour
 
     public Npc_id NPC_id;
     [SerializeField]
-    private UI_npc uiMenu = null; //컴포넌트 받기위해 드래그로 
+    private GameObject uiMenu = null; //컴포넌트 받기위해 드래그로 
     bool isAction = false;
     //public Camera Playercam;
     //public GameObject Playercamobj;
     Transform nowTranform;
     Animator animator;
+
+    [SerializeField]
+    float talkdelay = 1f;
+    [SerializeField]
+    float talktime = 0f;
+    bool cannexttalk = false;
 
     private void Awake()
     {
@@ -29,20 +35,36 @@ public class Npc : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)&&isAction)
+        delaytalk();
+        if (Input.GetKeyDown(KeyCode.E) && isAction && cannexttalk)
         {
             Talk(NPC_id.id);
-
+            talktime = 0f;
         }
-        if (nowTranform !=null)
+        if (nowTranform != null)
         {
             StartCoroutine(camMove(nowTranform));
         }
-        
+
 
 
     }
 
+    void delaytalk()
+    {
+        if (talktime < talkdelay)
+        talktime += Time.deltaTime;
+
+        if (talktime > talkdelay)
+        {
+            cannexttalk = true;
+        }
+        else
+        {
+            cannexttalk = false;
+        }
+
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -53,15 +75,16 @@ public class Npc : MonoBehaviour
             {
                 Talk(NPC_id.id);
             }
-            
+
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            isAction = false;
             uiMenu.gameObject.SetActive(false);
-            uiMenu.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = " ";
+            uiMenu.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = " ";
             NPCReset(this.gameObject.transform.GetChild(0).gameObject);
             talkindex = 0;
             lookindex = 0;
@@ -72,20 +95,22 @@ public class Npc : MonoBehaviour
 
     void Talk(int _id)
     {
-       string talkData =  talkManager.GetTalk(_id, talkindex);
-       Transform lookData = talkManager.GetLook(_id, lookindex);
-       string animData = talkManager.GetAnim(_id, animindex);
-        
-        if(talkData == null) 
+        string talkData = talkManager.GetTalk(_id, talkindex);
+        Transform lookData = talkManager.GetLook(_id, lookindex);
+        string animData = talkManager.GetAnim(_id, animindex);
+
+        if (talkData == null)
         {
             talkindex = 0;
-            
+
             uiMenu.gameObject.SetActive(false);
             isAction = false;
+            NPC_id.id += 1;
             return;
         }
-        if(lookData == null)
+        if (lookData == null)
         {
+            NPCReset(this.gameObject.transform.GetChild(0).gameObject);
             lookindex = 0;
 
         }
@@ -93,13 +118,13 @@ public class Npc : MonoBehaviour
         {
             animindex = 0;
         }
-        uiMenu.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = talkData;
+        uiMenu.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = talkData;
 
 
-        Debug.Log("테스트"+ animData);
+        Debug.Log("테스트" + animData);
         animator.SetTrigger(animData);
-        
-        
+
+
 
         /*
         Vector3 delta = lookData.position - Playercam.transform.position;
@@ -120,7 +145,7 @@ public class Npc : MonoBehaviour
     {
         Talk(NPC_id.id);
     }
- 
+
     public static void NPCReset(GameObject _body)
     {
         GameObject npc = _body.gameObject.transform.parent.gameObject;
@@ -142,8 +167,9 @@ public class Npc : MonoBehaviour
         //Playercam.transform.rotation = Quaternion.Lerp(Playercam.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
         //Playercam.transform.rotation = Quaternion.Lerp(Playercam.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
         dir.y = 0f;
-        yield return this.gameObject.transform.GetChild(0).transform.rotation = Quaternion.Lerp(this.gameObject.transform.GetChild(0).transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);  
+        yield return this.gameObject.transform.GetChild(0).transform.rotation = Quaternion.Lerp(this.gameObject.transform.GetChild(0).transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
     }
 }
+  
 
 
