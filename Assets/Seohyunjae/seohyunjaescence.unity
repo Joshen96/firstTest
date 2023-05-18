@@ -446,6 +446,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Free Racing Car Purple Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6645616114513181105, guid: 62010132604e8c94d96b4cb4fe6d3394, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62010132604e8c94d96b4cb4fe6d3394, type: 3}
 --- !u!1 &613219245
@@ -601,6 +605,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Free Racing Car Red Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3294564219125457607, guid: 8a8f57edf3523624eb9f886833e8e97a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a8f57edf3523624eb9f886833e8e97a, type: 3}
 --- !u!114 &828073963 stripped
@@ -736,6 +744,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Free Racing Car Blue Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7720726507797323357, guid: e9be6b9d71ce20345b55b654f6eca5d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9be6b9d71ce20345b55b654f6eca5d9, type: 3}
 --- !u!1001 &1514286361
@@ -748,6 +760,10 @@ PrefabInstance:
     - target: {fileID: 1441219670942780, guid: b3b376febc10d7841b025486328ee1a6, type: 3}
       propertyPath: m_Name
       value: RED BUS
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441219670942780, guid: b3b376febc10d7841b025486328ee1a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4302005271253200, guid: b3b376febc10d7841b025486328ee1a6, type: 3}
       propertyPath: m_RootOrder
@@ -962,6 +978,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Free Racing Car Gray Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7282772008711335601, guid: 4d1624804e8167f479ab63c5302ff1d5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7951749605284508683, guid: 4d1624804e8167f479ab63c5302ff1d5, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1013,7 +1033,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2771194145041277435, guid: 4c1c7e1cb17136e4990b5ed56008645b, type: 3}
   m_PrefabInstance: {fileID: 8582245663430876998}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1967792185
+--- !u!114 &1967792187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1042,6 +1062,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ed41fa6487649b248b464236400e32f2, type: 3}
       propertyPath: m_Name
       value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ed41fa6487649b248b464236400e32f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ed41fa6487649b248b464236400e32f2, type: 3}
       propertyPath: m_RootOrder
@@ -1391,6 +1415,18 @@ PrefabInstance:
     - target: {fileID: 5883309505939813073, guid: 4c1c7e1cb17136e4990b5ed56008645b, type: 3}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883309505939813073, guid: 4c1c7e1cb17136e4990b5ed56008645b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883309505939813073, guid: 4c1c7e1cb17136e4990b5ed56008645b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883309505939813073, guid: 4c1c7e1cb17136e4990b5ed56008645b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5883309505939813073, guid: 4c1c7e1cb17136e4990b5ed56008645b, type: 3}
       propertyPath: m_LocalPosition.x

@@ -11,15 +11,11 @@ public class Carmovement : MonoBehaviour
     public Transform[] paths;
     public float speed = 10f;
     public int i = 0;
-    public  float scrPlayDist = 10f;
-    public  bool isStopcar = false;
+    public float scrPlayDist = 3f;
+    public bool isStopcar = false;
     private void Start()
     {
         car.transform.position = paths[0].transform.position;
-       
-        
-        
-
     }
     private void Update()
     {
@@ -45,19 +41,13 @@ public class Carmovement : MonoBehaviour
         {
             isStopcar = true;
             //¹ÙÄû¸ØÃß±â
-
         }
 
-        
-        
-
     }
-
 
     public void carMove()
     {
         car.transform.position = Vector3.MoveTowards(car.transform.position, paths[i].transform.position, speed * Time.deltaTime);
-        
 
     }
     private void DebugDistance()
