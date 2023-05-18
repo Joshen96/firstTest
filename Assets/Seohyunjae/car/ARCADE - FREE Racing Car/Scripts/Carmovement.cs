@@ -7,22 +7,29 @@ using static UnityEngine.GraphicsBuffer;
 public class Carmovement : MonoBehaviour
 {
     public GameObject car;
+    public GameObject noparkingsetstop;
     public Transform Player;
     public Transform[] paths;
-    public float speed = 10f;
+    public float speed=1f;
+    
     public int i = 0;
-    public  float scrPlayDist = 10f;
-    public  bool isStopcar = false;
+    public float scrPlayDist = 3f;
+    public bool isStopcar = false;
+    
+
+    private void Awake()
+    {
+       
+    }
     private void Start()
     {
         car.transform.position = paths[0].transform.position;
-       
         
-        
-
     }
     private void Update()
     {
+        
+        
         DebugDistance();
         float dist = CalcDistanceWithTarget();
 
@@ -30,7 +37,8 @@ public class Carmovement : MonoBehaviour
         {
             isStopcar = false;
             car.transform.position = Vector3.MoveTowards(car.transform.position, paths[i].transform.position, speed * Time.deltaTime);
-            car.transform.LookAt(paths[i]);
+            //car.transform.LookAt(paths[i]);
+            lookingPlayer(paths[i]);
             if (car.transform.position == paths[i].transform.position)
             {
                 i++;
@@ -45,19 +53,13 @@ public class Carmovement : MonoBehaviour
         {
             isStopcar = true;
             //¹ÙÄû¸ØÃß±â
-
         }
 
-        
-        
-
     }
-
 
     public void carMove()
     {
         car.transform.position = Vector3.MoveTowards(car.transform.position, paths[i].transform.position, speed * Time.deltaTime);
-        
 
     }
     private void DebugDistance()
@@ -87,4 +89,12 @@ public class Carmovement : MonoBehaviour
 
         return dist;
     }
+    public void lookingPlayer(Transform _nextpath)
+    {
+        Vector3 dir = _nextpath.transform.position - car.transform.position;
+        car.gameObject.transform.rotation = Quaternion.Lerp(car.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
+
+
+    }
+  
 } 
