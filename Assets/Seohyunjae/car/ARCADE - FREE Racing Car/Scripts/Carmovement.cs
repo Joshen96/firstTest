@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.Device;
 using static UnityEngine.GraphicsBuffer;
@@ -7,7 +8,9 @@ using static UnityEngine.GraphicsBuffer;
 public class Carmovement : MonoBehaviour
 {
     public GameObject car;
-    public GameObject noparkingsetstop;
+    public GameObject Noparkingset;
+    
+
     public Transform Player;
     public Transform[] paths;
     public float speed=1f;
@@ -89,6 +92,20 @@ public class Carmovement : MonoBehaviour
 
         return dist;
     }
+    private float CalcDistanceWithTarge2()
+    {
+        Vector3 dirToTarget =
+            Noparkingset.transform.position - car.transform.position;
+        float dist2 = dirToTarget.magnitude;
+
+        dist2 = Vector3.Distance(
+            Noparkingset.transform.position, car.transform.position);
+
+        return dist2;
+    }
+
+
+
     public void lookingPlayer(Transform _nextpath)
     {
         Vector3 dir = _nextpath.transform.position - car.transform.position;
