@@ -19,6 +19,7 @@ public class BallManager_sy : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))             // 클릭했을 때
         {
+            Debug.Log("클릭");
             FindClickObject();                       // 클릭한 오브젝트 확인
 
             if (pickObject == ballRigidbody.gameObject) pickObject.transform.rotation = Quaternion.Euler(Vector3.zero);
@@ -44,7 +45,8 @@ public class BallManager_sy : MonoBehaviour
 
     private void FindClickObject() // 마우스 클릭 시 해당 오브젝트 찾는 함수
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);            // 마우스 포지션에서 광선쏘기
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.Log("레이" + ray);// 마우스 포지션에서 광선쏘기
         RaycastHit hit;                                                         // 쏜 광선이 어딘가에 맞았는지를 확인
 
         if (Physics.Raycast(ray, out hit))
