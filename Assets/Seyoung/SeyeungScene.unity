@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 344699856}
   - component: {fileID: 344699857}
   m_Layer: 0
-  m_Name: GoalTrigger
+  m_Name: GoalLineTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 816928643}
   - component: {fileID: 816928644}
   m_Layer: 0
-  m_Name: GoalTrigger
+  m_Name: GoalLineTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 823502655}
   - component: {fileID: 823502656}
   m_Layer: 0
-  m_Name: GoalTrigger
+  m_Name: GoalLineTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1039,7 +1039,7 @@ GameObject:
   - component: {fileID: 1863726841}
   - component: {fileID: 1863726842}
   m_Layer: 0
-  m_Name: GoalTrigger
+  m_Name: GoalLineTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1086,15 +1086,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3382911250993704688, guid: 22ed76143e8f4ae4b8fe38e77ad87aaa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.812
       objectReference: {fileID: 0}
     - target: {fileID: 3382911250993704688, guid: 22ed76143e8f4ae4b8fe38e77ad87aaa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3382911250993704688, guid: 22ed76143e8f4ae4b8fe38e77ad87aaa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -15.076
       objectReference: {fileID: 0}
     - target: {fileID: 3382911250993704688, guid: 22ed76143e8f4ae4b8fe38e77ad87aaa, type: 3}
       propertyPath: m_LocalRotation.w
