@@ -18,6 +18,7 @@ public class Carmovement : MonoBehaviour
     public float scrPlayDist = 8f;
    
     public bool isStopcar = false;
+    public GameObject carui;
     
 
     private void Awake()
@@ -37,16 +38,15 @@ public class Carmovement : MonoBehaviour
         float dist = CalcDistanceWithTarget();
        
 
-
-      
-
         if (dist < scrPlayDist) 
         {
             isStopcar = true;
+            carui.SetActive(true);
             
         }
         else
         {
+            
             isStopcar= false;
             car.transform.position = Vector3.MoveTowards(car.transform.position, paths[i].transform.position, speed * Time.deltaTime);
             //car.transform.LookAt(paths[i]);
@@ -61,8 +61,6 @@ public class Carmovement : MonoBehaviour
                 i = 0;
             }
         }
-
-       
 
     }
 
