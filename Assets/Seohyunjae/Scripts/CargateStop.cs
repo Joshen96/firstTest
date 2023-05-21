@@ -23,10 +23,6 @@ public class CargateStop : MonoBehaviour
             Debug.Log("Â÷°¨Áö");
 
             StartCoroutine(Rotation());
-            
-            
-
-
         }
     }
 
@@ -35,10 +31,9 @@ public class CargateStop : MonoBehaviour
         if (_other.tag == "Car")
         {
 
-           
             StartCoroutine(delaycarmove(_other.gameObject));
             Debug.Log("Â÷¶³¾îÁü");
-
+            carspeed =15;
 
         }
     }
@@ -53,7 +48,7 @@ public class CargateStop : MonoBehaviour
 
        yield return StartCoroutine(iRotationup(90f));
         
-        yield return StartCoroutine(iRotationdown(0f));
+       yield return StartCoroutine(iRotationdown(0f));
 
     }
     IEnumerator iRotationup(float targetAngle)
@@ -82,9 +77,6 @@ public class CargateStop : MonoBehaviour
  
     IEnumerator iRotationdown(float targetAngle)
     {
-
-        
-
         float st = tr.eulerAngles.z;
         float er = targetAngle;
 
@@ -96,7 +88,7 @@ public class CargateStop : MonoBehaviour
             float speed = t;
             float zRotation = Mathf.Lerp(90, 0, speed) % 360.0f;
 
-            Debug.Log(zRotation);
+            //Debug.Log(zRotation);
             //tr.eulerAngles = new Vector3(-xRotation, tr.eulerAngles.y, tr.eulerAngles.z);
             tr.eulerAngles = new Vector3(tr.eulerAngles.x, tr.eulerAngles.y, zRotation);
 
@@ -105,4 +97,5 @@ public class CargateStop : MonoBehaviour
             yield return null;
         }
     }
+    
 }

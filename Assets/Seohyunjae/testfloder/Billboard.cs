@@ -29,9 +29,9 @@ public class Billboard : MonoBehaviour
 
     private void Start()
     {
-        VideoClip clip =
-            Resources.Load<VideoClip>(
-                "Videos\\TWICE_SETMEFREE");
+       // VideoClip clip =
+         //   Resources.Load<VideoClip>(
+           //     "Videos\\TWICE_SETMEFREE");
         //clip =
         //    Resources.Load("Videos\\TWICE_SETMEFREE")
         //    as VideoClip;
@@ -39,7 +39,7 @@ public class Billboard : MonoBehaviour
         //    (VideoClip)Resources.Load(
         //        "Videos\\TWICE_SETMEFREE");
 
-        screen.SetVideoClip(clip);
+        //screen.SetVideoClip(clip);
     }
 
     private void Update()
