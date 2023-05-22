@@ -20,6 +20,7 @@ public class Npc_UI_lookme : MonoBehaviour
     public void lookingPlayer()
     {
         Vector3 dir = this.transform.position - playerobj.transform.position;
+       
         this.gameObject.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
         
 
@@ -36,7 +37,7 @@ public class Npc_UI_lookme : MonoBehaviour
 
         //Playercam.transform.rotation = Quaternion.Lerp(Playercam.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
         //Playercam.transform.rotation = Quaternion.Lerp(Playercam.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
-        dir.y = 0f;
+        //dir.y = 0f;
         yield return this.gameObject.transform.GetChild(0).transform.rotation = Quaternion.Lerp(this.gameObject.transform.GetChild(0).transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
     }
 }
