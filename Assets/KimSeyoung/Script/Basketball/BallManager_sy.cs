@@ -8,33 +8,13 @@ public class BallManager_sy : MonoBehaviour
     [SerializeField] private bool isPickBall = false;
     [SerializeField] private float throwSpeed = 0.0f;
 
-    [SerializeField] private float goalLineRotateSpeed = 5.0f; //(????)
-
-
-    /// <summary>
-    /// ///////////////////////////////////////////
-    /// </summary>
-    private enum ERotDir { CW, CCW }                                    // 회전방향 종류
-    private enum ERotType { Pitch, Yaw, Roll }                          // 축회전 종류
-
-    [Header("- Values -")]
-    [SerializeField, Range(0f, 300f)] private float speed = 100f;       // 회전 속도
+    [SerializeField] private Transform targetTr = null;
+    [SerializeField, Range(200f, 1000f)] private float speed = 500f;       // 회전 속도
     [SerializeField, Range(0f, 10f)] private float distance = 1f;       // 반지름 Radius
-
-    [Header("- Type -")]
-    [SerializeField] private ERotDir rotDir = ERotDir.CCW;              // 기본 방향 설정 
-    [SerializeField] private ERotType rotType = ERotType.Yaw;           // 기본 회전축 설정
-    /// <summary>
-    /// ///////////////////////////////////////////
-    /// </summary>
-
-
-
-
+    private float angle = 0f;
 
     private void Awake()
     {
-
     }
 
     private void Update()
@@ -95,16 +75,31 @@ public class BallManager_sy : MonoBehaviour
     }
 
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerStay(Collider other)
     {
         switch (other.gameObject.name)
         {
-            case "GoalTrigger":
+            case "GoalLineTrigger":
                 {
                     Debug.Log("골라인 닿았어!!!");
                     // GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-1, 1), 0, 0) * goalLineRotateSpeed, ForceMode.Impulse);
-                    // 골라인에서 회전!!! (-) AroundMoveBall 스크립트 참고해서 다시 만들어!
-                    // 튕겨나가잖아!!!! (-)
+
+                    if (targetTr == null)
+                    { Debug.LogError("회전타겟 오브젝트 설정해!!!"); }
+
+                    if (speed > 10f) 
+                    {
+                        angle -= Time.deltaTime * speed;
+                        if (angle < 0f) angle = 360f;
+
+                        Vector3 anglePos = new Vector3();
+                        CalcAnglePosWithYaw(angle, ref anglePos);
+
+                        Vector3 criterionPos = targetTr.position;
+
+                        speed -= (Time.deltaTime * 100f);
+                        this.transform.position = criterionPos + (anglePos * distance);
+                    }
                 }
                 break;
 
@@ -116,6 +111,16 @@ public class BallManager_sy : MonoBehaviour
                 break;
         }
     }
+    private void CalcAnglePosWithYaw(float _angle, ref Vector3 _pos)
+        // 회전이동하도록 AnglePos 계산하기 , 공 자체의 회전은 아직 없음(-)
+    {
+        float angle2Rad = _angle * Mathf.Deg2Rad;
+
+        _pos.x = Mathf.Cos(angle2Rad);
+        _pos.y = 0f;
+        _pos.z = Mathf.Sin(angle2Rad);
+    }
+
 
     public void GoalIn()
     {
