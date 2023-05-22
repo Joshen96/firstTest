@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1062398798272758587}
   - component: {fileID: 1062398798272758586}
   - component: {fileID: 1062398798272758581}
+  - component: {fileID: 6127349927036195825}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -122,9 +123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Npc, Assembly-CSharp
-        m_MethodName: button_next_talk
+      - m_Target: {fileID: 6127349927036195825}
+        m_TargetAssemblyTypeName: npctalkButton, Assembly-CSharp
+        m_MethodName: inclick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -134,6 +135,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6127349927036195825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062398798272758583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab1e318e7376ac459695126a470d3c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isclick: 0
 --- !u!1 &1062398799071225403
 GameObject:
   m_ObjectHideFlags: 0

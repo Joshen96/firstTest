@@ -9,7 +9,7 @@ public class Ball_sy : MonoBehaviour
 
     private void Start()
     {
-        ballManager = transform.parent.GetComponent<BallManager_sy>();
+       // ballManager = transform.parent.GetComponent<BallManager_sy>();
     }
 
     public void OnTriggerEnter(Collider other)

@@ -36,6 +36,7 @@ public class Npc : MonoBehaviour
     private void Update()
     {
         delaytalk();
+
         if (Input.GetKeyDown(KeyCode.E) && isAction && cannexttalk)
         {
             Talk(NPC_id.id);
@@ -61,6 +62,7 @@ public class Npc : MonoBehaviour
         }
         else
         {
+            npctalkButton.isclick = false;
             cannexttalk = false;
         }
 
