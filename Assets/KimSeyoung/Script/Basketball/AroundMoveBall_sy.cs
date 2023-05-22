@@ -29,24 +29,14 @@ public class AroundMoveBall_sy : MonoBehaviour
 
         private void Awake()
         {
-            if (ballPrefab == null)
-            {
-                Debug.LogError("º¼ ÇÁ¸®Æé ¼³Á¤ ¾ÈÇß¾î, ÀÓ¸ú~!!!");
-                return;
-            }
-
-            GameObject go = Instantiate(ballPrefab);
-            //go.transform.parent = transform;
-            go.transform.SetParent(transform);
-            ballTr = go.transform;
+            //GameObject go = Instantiate(ballPrefab);
+            //go.transform.SetParent(transform);
+            //ballTr = go.transform;
         }
 
         private void Update()
         {
-            if (targetTr == null) return;
-
-            // Clamp
-            switch (rotDir)
+            switch (rotDir)                         // ¾Þ±Û¼³Á¤
             {
                 case ERotDir.CW:
                     angle -= Time.deltaTime * speed;
@@ -58,20 +48,15 @@ public class AroundMoveBall_sy : MonoBehaviour
                     break;
             }
 
-
             Vector3 anglePos = new Vector3();
-            CalcAnglePosWithRotType(
-                rotType, angle, ref anglePos);
+            CalcAnglePosWithRotType(rotType, angle, ref anglePos);
 
             Vector3 targetPos = targetTr.position;
             ballTr.position =
                 targetPos + (anglePos * distance);
         }
 
-        private void CalcAnglePosWithRotType(
-            ERotType _rotType,
-            float _angle,
-            ref Vector3 _pos)
+        private void CalcAnglePosWithRotType( ERotType _rotType, float _angle, ref Vector3 _pos)
         {
             float angle2Rad = _angle * Mathf.Deg2Rad;
             switch (_rotType)
