@@ -3112,7 +3112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnPoint: {fileID: 773602363}
   nextSpawn: 2
-  SpawnRate: 5
+  SpawnRate: 10
   NPC: {fileID: 1968476688708216}
 --- !u!4 &1719593616
 Transform:
@@ -4372,6 +4372,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BC_NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 9025037033854045983, guid: 30d3bd3b98a80e3418e51d737150e391, type: 3}
+      propertyPath: NPC
+      value: 
+      objectReference: {fileID: 1968476688708216}
     - target: {fileID: 9025037033854045983, guid: 30d3bd3b98a80e3418e51d737150e391, type: 3}
       propertyPath: PATH
       value: 
