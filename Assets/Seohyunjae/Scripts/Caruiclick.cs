@@ -8,20 +8,24 @@ public class Caruiclick : MonoBehaviour
     public GameObject carcamera;
     public GameObject carui;
     public GameObject player;
+    
     //public GameObject camera;
     // Start is called before the first frame update
    
+
     public void yesOnClick()
     {
         carcamera.SetActive(true);
         Debug.Log("123");
         carui.SetActive(false);
-        player.SetActive(false);
         
+
     }
     public void noOnClick() 
     {
         carcamera.SetActive(false);
+        Carmovement carmovement = this.GetComponentInParent<Carmovement>();
+        carmovement.isNoclick = true;
         carui.SetActive(false);
         player.SetActive(true);
     }
