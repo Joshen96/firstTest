@@ -111,6 +111,7 @@ public class Npc : MonoBehaviour
             uiMenu.gameObject.SetActive(false);
             isAction = false;
             NPC_id.id += 1;
+            
             return;
         }
         if (lookData == null)
