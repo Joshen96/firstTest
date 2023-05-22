@@ -29,15 +29,19 @@ public class Npc : MonoBehaviour
     float talktime = 0f;
     bool cannexttalk = false;
 
+    private npctalkButton _npctalkButton;
+
+    
+
     private void Awake()
     {
-        animator = this.gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
+        animator = this.GetComponentInChildren<Animator>();
     }
     private void Update()
     {
         delaytalk();
 
-        if (Input.GetKeyDown(KeyCode.E) && isAction && cannexttalk)
+        if (npctalkButton.isclick && isAction && cannexttalk) //클릭부분
         {
             Talk(NPC_id.id);
             talktime = 0f;
@@ -59,6 +63,7 @@ public class Npc : MonoBehaviour
         if (talktime > talkdelay)
         {
             cannexttalk = true;
+            
         }
         else
         {
@@ -73,10 +78,7 @@ public class Npc : MonoBehaviour
         {
             uiMenu.gameObject.SetActive(true);
             isAction = true;
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Talk(NPC_id.id);
-            }
+            
 
         }
     }
@@ -86,7 +88,7 @@ public class Npc : MonoBehaviour
         {
             isAction = false;
             uiMenu.gameObject.SetActive(false);
-            uiMenu.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = " ";
+            uiMenu.GetComponentInChildren<Text>().text = " ";
             NPCReset(this.gameObject.transform.GetChild(0).gameObject);
             talkindex = 0;
             lookindex = 0;
@@ -100,6 +102,7 @@ public class Npc : MonoBehaviour
         string talkData = talkManager.GetTalk(_id, talkindex);
         Transform lookData = talkManager.GetLook(_id, lookindex);
         string animData = talkManager.GetAnim(_id, animindex);
+        
 
         if (talkData == null)
         {
@@ -108,6 +111,7 @@ public class Npc : MonoBehaviour
             uiMenu.gameObject.SetActive(false);
             isAction = false;
             NPC_id.id += 1;
+            
             return;
         }
         if (lookData == null)
@@ -120,7 +124,7 @@ public class Npc : MonoBehaviour
         {
             animindex = 0;
         }
-        uiMenu.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<Text>().text = talkData;
+        uiMenu.GetComponentInChildren<Text>().text = talkData;
 
 
         Debug.Log("테스트" + animData);
@@ -171,6 +175,7 @@ public class Npc : MonoBehaviour
         dir.y = 0f;
         yield return this.gameObject.transform.GetChild(0).transform.rotation = Quaternion.Lerp(this.gameObject.transform.GetChild(0).transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
     }
+   
 }
   
 

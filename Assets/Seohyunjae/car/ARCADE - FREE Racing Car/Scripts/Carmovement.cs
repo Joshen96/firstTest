@@ -18,12 +18,15 @@ public class Carmovement : MonoBehaviour
     public float scrPlayDist = 8f;
    
     public bool isStopcar = false;
+    public bool isNoclick = false;
     public GameObject carui;
+    
     
 
     private void Awake()
     {
-       
+        isStopcar = false;
+
     }
     private void Start()
     {
@@ -41,12 +44,17 @@ public class Carmovement : MonoBehaviour
         if (dist < scrPlayDist) 
         {
             isStopcar = true;
+            if (!isNoclick)
+            {
             carui.SetActive(true);
+
+            }
             
         }
         else
         {
-            
+            isNoclick = false;
+            carui.SetActive(false);
             isStopcar= false;
             car.transform.position = Vector3.MoveTowards(car.transform.position, paths[i].transform.position, speed * Time.deltaTime);
             //car.transform.LookAt(paths[i]);
