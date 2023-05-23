@@ -9,7 +9,7 @@ public class BallManager_sy : MonoBehaviour
     [SerializeField] private float throwSpeed = 0.0f;
 
     [SerializeField] private Transform targetTr = null;
-    [SerializeField, Range(0f, 1000f)] private float speed = 700f;       // 회전 속도
+    [SerializeField, Range(0f, 1000f)] private float speed = 800f;       // 회전 속도
     [SerializeField, Range(0f, 10f)] private float distance = 1f;       // 반지름 Radius
     private float angle = 0f;
 
@@ -86,7 +86,7 @@ public class BallManager_sy : MonoBehaviour
                     if (targetTr == null)
                     { Debug.LogError("회전타겟 오브젝트 설정해!!!"); }
 
-                    if (speed > 200f)
+                    if (speed > 500f)
                     {
                         
                         angle -= Time.deltaTime * speed;
@@ -119,8 +119,8 @@ public class BallManager_sy : MonoBehaviour
 
             case "GoalLineTrigger":
                 {
-                    this.gameObject.GetComponent<Rigidbody>().useGravity = true;
-                    speed = 600f;
+                    GetComponent<Rigidbody>().useGravity = true;
+                    speed = 800f;
                 }
                 break;
         }
