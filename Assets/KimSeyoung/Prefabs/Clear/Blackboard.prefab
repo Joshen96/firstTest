@@ -2069,7 +2069,7 @@ GameObject:
   - component: {fileID: 2495684168652247966}
   - component: {fileID: 427698502053046429}
   m_Layer: 0
-  m_Name: Blackboard 1
+  m_Name: Blackboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

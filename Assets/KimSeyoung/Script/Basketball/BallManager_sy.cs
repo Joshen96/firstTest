@@ -9,13 +9,9 @@ public class BallManager_sy : MonoBehaviour
     [SerializeField] private float throwSpeed = 0.0f;
 
     [SerializeField] private Transform targetTr = null;
-    [SerializeField, Range(200f, 1000f)] private float speed = 500f;       // 회전 속도
+    [SerializeField, Range(0f, 1000f)] private float speed = 700f;       // 회전 속도
     [SerializeField, Range(0f, 10f)] private float distance = 1f;       // 반지름 Radius
     private float angle = 0f;
-
-    private void Awake()
-    {
-    }
 
     private void Update()
     {
@@ -79,21 +75,25 @@ public class BallManager_sy : MonoBehaviour
     {
         switch (other.gameObject.name)
         {
+
             case "GoalLineTrigger":
                 {
-                    Debug.Log("골라인 닿았어!!!");
+                    this.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                    Debug.Log("touched goalline!!!");
                     // GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-1, 1), 0, 0) * goalLineRotateSpeed, ForceMode.Impulse);
 
                     if (targetTr == null)
                     { Debug.LogError("회전타겟 오브젝트 설정해!!!"); }
 
-                    if (speed > 10f) 
+                    if (speed > 200f)
                     {
+                        
                         angle -= Time.deltaTime * speed;
                         if (angle < 0f) angle = 360f;
 
                         Vector3 anglePos = new Vector3();
                         CalcAnglePosWithYaw(angle, ref anglePos);
+                        GetComponent<Rigidbody>().AddTorque(Vector3.down * speed, ForceMode.Impulse);
 
                         Vector3 criterionPos = targetTr.position;
 
@@ -111,8 +111,20 @@ public class BallManager_sy : MonoBehaviour
                 break;
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        switch (other.gameObject.name)
+        {
+
+            case "GoalLineTrigger":
+                {
+                    this.gameObject.GetComponent<Rigidbody>().useGravity = true;
+                    speed = 600f;
+                }
+                break;
+        }
+    }
     private void CalcAnglePosWithYaw(float _angle, ref Vector3 _pos)
-        // 회전이동하도록 AnglePos 계산하기 , 공 자체의 회전은 아직 없음(-)
     {
         float angle2Rad = _angle * Mathf.Deg2Rad;
 
@@ -120,6 +132,7 @@ public class BallManager_sy : MonoBehaviour
         _pos.y = 0f;
         _pos.z = Mathf.Sin(angle2Rad);
     }
+
 
 
     public void GoalIn()
