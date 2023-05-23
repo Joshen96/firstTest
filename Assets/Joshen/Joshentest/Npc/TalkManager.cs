@@ -63,7 +63,11 @@ public class TalkManager : MonoBehaviour
 
     public string GetTalk(int _id, int _talkIdex)
     {
-       
+
+        if (!talkData.ContainsKey(_id))
+        {
+            _id = 9999;
+        }
 
         if (_talkIdex == talkData[_id].Length)
             return null;
@@ -72,8 +76,11 @@ public class TalkManager : MonoBehaviour
     }
     public Transform GetLook(int _id, int _lookIdex)
     {
+        if (!lookData.ContainsKey(_id))
+        {
+            _id = 9999;
+        }
 
-        
         if (_lookIdex == lookData[_id].Length)
         {
             
@@ -84,6 +91,10 @@ public class TalkManager : MonoBehaviour
     }
     public string GetAnim(int _id, int _animIdex)
     {
+        if (!animData.ContainsKey(_id))
+        {
+            _id = 9999;
+        }
 
         if (_animIdex == animData[_id].Length)
         {
