@@ -10,6 +10,7 @@ public class Caruiclick : MonoBehaviour
     public GameObject player;
     public GameObject car;
     public Transform carin_tranform;
+    public GameObject carinui;
 
     public static bool carin_bool;
 
@@ -27,6 +28,8 @@ public class Caruiclick : MonoBehaviour
         carui.SetActive(false);
         player.SetActive(false);
         player.transform.position = carin_tranform.transform.position;
+        carinui.SetActive(true);
+
         
         //player.transform.position = car.transform.position + new Vector3(4f, 0, 0);
     }
@@ -40,4 +43,7 @@ public class Caruiclick : MonoBehaviour
         player.SetActive(true);
 
     }
+
+  
+
 }
