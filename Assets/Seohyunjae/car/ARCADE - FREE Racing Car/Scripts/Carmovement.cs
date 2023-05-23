@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.Device;
+using UnityEngine.Rendering;
 using static UnityEngine.GraphicsBuffer;
 
 public class Carmovement : MonoBehaviour
 {
     public GameObject car;
+    
 
     public Transform Player;
     public Transform[] paths;
@@ -16,7 +18,8 @@ public class Carmovement : MonoBehaviour
 
     public int i = 0;
     public float scrPlayDist = 8f;
-   
+
+    public bool isaccord = false;
     public bool isStopcar = false;
     public bool isNoclick = false;
     public GameObject carui;
@@ -39,20 +42,25 @@ public class Carmovement : MonoBehaviour
         DebugDistance();
        
         float dist = CalcDistanceWithTarget();
+        
        
-
         if (dist < scrPlayDist) 
         {
+
             isStopcar = true;
             if (!isNoclick)
             {
             carui.SetActive(true);
-
             }
-            
+
+          
+
         }
+      
+
         else
         {
+                       
             isNoclick = false;
             carui.SetActive(false);
             isStopcar= false;

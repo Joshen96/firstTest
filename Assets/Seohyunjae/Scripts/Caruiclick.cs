@@ -8,6 +8,12 @@ public class Caruiclick : MonoBehaviour
     public GameObject carcamera;
     public GameObject carui;
     public GameObject player;
+    public GameObject car;
+    public Transform carin_tranform;
+    public GameObject carinui;
+
+    public static bool carin_bool;
+
     
     //public GameObject camera;
     // Start is called before the first frame update
@@ -15,11 +21,18 @@ public class Caruiclick : MonoBehaviour
 
     public void yesOnClick()
     {
+        Debug.Log(123);
+        carin_bool= true;
         carcamera.SetActive(true);
-        Debug.Log("123");
+        Debug.Log("차량ui클릭");
+        Debug.Log(car.transform.position);
         carui.SetActive(false);
-        
+        player.SetActive(false);
+        player.transform.position = carin_tranform.transform.position;
+        carinui.SetActive(true);
 
+        
+        //player.transform.position = car.transform.position + new Vector3(4f, 0, 0);
     }
     public void noOnClick() 
     {
@@ -27,6 +40,11 @@ public class Caruiclick : MonoBehaviour
         Carmovement carmovement = this.GetComponentInParent<Carmovement>();
         carmovement.isNoclick = true;
         carui.SetActive(false);
+        player.transform.position = car.transform.position + new Vector3(-2f, 2f, 0);
         player.SetActive(true);
+
     }
+
+  
+
 }

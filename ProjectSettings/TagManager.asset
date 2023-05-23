@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Npc
   - Car
+  - Zone
+  - Spawn_zone
   layers:
   - Default
   - TransparentFX
