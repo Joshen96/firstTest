@@ -13,6 +13,7 @@ public class BallManager_sy : MonoBehaviour
     [SerializeField, Range(0f, 10f)] private float distance = 1f;       // 반지름 Radius
     private float angle = 0f;
 
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))             // 클릭했을 때

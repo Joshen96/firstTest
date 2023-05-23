@@ -9,6 +9,8 @@ public class JS_RoomManager : MonoBehaviour
     [SerializeField]
     public static int doorNumber = 0;
 
+
+    
     void Start()
     {
         GameObject[] enters = GameObject.FindGameObjectsWithTag("Spawn_zone");  //exit 태그 오브젝트

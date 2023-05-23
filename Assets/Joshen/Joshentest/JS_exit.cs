@@ -23,7 +23,7 @@ public class JS_exit : MonoBehaviour
         if(_other.gameObject.tag == "Player")
         {
 
-            //JS_RoomManager.ChangeScene(sceneName, doorNumber);
+            JS_RoomManager.ChangeScene(sceneName, doorNumber);
         }
         
     }
