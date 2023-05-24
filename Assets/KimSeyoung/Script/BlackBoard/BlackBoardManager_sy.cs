@@ -21,14 +21,17 @@ public class BlackBoardManager_sy : MonoBehaviour
 
     [SerializeField] private GameObject clearpageGO = null;
     [SerializeField] private GameObject failpageGO = null;
+    [SerializeField] private GameObject canversGO = null;
+    [SerializeField] private GameObject paticleGO = null;
 
     private void Start()
     {
         questionScript.gameObject.SetActive(false);
         exampleScript.gameObject.SetActive(false);
         buttonsScript.gameObject.SetActive(false);
-        clearpageGO.gameObject.SetActive(false);
-        failpageGO.gameObject.SetActive(false);
+        clearpageGO.SetActive(false);
+        failpageGO.SetActive(false);
+        paticleGO.SetActive(false);
     }
 
     private void Update()
@@ -46,16 +49,25 @@ public class BlackBoardManager_sy : MonoBehaviour
         // 임시로 "인문계강의실"이라 지정했음.
         if (className == "인문계강의실")
         {
+            if (canversGO.activeSelf || paticleGO.activeSelf)
+            {
+                canversGO.SetActive(true);
+            }
             SetHumanities();
         }
         else if (className == "이공계강의실")
         {
+            canversGO.SetActive(true);
             Engineering();
         }
         else if (className != "인문계강의실" && className != "이공계강의실")
         {
             if (questionNum != 12345) questionNum = 12345;
-            if (this.gameObject.activeSelf) this.gameObject.SetActive(false);
+            if (canversGO.activeSelf || paticleGO.activeSelf)
+            {
+                paticleGO.SetActive(false);
+                canversGO.SetActive(false);
+            }
         }
     }
 
@@ -109,6 +121,7 @@ public class BlackBoardManager_sy : MonoBehaviour
     private void RightAnswerClick() // 옳은 정답 클릭시
     {
         clearpageGO.gameObject.SetActive(true);
+        paticleGO.SetActive(true);
     }
 
     private void WrongAnswerClick() // 틀린 정답 클릭시
