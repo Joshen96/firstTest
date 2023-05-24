@@ -66,7 +66,7 @@ public class JS_WilteboardMarker : MonoBehaviour
                     {
                         var lerpX = (int)Mathf.Lerp(_lastTouchPos.x, x, f);
                         var lerpY = (int)Mathf.Lerp(_lastTouchPos.y, y, f);
-                        _whiteboard.texture.SetPixels(x, y, _penSize, _penSize, _colors);
+                        _whiteboard.texture.SetPixels(lerpX, lerpY, _penSize, _penSize, _colors);
                     }
 
                     transform.rotation = _lastTouchRot;
