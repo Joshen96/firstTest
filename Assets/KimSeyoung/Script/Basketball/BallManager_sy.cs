@@ -11,8 +11,16 @@ public class BallManager_sy : MonoBehaviour
     [SerializeField] private Transform targetTr = null;
     [SerializeField, Range(0f, 1000f)] private float speed = 800f;       // 회전 속도
     [SerializeField, Range(0f, 10f)] private float distance = 1f;       // 반지름 Radius
+    [SerializeField] private GameObject goalPaticleGO = null;
     private float angle = 0f;
 
+    private AudioSource audioSource = null;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        goalPaticleGO.SetActive(false);
+    }
 
     private void Update()
     {
@@ -71,24 +79,40 @@ public class BallManager_sy : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(transform.position * throwSpeed, ForceMode.Impulse);
     }
 
-
-    public void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         switch (other.gameObject.name)
         {
+            case "GoalLineTrigger": 
+                {
+                    audioSource.Play();
+                }
+                break;
+            case "GoalInTrigger":
+                {
+                    audioSource.volume = 0.5f;
+                    audioSource.clip = Resources.Load<AudioClip>("SoundEffect/GoalInSound_");
+                    // SoundEffect 폴더의 파일을 찾는다.
+                }
+                break;
+        }
+    }
 
+
+    private void OnTriggerStay(Collider other)
+    {
+        switch (other.gameObject.name)
+        {
             case "GoalLineTrigger":
                 {
                     this.gameObject.GetComponent<Rigidbody>().useGravity = false;
                     Debug.Log("touched goalline!!!");
-                    // GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-1, 1), 0, 0) * goalLineRotateSpeed, ForceMode.Impulse);
 
                     if (targetTr == null)
                     { Debug.LogError("회전타겟 오브젝트 설정해!!!"); }
 
                     if (speed > 500f)
                     {
-                        
                         angle -= Time.deltaTime * speed;
                         if (angle < 0f) angle = 360f;
 
@@ -100,14 +124,20 @@ public class BallManager_sy : MonoBehaviour
 
                         speed -= (Time.deltaTime * 100f);
                         this.transform.position = criterionPos + (anglePos * distance);
+
+                        audioSource.volume -= (Time.deltaTime / 3.5f);
+                    }
+
+                    if (speed < 600f)
+                    {
+                        distance -= Time.deltaTime * 0.1f;
                     }
                 }
                 break;
 
             case "GoalInTrigger":
                 {
-                    Debug.Log("골인 했어!!!");
-                    GoalIn();               // 골인했다고 알려주기
+                    GoalIn();
                 }
                 break;
         }
@@ -119,8 +149,15 @@ public class BallManager_sy : MonoBehaviour
 
             case "GoalLineTrigger":
                 {
+                    audioSource.Stop();
                     GetComponent<Rigidbody>().useGravity = true;
                     speed = 800f;
+                }
+                break;
+            case "GoalInTrigger":
+                {
+                    audioSource.Play();
+                    distance = 1f;
                 }
                 break;
         }
@@ -138,7 +175,8 @@ public class BallManager_sy : MonoBehaviour
 
     public void GoalIn()
     {
-        // 성공코드에는 전광판 점수 올리기 or 성공 파티클 터뜨리기 or 성공 소리 on 등등을 넣을 수 있음 (-)
-        Debug.Log("오예~ 골인!!!");
+        // 성공코드에는 전광판 점수 올리기(-)
+        goalPaticleGO.SetActive(true);
+        audioSource.Stop();
     }
 }

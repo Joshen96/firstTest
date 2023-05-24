@@ -19,7 +19,7 @@ public class Question_sy : MonoBehaviour
             case 0:
                 this.gameObject.GetComponent<TextMeshProUGUI>().fontSize = 3;
                 this.gameObject.GetComponent<TextMeshProUGUI>().text = "피라미드를 지키는 스핑크스는 피라미드를 지나가는 사람에게 퀴즈를 낸 뒤\n맞히지 못하면 잡아먹는다.\n마침 피라미드를 지나가던 세영이에게 스핑크스가 퀴즈를 냈다.\n답은 무엇일까?\n";
-                _answerStr = "뿌웅 뿌지직 뿡뿡 뿌직";
+                _answerStr = "뿌웅뿌지직뿡뿡뿌직";
                 break;
             case 1:
                 this.gameObject.GetComponent<TextMeshProUGUI>().fontSize = 5;
