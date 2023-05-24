@@ -8,6 +8,7 @@ public class Carinuiyes : MonoBehaviour
     public GameObject player;
     public GameObject car;
     public GameObject carinui;
+    public GameObject getoff;
     // Start is called before the first frame update
     public void carinyes()
     {
@@ -21,11 +22,11 @@ public class Carinuiyes : MonoBehaviour
     }
     public void carInNO()
     {
-        carinui.SetActive(false);
+        getoff.SetActive(false);
         Invoke("carinuireutrn", 3f);
     }
     public void carinuireutrn()
     {
-        carinui.SetActive(true);
+        getoff.SetActive(true);
     }
 }

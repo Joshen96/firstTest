@@ -13,8 +13,8 @@ public class Carcamera : MonoBehaviour
     
     void Update()
     {
-        
-
+    
+       
         if (Input.GetKeyDown(KeyCode.D) && Caruiclick.carin_bool)
         {
             Caruiclick.carin_bool = false;
