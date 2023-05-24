@@ -8,9 +8,14 @@ public class JS_RoomManager : MonoBehaviour
 
     [SerializeField]
     public static int doorNumber = 0;
+    GameObject player;
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+       
+        
+    }
 
-
-    
     void Start()
     {
         GameObject[] enters = GameObject.FindGameObjectsWithTag("Spawn_zone");  //exit 태그 오브젝트
@@ -35,8 +40,9 @@ public class JS_RoomManager : MonoBehaviour
                 {
                     z -= 3;
                 }
+
+                y -= 1f;
                 
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
                 player.transform.position = new Vector3(x, y, z);
                 break;
             }
@@ -48,7 +54,8 @@ public class JS_RoomManager : MonoBehaviour
     public static void ChangeScene(string sceneName, int doorNum) //원하는 문의 위치로 가기위해 doorNum
     {
         doorNumber = doorNum;
-        SceneManager.LoadScene(sceneName);
+        // SceneManager.LoadScene(sceneName);
+        LodingSceneController.LoadScene(sceneName);
         Debug.Log(doorNumber);
     }
 
