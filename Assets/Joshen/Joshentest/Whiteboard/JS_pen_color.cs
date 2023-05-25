@@ -8,13 +8,7 @@ public class JS_pen_color : MonoBehaviour
 
     [SerializeField]
     Material[] colors;
-    enum color
-    {
-        black=0,
-        red,
-        blue,
-        green
-    };
+
     int number = 0;
     private void Awake()
     {
@@ -23,7 +17,7 @@ public class JS_pen_color : MonoBehaviour
         Debug.Log(colors.Length);
     }
     
-   public void tset()
+   public void tset() //ÆæÃË ¹Ù²Ù´Â ÇÔ¼ö
     {
         if(number<colors.Length-1)
         {

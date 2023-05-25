@@ -12,7 +12,7 @@ public class Rocket1 : MonoBehaviour {
 
     {
         //Wait for 3 secs.
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
 
         //Game object will turn off
         GameObject.Find("MeshRenderer").SetActive(false);
