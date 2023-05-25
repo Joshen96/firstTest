@@ -134,9 +134,6 @@ public class BlackBoardManager_sy : MonoBehaviour
 
     public void ReplayButtonClick() // 다시 버튼 클릭 시
     {
-        //questionScript.gameObject.SetActive(true);
-        //exampleScript.gameObject.SetActive(true);
-        //buttonsScript.gameObject.SetActive(true);
         failpageGO.SetActive(false);
     }
 
@@ -145,10 +142,6 @@ public class BlackBoardManager_sy : MonoBehaviour
         restartButtonGO.SetActive(false);
         paticleGO.SetActive(false);
         clearpageGO.SetActive(false);
-
-        //questionScript.gameObject.SetActive(true);
-        //exampleScript.gameObject.SetActive(true);
-        //buttonsScript.gameObject.SetActive(true);
 
         ChangeQNum();
     }

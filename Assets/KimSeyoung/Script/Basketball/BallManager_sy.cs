@@ -20,7 +20,9 @@ public class BallManager_sy : MonoBehaviour
     {
         startPosition = transform.position;
         limitPosition = startPosition + limitPosition;
-        if (soundManager == null) Debug.LogError("»ç¿îµå¸Å´ÏÁ® ¼³Á¤ÇØ ÂÒ»þ~!!");
+
+        if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        if (goalLineTriggerGO == null) goalLineTriggerGO = GameObject.Find("GoalLineTriggerGO").transform;
     }
 
     private void Update()
@@ -38,12 +40,6 @@ public class BallManager_sy : MonoBehaviour
                     soundManager.PlayEffectSound("WindSound_");
                 }
                 break;
-            case "GoalInTrigger":
-                {
-                    soundManager.ESoundAudioSource.volume = 0.5f;
-                    soundManager.PlayEffectSound("GoalInSound_");
-                }
-                break;
         }
     }
 
@@ -53,11 +49,7 @@ public class BallManager_sy : MonoBehaviour
         {
             case "GoalLineTrigger":
                 {
-                    this.gameObject.GetComponent<Rigidbody>().useGravity = false; // (-)
-
-                    Debug.Log("touched goalline!!!");
-
-                    if (goalLineTriggerGO == null) Debug.LogError("È¸ÀüÅ¸°Ù ¿ÀºêÁ§Æ® ¼³Á¤ÇØ!!! ÂÒ»þ~");
+                    this.gameObject.GetComponent<Rigidbody>().useGravity = false;
 
                     if (rotationSpeed > 600f)
                     {
@@ -65,7 +57,7 @@ public class BallManager_sy : MonoBehaviour
                         if (angle < 0f) angle = 360f;
 
                         Vector3 anglePos = new Vector3();
-                        CalcAnglePosWithYaw(angle, ref anglePos);           // 
+                        CalcAnglePosWithYaw(angle, ref anglePos);
                         GetComponent<Rigidbody>().AddTorque(Vector3.down * rotationSpeed, ForceMode.Impulse);
 
                         Vector3 criterionPos = goalLineTriggerGO.position;
@@ -91,7 +83,7 @@ public class BallManager_sy : MonoBehaviour
 
             case "GoalLineTrigger":
                 {
-                    GetComponent<Rigidbody>().useGravity = true; // (-)
+                    GetComponent<Rigidbody>().useGravity = true;
                     rotationSpeed = 900f;
                 }
                 break;
