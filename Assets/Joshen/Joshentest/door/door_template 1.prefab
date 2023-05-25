@@ -260,8 +260,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 147.05, y: 0}
-  m_SizeDelta: {x: 75, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2931201601787640553
 CanvasRenderer:
@@ -538,7 +538,6 @@ GameObject:
   - component: {fileID: 6488418079962085937}
   - component: {fileID: 8371034326009306024}
   - component: {fileID: 8371034326009306025}
-  - component: {fileID: 3039968960602336390}
   m_Layer: 0
   m_Name: Glass.002
   m_TagString: Untagged
@@ -665,27 +664,6 @@ MonoBehaviour:
   openandclose1: {fileID: 8371034326009306024}
   open: 0
   Player: {fileID: 0}
---- !u!223 &3039968960602336390
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3039968960602336389}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1 &6993993278003818343
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,7 +690,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6993993278003818343}
-  m_LocalRotation: {x: -0, y: 0.7061093, z: -0, w: 0.7081029}
+  m_LocalRotation: {x: 0, y: 0.70610636, z: 0, w: 0.70810574}
   m_LocalPosition: {x: -16.74, y: 0.10017824, z: 5.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
