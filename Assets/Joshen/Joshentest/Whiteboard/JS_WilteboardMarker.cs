@@ -32,20 +32,13 @@ public class JS_WilteboardMarker : MonoBehaviour
         _tipHeight = _tip.localScale.y;
 
     }
-    
 
     // Update is called once per frame
     void Update()
     {
-
         Draw();
     }
-    public void colorchange()
-    {
-        _renderer = _tip.GetComponent<Renderer>();
-        _colors = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
-        _tipHeight = _tip.localScale.y;
-    }
+
     private void Draw()
     {
         if(Physics.Raycast(_tip.position,transform.up,out _touch,_tipHeight))

@@ -70,7 +70,7 @@ public class BC_NPC_AI : MonoBehaviour
        // animator.SetFloat("vertical", !agent.isStopped ? 1 : 0);
     }
 
-    public void gonpc(int _index)
+    void gonpc(int _index)
     {
        
         agent.SetDestination(PathPoints[index].position); //¿Ãµø

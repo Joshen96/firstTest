@@ -11,7 +11,7 @@ public class CarspeedConrol : MonoBehaviour
 
     private void Start()
     {
-        this.GetComponent<Scrollbar>().value = 0.25f;
+        this.GetComponent<Scrollbar>().value = 0.0f;
     }
 
 
