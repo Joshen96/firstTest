@@ -46,11 +46,11 @@ public class JS_WilteboardMarker : MonoBehaviour
         _colors = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
         _tipHeight = _tip.localScale.y;
     }
-    private void Draw()
+    private void Draw() //그림그리는 함수
     {
-        if(Physics.Raycast(_tip.position,transform.up,out _touch,_tipHeight))
+        if(Physics.Raycast(_tip.position,transform.up,out _touch,_tipHeight)) //펜의 레이캐스트
         {
-            if(_touch.transform.CompareTag("Whiteboard"))
+            if(_touch.transform.CompareTag("Whiteboard"))  //레이의 트랜스폼이 칠판태그일경우
             {
                 if(_whiteboard == null)
                 {
@@ -69,7 +69,7 @@ public class JS_WilteboardMarker : MonoBehaviour
                 {
                     _whiteboard.texture.SetPixels(x, y, _penSize, _penSize, _colors);
 
-                    for(float f = 0.01f; f<1.00f; f+=0.03f)
+                    for(float f = 0.01f; f<1.00f; f+=0.03f) //부드럽게 그리기
                     {
                         var lerpX = (int)Mathf.Lerp(_lastTouchPos.x, x, f);
                         var lerpY = (int)Mathf.Lerp(_lastTouchPos.y, y, f);
@@ -77,7 +77,7 @@ public class JS_WilteboardMarker : MonoBehaviour
                     }
 
                     transform.rotation = _lastTouchRot;
-                    _whiteboard.texture.Apply();
+                    _whiteboard.texture.Apply(); //그림적용
 
 
                 }
