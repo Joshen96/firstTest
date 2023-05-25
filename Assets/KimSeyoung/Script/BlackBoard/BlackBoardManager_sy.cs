@@ -24,6 +24,8 @@ public class BlackBoardManager_sy : MonoBehaviour
     [SerializeField] private GameObject canversGO = null;
     [SerializeField] private GameObject paticleGO = null;
 
+    [SerializeField] private SoundManager soundManager = null;
+
     private void Start()
     {
         questionScript.gameObject.SetActive(false);
@@ -32,6 +34,8 @@ public class BlackBoardManager_sy : MonoBehaviour
         clearpageGO.SetActive(false);
         failpageGO.SetActive(false);
         paticleGO.SetActive(false);
+
+        if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 
     private void Update()

@@ -14,11 +14,11 @@ public class BallManager_sy : MonoBehaviour
     [SerializeField] private GameObject goalPaticleGO = null;
     private float angle = 0f;
 
-    private AudioSource audioSource = null;
+    [SerializeField] private SoundManager soundManager = null;
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         goalPaticleGO.SetActive(false);
     }
 
@@ -85,14 +85,13 @@ public class BallManager_sy : MonoBehaviour
         {
             case "GoalLineTrigger": 
                 {
-                    audioSource.Play();
+                    soundManager.PlayEffectSound("WindSound_");
                 }
                 break;
             case "GoalInTrigger":
                 {
-                    audioSource.volume = 0.5f;
-                    audioSource.clip = Resources.Load<AudioClip>("SoundEffect/GoalInSound_");
-                    // SoundEffect 폴더의 파일을 찾는다.
+                    soundManager.ESoundAudioSource.volume = 0.5f;
+                    soundManager.PlayEffectSound("GoalInSound_");
                 }
                 break;
         }
@@ -125,19 +124,13 @@ public class BallManager_sy : MonoBehaviour
                         speed -= (Time.deltaTime * 100f);
                         this.transform.position = criterionPos + (anglePos * distance);
 
-                        audioSource.volume -= (Time.deltaTime / 3.5f);
+                        soundManager.ESoundAudioSource.volume -= (Time.deltaTime / 3.5f);
                     }
 
                     if (speed < 600f)
                     {
                         distance -= Time.deltaTime * 0.1f;
                     }
-                }
-                break;
-
-            case "GoalInTrigger":
-                {
-                    GoalIn();
                 }
                 break;
         }
@@ -149,14 +142,13 @@ public class BallManager_sy : MonoBehaviour
 
             case "GoalLineTrigger":
                 {
-                    audioSource.Stop();
                     GetComponent<Rigidbody>().useGravity = true;
                     speed = 800f;
                 }
                 break;
             case "GoalInTrigger":
                 {
-                    audioSource.Play();
+                    GoalIn();
                     distance = 1f;
                 }
                 break;
@@ -177,6 +169,6 @@ public class BallManager_sy : MonoBehaviour
     {
         // 성공코드에는 전광판 점수 올리기(-)
         goalPaticleGO.SetActive(true);
-        audioSource.Stop();
+
     }
 }
