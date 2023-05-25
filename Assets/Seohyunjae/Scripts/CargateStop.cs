@@ -17,7 +17,7 @@ public class CargateStop : MonoBehaviour
     }
     private void OnTriggerEnter(Collider _other)
     {
-        if(_other.tag=="Car")
+        if(_other.tag == "Car")
         {
             _other.gameObject.GetComponent<Car_Speed>().speed=0f;
             Debug.Log("Â÷°¨Áö");
@@ -30,11 +30,9 @@ public class CargateStop : MonoBehaviour
     {
         if (_other.tag == "Car")
         {
-
             StartCoroutine(delaycarmove(_other.gameObject));
             Debug.Log("Â÷¶³¾îÁü");
             carspeed =15;
-
         }
     }
     IEnumerator delaycarmove(GameObject _other)
@@ -71,8 +69,6 @@ public class CargateStop : MonoBehaviour
 
             yield return null;
         }
-
-        
     }
  
     IEnumerator iRotationdown(float targetAngle)

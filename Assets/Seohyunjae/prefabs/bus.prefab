@@ -111,7 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b910fafb9eef4364b9a18872af760ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheel: {fileID: 2263811686666126572}
+  carmovement: {fileID: 0}
+  wheels: []
   xspeed: 180
 --- !u!1 &3593131761770251394
 GameObject:
@@ -141,7 +142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3593131761770251394}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7.4700003, y: 3.0000007, z: -52.940147}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -339,7 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b910fafb9eef4364b9a18872af760ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheel: {fileID: 3593131761770251398}
+  carmovement: {fileID: 0}
+  wheels: []
   xspeed: 180
 --- !u!1 &3593131761770251400
 GameObject:
@@ -452,5 +454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b910fafb9eef4364b9a18872af760ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheel: {fileID: 3593131761770251400}
+  carmovement: {fileID: 0}
+  wheels: []
   xspeed: 180
