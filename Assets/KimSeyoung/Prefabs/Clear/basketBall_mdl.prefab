@@ -221,13 +221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86984344cb9ad0040818b21a85bfbf56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickObject: {fileID: 0}
-  isPickBall: 0
-  throwSpeed: 0
-  targetTr: {fileID: 0}
-  speed: 800
+  goalLineTriggerGO: {fileID: 0}
+  rotationSpeed: 800
   distance: 0.2
-  goalPaticleGO: {fileID: 0}
   soundManager: {fileID: 0}
 --- !u!54 &3039724853628839144
 Rigidbody:
