@@ -23,7 +23,7 @@ public class BC_NPC_Traffic_WaypointNavigator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //npc 방향
+        //npc 랜덤 이동속도
         if(controller.reachedDestination)
         {
             bool ShouldBranch = false;

@@ -36,25 +36,25 @@ public class BC_NPC_Traffic_WaypointManagerWindow : EditorWindow
 
     void DrawButtons()
     {
-        if(GUILayout.Button("Create Waypoint"))
+        if(GUILayout.Button("Waypoint 积己"))
         {
             CreateWaypoint();
         }
         if (Selection.activeGameObject != null && Selection.activeGameObject.GetComponent<BC_NPC_Traffic_Waypoint>())
         {
-            if(GUILayout.Button("Add Branch Waypoint"))
+            if(GUILayout.Button("Waypoint 背瞒痢 积己"))
             {
                 CreateBranch();
             }
-            if(GUILayout.Button("Create Waypoint BeFore"))
+            if(GUILayout.Button("捞傈 Waypoint 积己"))
             {
                 CreateWaypointBefore();
             }
-            if (GUILayout.Button("Create Waypoint After"))
+            if (GUILayout.Button("促澜 Waypoint 积己"))
             {
                 CreateWaypointAfter();
             }
-            if (GUILayout.Button("Remove Waypoint"))
+            if (GUILayout.Button("Waypoint 力芭"))
             {
                 RemoveWaypoint();
             }
