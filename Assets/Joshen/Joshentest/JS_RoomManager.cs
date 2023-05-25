@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class JS_RoomManager : MonoBehaviour
 {
-
+     // 각 씬마다 있어야함!!
     [SerializeField]
-    public static int doorNumber = 0;
+    public static int doorNumber = 0; //내가들어왔던 넘버를 받아오는곳
     GameObject player;
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player"); 
        
         
     }
@@ -43,7 +43,7 @@ public class JS_RoomManager : MonoBehaviour
 
                 y -= 1f;
                 
-                player.transform.position = new Vector3(x, y, z);
+                player.transform.position = new Vector3(x, y, z); //이때 이동후 플레이어 위치 정해짐
                 break;
             }
 
@@ -55,7 +55,7 @@ public class JS_RoomManager : MonoBehaviour
     {
         doorNumber = doorNum;
         // SceneManager.LoadScene(sceneName);
-        LodingSceneController.LoadScene(sceneName);
+        LodingSceneController.LoadScene(sceneName); //로딩창 + 함수와 다음씬 이름을 가져감
         Debug.Log(doorNumber);
     }
 

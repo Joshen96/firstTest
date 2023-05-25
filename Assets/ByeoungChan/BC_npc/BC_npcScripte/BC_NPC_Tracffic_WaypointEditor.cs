@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+[InitializeOnLoad()]
 public class BC_NPC_Tracffic_WaypointEditor : MonoBehaviour
 {
     [DrawGizmo(GizmoType.NonSelected | GizmoType.Selected | GizmoType.Pickable)]
@@ -18,7 +19,7 @@ public class BC_NPC_Tracffic_WaypointEditor : MonoBehaviour
         }
 
         Gizmos.DrawSphere(waypoint.transform.position, .1f);
-
+        //끝 라인 설정
         Gizmos.color = Color.white;
         Gizmos.DrawLine(waypoint.transform.position + (waypoint.transform.right * waypoint.width / 2f),
             waypoint.transform.position - (waypoint.transform.right * waypoint.width / 2f));
