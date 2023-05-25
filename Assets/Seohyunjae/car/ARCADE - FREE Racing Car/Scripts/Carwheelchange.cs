@@ -28,7 +28,7 @@ public class Carwheelchange : MonoBehaviour
            // Debug.Log("¿òÁ÷ÀÓ");
             foreach (GameObject wheel in wheels) 
             {
-                wheel.transform.Rotate(xspeed * Time.deltaTime, 0, 0);
+                wheel.transform.Rotate(0, xspeed * Time.deltaTime, 0);
             }
             
         }
