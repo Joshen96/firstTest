@@ -2237,14 +2237,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2061202478523406370, guid: 1badbddffa84c59469e200ac39986ab9, type: 3}
-      propertyPath: direction
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2061202478523406370, guid: 1badbddffa84c59469e200ac39986ab9, type: 3}
-      propertyPath: sceneName
-      value: test2
-      objectReference: {fileID: 0}
     - target: {fileID: 2061202478523406373, guid: 1badbddffa84c59469e200ac39986ab9, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -3625,6 +3617,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4532213659926766363, guid: 41bdbbfbdae7b9b45b3e513692fdbf11, type: 3}
+      propertyPath: m_AttachTransform
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4532213659926766363, guid: 41bdbbfbdae7b9b45b3e513692fdbf11, type: 3}
       propertyPath: m_InteractionManager
       value: 

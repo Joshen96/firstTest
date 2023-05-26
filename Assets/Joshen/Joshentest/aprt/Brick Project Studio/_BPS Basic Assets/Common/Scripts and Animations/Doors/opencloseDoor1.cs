@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR;
-using UnityEngine.InputSystem;
 
 namespace SojaExiles
 
@@ -14,7 +12,6 @@ namespace SojaExiles
 		public bool open;
 		public Transform Player;
 
-		
 		void Start()
 		{
 			open = false;
@@ -30,7 +27,6 @@ namespace SojaExiles
 					{
 						if (open == false)
 						{
-							
 							if (Input.GetMouseButtonDown(0))
 							{
 								StartCoroutine(opening());
@@ -54,15 +50,16 @@ namespace SojaExiles
 			}
 
 		}
+
+
 		public void opendoor()
 		{
-            StartCoroutine(opening());
-
-        }
+			StartCoroutine(opening());
+		}
 
 		public void closedoor()
 		{
-			StartCoroutine(closing());
+			StartCoroutine (closing());
 		}
 
 		IEnumerator opening()
