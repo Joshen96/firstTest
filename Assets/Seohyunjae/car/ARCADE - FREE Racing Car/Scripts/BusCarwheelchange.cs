@@ -31,6 +31,13 @@ public class BusCarwheelchange : MonoBehaviour
             }
 
         }
+        if(carmovement.isStopcar)
+        {
+            foreach (GameObject wheel in wheels)
+            {
+                wheel.transform.Rotate(0, 0, 0);
+            }
+        }
         else
         {
            // Debug.Log("¿òÁ÷ÀÓ");
