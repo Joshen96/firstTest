@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
-public class Carwheelchange : MonoBehaviour
+public class racingcarwheels : MonoBehaviour
 {
     public Carmovement carmovement;
     public GameObject[] wheels;
     public float xspeed = 180;
-  
+
 
     private void Awake()
     {
@@ -18,20 +17,25 @@ public class Carwheelchange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(carmovement.isStopcar)
+
+        if (carmovement.isStopcar)
         {
             //Debug.Log("¸ØÃã");
         }
         else
         {
-           // Debug.Log("¿òÁ÷ÀÓ");
-            foreach (GameObject wheel in wheels) 
+            // Debug.Log("¿òÁ÷ÀÓ");
+            foreach (GameObject wheel in wheels)
             {
-                wheel.transform.Rotate(0, xspeed * Time.deltaTime, 0);
+                wheel.transform.Rotate(xspeed * Time.deltaTime,0, 0);
             }
-            
+
         }
-    
+        if (true)
+        {
+
+        }
+
     }
 }
+
