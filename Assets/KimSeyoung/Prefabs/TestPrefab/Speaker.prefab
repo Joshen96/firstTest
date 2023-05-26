@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6918116834465178828}
   - component: {fileID: 6918116833762015957}
   - component: {fileID: 6918116833762015958}
-  - component: {fileID: 6918116833762015962}
+  - component: {fileID: 6113886653371737459}
   m_Layer: 0
   m_Name: Speaker
   m_TagString: Untagged
@@ -114,8 +114,8 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 100, y: 50, z: 50}
-  m_Center: {x: -0.0000009536743, y: 0, z: 25}
---- !u!114 &6918116833762015962
+  m_Center: {x: 0, y: 0, z: 25}
+--- !u!114 &6113886653371737459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
