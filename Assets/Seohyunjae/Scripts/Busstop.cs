@@ -9,7 +9,7 @@ public class Busstop : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider _other)
     {
-        if (_other.tag == "Car")
+        if (_other.tag == "Bus")
         {
             speedcontrol.GetComponent<Scrollbar>().value= 0;
             Debug.Log("Â÷°¨Áö1");
