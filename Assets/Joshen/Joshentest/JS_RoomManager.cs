@@ -32,14 +32,23 @@ public class JS_RoomManager : MonoBehaviour
                 
                 
 
-                if (exit.direction == ExitDirection.front)
+                if (exit.direction == ExitDirection.front_blue)
                 {
                     z += 3;
                 }
-                else if (exit.direction == ExitDirection.back)
+                else if (exit.direction == ExitDirection.back_red)
                 {
                     z -= 3;
                 }
+                if (exit.direction == ExitDirection.left_yellow)
+                {
+                    x -= 3;
+                }
+                else if (exit.direction == ExitDirection.right_green)
+                {
+                    x += 3;
+                }
+
 
                 y -= 1f;
                 
