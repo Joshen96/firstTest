@@ -4,79 +4,30 @@ using UnityEngine;
 
 public class BallManager_sy : MonoBehaviour
 {
-    [SerializeField] private GameObject pickObject = null;                       // 잡은 물체 오브젝트
-    [SerializeField] private bool isPickBall = false;
-    [SerializeField] private float throwSpeed = 0.0f;
-
-    [SerializeField] private Transform targetTr = null;
-    [SerializeField, Range(0f, 1000f)] private float speed = 800f;       // 회전 속도
-    [SerializeField, Range(0f, 10f)] private float distance = 1f;       // 반지름 Radius
-    [SerializeField] private GameObject goalPaticleGO = null;
+    [SerializeField] private Transform goalLineTriggerGO = null;        // 골라인 가운데에 있는 트리거 오브젝트
+    [SerializeField, Range(500f, 1000f)] private float rotationSpeed = 900f;
+    
+    [SerializeField, Range(0f, 10f)] private float distance = 1f;
     private float angle = 0f;
 
     [SerializeField] private SoundManager soundManager = null;
 
+    private Vector3 startPosition = Vector3.zero;
+    private Vector3 limitPosition = new Vector3(50f, 100f, 50f);
+    private float limitDistance = 50f;
+
     private void Start()
     {
+        startPosition = transform.position;
+        limitPosition = startPosition + limitPosition;
+
         if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
-        goalPaticleGO.SetActive(false);
+        if (goalLineTriggerGO == null) goalLineTriggerGO = GameObject.Find("GoalLineTriggerGO").transform;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))             // 클릭했을 때
-        {
-            Debug.Log("클릭");
-            FindClickObject();                       // 클릭한 오브젝트 확인
-
-            if (pickObject == this) transform.rotation = Quaternion.Euler(Vector3.zero);
-        }
-
-        if (Input.GetMouseButton(0))                // 공을 클릭중이라면
-        {
-            if (pickObject == this)
-            {
-                isPickBall = true;
-            }
-        }
-
-        if (isPickBall && Input.GetMouseButtonUp(0))              // 공을 놓았을 때
-        {
-            Debug.Log("공을 던졌어!!!");
-            pickObject = null;
-            isPickBall = false;
-            GetThrowInfo();                                 // 공을 던질 속도,방향 구하기
-            ThrowBall();                                    // 공 던지기!!!
-        }
-    }
-
-    private void FindClickObject() // 마우스 클릭 시 해당 오브젝트 찾는 함수
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Debug.Log("레이" + ray);// 마우스 포지션에서 광선쏘기
-        RaycastHit hit;                                                         // 쏜 광선이 어딘가에 맞았는지를 확인
-
-        if (Physics.Raycast(ray, out hit))
-        {
-            if (hit.transform.gameObject != null)                               // 광선에 맞은 오브젝트가 null이 아니라면
-            {
-                pickObject = hit.transform.gameObject;                          // 클릭한 오브젝트를 ClickObject의 변수값으로 입력
-            }
-        }
-    }
-
-
-    private void GetThrowInfo()                                // 공을 던질 때 필요한 값들 변수에 저장
-    {
-        throwSpeed = GetComponent<Rigidbody>().velocity.magnitude;                  // 공을 던질 속도 = 공 이동 속도
-    }
-
-    private void ThrowBall()                                    // 공을 던지는 기능
-    {
-        // 공의 Pitch 회전
-       GetComponent<Rigidbody>().AddTorque(Vector3.right * throwSpeed, ForceMode.Impulse);
-        // 공의 이동
-        GetComponent<Rigidbody>().AddForce(transform.position * throwSpeed, ForceMode.Impulse);
+        PositionReset();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -85,18 +36,12 @@ public class BallManager_sy : MonoBehaviour
         {
             case "GoalLineTrigger": 
                 {
+                    soundManager.ESoundAudioSource.volume = 0.7f;
                     soundManager.PlayEffectSound("WindSound_");
-                }
-                break;
-            case "GoalInTrigger":
-                {
-                    soundManager.ESoundAudioSource.volume = 0.5f;
-                    soundManager.PlayEffectSound("GoalInSound_");
                 }
                 break;
         }
     }
-
 
     private void OnTriggerStay(Collider other)
     {
@@ -105,29 +50,25 @@ public class BallManager_sy : MonoBehaviour
             case "GoalLineTrigger":
                 {
                     this.gameObject.GetComponent<Rigidbody>().useGravity = false;
-                    Debug.Log("touched goalline!!!");
 
-                    if (targetTr == null)
-                    { Debug.LogError("회전타겟 오브젝트 설정해!!!"); }
-
-                    if (speed > 500f)
+                    if (rotationSpeed > 600f)
                     {
-                        angle -= Time.deltaTime * speed;
+                        angle -= Time.deltaTime * rotationSpeed;
                         if (angle < 0f) angle = 360f;
 
                         Vector3 anglePos = new Vector3();
                         CalcAnglePosWithYaw(angle, ref anglePos);
-                        GetComponent<Rigidbody>().AddTorque(Vector3.down * speed, ForceMode.Impulse);
+                        GetComponent<Rigidbody>().AddTorque(Vector3.down * rotationSpeed, ForceMode.Impulse);
 
-                        Vector3 criterionPos = targetTr.position;
+                        Vector3 criterionPos = goalLineTriggerGO.position;
 
-                        speed -= (Time.deltaTime * 100f);
+                        rotationSpeed -= (Time.deltaTime * 100f);
                         this.transform.position = criterionPos + (anglePos * distance);
 
                         soundManager.ESoundAudioSource.volume -= (Time.deltaTime / 3.5f);
                     }
 
-                    if (speed < 600f)
+                    if (rotationSpeed < 700f)
                     {
                         distance -= Time.deltaTime * 0.1f;
                     }
@@ -143,13 +84,13 @@ public class BallManager_sy : MonoBehaviour
             case "GoalLineTrigger":
                 {
                     GetComponent<Rigidbody>().useGravity = true;
-                    speed = 800f;
+                    rotationSpeed = 900f;
                 }
                 break;
             case "GoalInTrigger":
                 {
-                    GoalIn();
                     distance = 1f;
+                    // 전광판 오브젝트 추가(-), 점수 연동(-)
                 }
                 break;
         }
@@ -163,12 +104,12 @@ public class BallManager_sy : MonoBehaviour
         _pos.z = Mathf.Sin(angle2Rad);
     }
 
-
-
-    public void GoalIn()
+    private void PositionReset()
     {
-        // 성공코드에는 전광판 점수 올리기(-)
-        goalPaticleGO.SetActive(true);
-
+        if (transform.position.x > limitPosition.x) transform.position = startPosition;
+        else if (transform.position.y > limitPosition.y) transform.position = startPosition;
+        else if (transform.position.z > limitPosition.z) transform.position = startPosition;
     }
+
+
 }

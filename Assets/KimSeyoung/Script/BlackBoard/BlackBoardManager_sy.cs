@@ -13,6 +13,7 @@ public class BlackBoardManager_sy : MonoBehaviour
     [Header ("-- Question Option --")]          // 필수 선택지
     public string className = "";               // 강의실 이름
     public int questionNum = 12345;             // 질문번호 
+    private int beforeQNum = 12345;             // 이전에 풀었던 질문 번호
     public string answerStr = "";               // 현 질문의 정답
 
     [SerializeField] private Question_sy questionScript = null;
@@ -23,19 +24,17 @@ public class BlackBoardManager_sy : MonoBehaviour
     [SerializeField] private GameObject failpageGO = null;
     [SerializeField] private GameObject canversGO = null;
     [SerializeField] private GameObject paticleGO = null;
-
-    [SerializeField] private SoundManager soundManager = null;
+    [SerializeField] private GameObject restartButtonGO = null;
 
     private void Start()
     {
         questionScript.gameObject.SetActive(false);
         exampleScript.gameObject.SetActive(false);
         buttonsScript.gameObject.SetActive(false);
+        restartButtonGO.SetActive(false);
         clearpageGO.SetActive(false);
         failpageGO.SetActive(false);
         paticleGO.SetActive(false);
-
-        if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 
     private void Update()
@@ -112,32 +111,61 @@ public class BlackBoardManager_sy : MonoBehaviour
     public void CheckTheAnswer(string _input, string _answer) // 정답 확인
     {
         if (_input == _answer) RightAnswerClick();
-        else
-        {
-            Debug.Log("니가 고른 값 : " + _input);
-            Debug.Log(" 질문의 정답 : " + answerStr);
-            Debug.Log("틀렸다 쨔식아ㅋㅋㅋㅋㅋ");
-
-            WrongAnswerClick();
-        }
+        else  WrongAnswerClick();
     }
 
     private void RightAnswerClick() // 옳은 정답 클릭시
     {
         clearpageGO.gameObject.SetActive(true);
         paticleGO.SetActive(true);
+        StartCoroutine("RestartButtonActivation");
+    }
+
+    private IEnumerator RestartButtonActivation() 
+    {
+        yield return new WaitForSeconds(3f);
+        restartButtonGO.SetActive(true);
     }
 
     private void WrongAnswerClick() // 틀린 정답 클릭시
     {
-        failpageGO.gameObject.SetActive(true);
+        failpageGO.SetActive(true);
     }
 
     public void ReplayButtonClick() // 다시 버튼 클릭 시
     {
-        questionScript.gameObject.SetActive(true);
-        exampleScript.gameObject.SetActive(true);
-        buttonsScript.gameObject.SetActive(true);
-        failpageGO.gameObject.SetActive(false);
+        failpageGO.SetActive(false);
+    }
+
+    public void RestartButtonClick() // 재시작 버튼 클릭
+    {
+        restartButtonGO.SetActive(false);
+        paticleGO.SetActive(false);
+        clearpageGO.SetActive(false);
+
+        ChangeQNum();
+    }
+
+    private void ChangeQNum()       // 질문번호 변경(이전 질문번호와 겹치지 않도록 변경)
+    {
+        switch (questionNum)
+        {
+            case 0:
+                beforeQNum = 0;
+                while (beforeQNum == questionNum) questionNum = Random.Range(0, 3);
+                break;
+            case 1:
+                beforeQNum = 1;
+                while (beforeQNum == questionNum) questionNum = Random.Range(0, 3);
+                break;
+            case 2:
+                beforeQNum = 2;
+                while (beforeQNum == questionNum) questionNum = Random.Range(0, 3);
+                break;
+            case 12345:
+                beforeQNum = 2;
+                while (beforeQNum == questionNum) questionNum = Random.Range(0, 3);
+                break;
+        }
     }
 }
