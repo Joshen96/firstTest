@@ -8,10 +8,7 @@ public class JS_Keysoket : MonoBehaviour
     GameObject openUI;
     [SerializeField]
     GameObject lockUI;
-    [SerializeField]
-    GameObject key;
-    [SerializeField]
-    Transform keysoket;
+ 
 
     private void Start()
     {
