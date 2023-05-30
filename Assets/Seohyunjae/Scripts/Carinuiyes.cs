@@ -37,8 +37,10 @@ public class Carinuiyes : MonoBehaviour
 
         //플레이어 텔레포트기능과 이동 활성화부분
 
-        player.GetComponent<TeleportationProvider>().enabled = true; //텔포금지
+        player.GetComponent<TeleportationProvider>().enabled = true; //텔포허용
         player.GetComponent<DynamicMoveProvider>().enabled = true;
+        player.GetComponentsInChildren<GrabMoveProvider>()[0].enabled = true;
+        player.GetComponentsInChildren<GrabMoveProvider>()[1].enabled = true;
 
     }
     public void carInNO()

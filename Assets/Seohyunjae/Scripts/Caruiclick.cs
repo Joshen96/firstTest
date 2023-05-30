@@ -46,6 +46,10 @@ public class Caruiclick : MonoBehaviour
         //플레이어 이동하고 텔포금지
         player.GetComponent<TeleportationProvider>().enabled = false; //텔포금지
         player.GetComponent<DynamicMoveProvider>().enabled = false;
+        player.GetComponentsInChildren<GrabMoveProvider>()[0].enabled = false;
+        player.GetComponentsInChildren<GrabMoveProvider>()[1].enabled = false;
+
+
 
         carinui.SetActive(true);
         
