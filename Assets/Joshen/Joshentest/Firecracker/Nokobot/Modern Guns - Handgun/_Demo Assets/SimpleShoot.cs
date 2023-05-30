@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class SimpleShoot : MonoBehaviour
 {
     public int maxammo = 15;
+    [SerializeField]
     private int currentammo;
 
     [Header("Prefab Refrences")]
@@ -53,6 +54,7 @@ public class SimpleShoot : MonoBehaviour
     }
     void Update()
     {
+        /*
         count.text = currentammo.ToString();
         //If you want a different input, change it here
         if (Input.GetButtonDown("Fire1"))
@@ -67,12 +69,22 @@ public class SimpleShoot : MonoBehaviour
             //Calls animation on the gun that has the relevant animation events that will fire
              //애니메이션에 발사,장전 함수내장
         }
-        
-        
+        */
+        if (Vector3.Angle(transform.up, Vector3.up) > 100 && currentammo < maxammo)
+            Reload();
+        count.text = currentammo.ToString();
     }
     public void firegun()
     {
-        gunAnimator.SetTrigger("Fire");
+        
+        if (currentammo > 0)
+        {
+            gunAnimator.SetTrigger("Fire");
+        }
+        else
+        {
+            source.PlayOneShot(noammo);
+        }
     }
 
     //This function creates the bullet behavior
