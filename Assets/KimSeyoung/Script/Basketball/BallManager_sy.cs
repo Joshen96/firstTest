@@ -11,7 +11,7 @@ public class BallManager_sy : MonoBehaviour
     [SerializeField, Range(0f, 10f)] private float distance = 0.2f;
     private float angle = 0f;
 
-    [SerializeField] private SoundManager soundManager = null;
+    [SerializeField] private SoundManager_sy soundManager = null;
 
     private Vector3 startPosition = Vector3.zero;
     private Vector3 limitPosition = new Vector3(50f, 100f, 50f);
@@ -22,7 +22,7 @@ public class BallManager_sy : MonoBehaviour
         startPosition = transform.position;
         limitPosition = startPosition + limitPosition;
 
-        if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager_sy>();
         if (goalLineTriggerGO == null) goalLineTriggerGO = GameObject.Find("GoalLineTriggerGO").transform;
 
     }

@@ -16,7 +16,7 @@ public class VendingMachine_sy : MonoBehaviour
 
         public bool CheckStock() { return stock > 0; }
         public void Sell() { if (CheckStock()) --stock; }
-        public void ReturnStock() { if (!CheckStock()) ++stock;  }
+        public void ReturnStock() { if (!CheckStock()) ++stock;  } // (-)
     }
 
     [SerializeField] private UIMenu_sy uiMenu = null;
@@ -29,7 +29,6 @@ public class VendingMachine_sy : MonoBehaviour
             Debug.LogError("UIMenu is missing!");
             return;
         }
-        // 미리 ProductInfoList 셋팅해두기 (-)
     }
 
     private void OnTriggerEnter(Collider _other)
@@ -78,44 +77,55 @@ public class VendingMachine_sy : MonoBehaviour
         GameObject prefab = ProductSpawnManager_sy.GetPrefab( productInfoList[_btnNum].product);
         if (prefab != null)
         {
-            // 자판기 주변에 생성
-            Instantiate(prefab, GetValidSpawnPosition(), Quaternion.identity);
+            // 자판기 앞에 생성
+            Instantiate(prefab, transform.position + new Vector3 (0f, 0.5f, -1f), Quaternion.identity);
         }
+
         // 재고 변경된 버튼 정보 초기화
         _menuBtn.UpdateInfo(changeInfo);
     }
+}        
 
-    private Vector3 GetValidSpawnPosition()
-    {
-        const float SPAWN_DIST = 3f;            // 생성 거리
-        const float PI2 = Mathf.PI * 2f;        // 360도로 배치하기 위해
-        const float POS_Y = 0.5f;               // 바닥에서 검사하면 정확도가 떨어질까봐 위로 띄움, 나중에 0으로 복구
 
-        Vector3 startPos = transform.position;  // 레이쏘기 시작할 위치
-        startPos.y += POS_Y;
-        bool isValidPos = false;                // 유효한 위치인지
-        float angle = 0f;                       // 랜덤 각도 임의저장
-        RaycastHit hitInfo;                     // 레이 히트 정보
-        Vector3 spawnPos = Vector3.zero;        // 생성할 위치
 
-        while (!isValidPos)
-        {
-            // 랜덤 각도 얻기
-            angle = Random.Range(0f, PI2);
-            spawnPos = transform.position + new Vector3( Mathf.Cos(angle) * SPAWN_DIST, POS_Y, Mathf.Sin(angle) * SPAWN_DIST);
-            Vector3 dir = (spawnPos - startPos).normalized;
 
-            // 생성할 위치 후보를 향해 레이 충돌검사
-            if (Physics.Raycast(startPos, dir, out hitInfo, SPAWN_DIST))
-            {
-                // 충돌된 오브젝트가 있다면 다른 위치를 찾아야 됨
-                Debug.Log("Raycast Hit: " + hitInfo.transform.name);
-                continue;
-            }
-            isValidPos = true;
-        }
-        spawnPos.y -= POS_Y;// 높이를 다시 원래대로 
 
-        return spawnPos;
-    }
-}
+
+
+
+
+
+
+    //private Vector3 GetValidSpawnPosition()
+    //{
+    //    const float SPAWN_DIST = 3f;            // 생성 거리
+    //    const float PI2 = Mathf.PI * 2f;        // 360도로 배치하기 위해
+    //    const float POS_Y = 0.5f;               // 바닥에서 검사하면 정확도가 떨어질까봐 위로 띄움, 나중에 0으로 복구
+
+    //    Vector3 startPos = transform.position;  // 레이쏘기 시작할 위치
+    //    startPos.y += POS_Y;
+    //    bool isValidPos = false;                // 유효한 위치인지
+    //    float angle = 0f;                       // 랜덤 각도 임의저장
+    //    RaycastHit hitInfo;                     // 레이 히트 정보
+    //    Vector3 spawnPos = Vector3.zero;        // 생성할 위치
+
+    //    while (!isValidPos)
+    //    {
+    //        // 랜덤 각도 얻기
+    //        angle = Random.Range(0f, PI2);
+    //        spawnPos = transform.position + new Vector3( Mathf.Cos(angle) * SPAWN_DIST, POS_Y, Mathf.Sin(angle) * SPAWN_DIST);
+    //        Vector3 dir = (spawnPos - startPos).normalized;
+
+    //        // 생성할 위치 후보를 향해 레이 충돌검사
+    //        if (Physics.Raycast(startPos, dir, out hitInfo, SPAWN_DIST))
+    //        {
+    //            // 충돌된 오브젝트가 있다면 다른 위치를 찾아야 됨
+    //            Debug.Log("Raycast Hit: " + hitInfo.transform.name);
+    //            continue;
+    //        }
+    //        isValidPos = true;
+    //    }
+    //    spawnPos.y -= POS_Y;// 높이를 다시 원래대로 
+
+    //    return spawnPos;
+    //}
