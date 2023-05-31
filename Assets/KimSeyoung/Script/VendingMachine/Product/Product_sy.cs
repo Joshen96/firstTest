@@ -13,12 +13,15 @@ public abstract class Product_sy : MonoBehaviour
 
     public void DestroyProduct()       // 삭제
     {
-        StartCoroutine("IDestroyProduct");
+        Debug.Log("손을놈");
+        StartCoroutine(IDestroyProduct());
     }
 
-    private IEnumerable IDestroyProduct()
+    private IEnumerator IDestroyProduct()
     {
+        Debug.Log("삭제 시작");
         yield return new WaitForSeconds(3f);
-        Destroy(this);
+        Destroy(this.gameObject);
+        Debug.Log("삭제 완료");
     }
 }
