@@ -5,9 +5,10 @@ using UnityEngine;
 public class BallManager_sy : MonoBehaviour
 {
     [SerializeField] private Transform goalLineTriggerGO = null;        // 골라인 가운데에 있는 트리거 오브젝트
-    [SerializeField, Range(500f, 1000f)] private float rotationSpeed = 900f;
+   // [SerializeField] private Transform goalLineTriggerGO1 = null;
+    [SerializeField, Range(500f, 1000f)] private float rotationSpeed = 800f;
     
-    [SerializeField, Range(0f, 10f)] private float distance = 1f;
+    [SerializeField, Range(0f, 10f)] private float distance = 0.2f;
     private float angle = 0f;
 
     [SerializeField] private SoundManager soundManager = null;
@@ -23,6 +24,7 @@ public class BallManager_sy : MonoBehaviour
 
         if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         if (goalLineTriggerGO == null) goalLineTriggerGO = GameObject.Find("GoalLineTriggerGO").transform;
+
     }
 
     private void Update()
@@ -84,12 +86,12 @@ public class BallManager_sy : MonoBehaviour
             case "GoalLineTrigger":
                 {
                     GetComponent<Rigidbody>().useGravity = true;
-                    rotationSpeed = 900f;
+                    rotationSpeed = 800f;
                 }
                 break;
             case "GoalInTrigger":
                 {
-                    distance = 1f;
+                    distance = 0.2f;
                     // 전광판 오브젝트 추가(-), 점수 연동(-)
                 }
                 break;
@@ -104,11 +106,28 @@ public class BallManager_sy : MonoBehaviour
         _pos.z = Mathf.Sin(angle2Rad);
     }
 
-    private void PositionReset()
+    private void PositionReset() //속도
     {
-        if (transform.position.x > limitPosition.x) transform.position = startPosition;
-        else if (transform.position.y > limitPosition.y) transform.position = startPosition;
-        else if (transform.position.z > limitPosition.z) transform.position = startPosition;
+        if (transform.position.x > limitPosition.x)
+        {
+            transform.position = startPosition;
+            this.GetComponent<Rigidbody>().isKinematic = true;
+            this.GetComponent<Rigidbody>().isKinematic = false;
+
+        }
+        else if (transform.position.y > limitPosition.y)
+        {
+            transform.position = startPosition;
+            this.GetComponent<Rigidbody>().isKinematic = true;
+            this.GetComponent<Rigidbody>().isKinematic = false;
+        }
+        else if (transform.position.z > limitPosition.z)
+        {
+            transform.position = startPosition;
+            this.GetComponent<Rigidbody>().isKinematic = true;
+            this.GetComponent<Rigidbody>().isKinematic = false;
+        }
+        
     }
 
 

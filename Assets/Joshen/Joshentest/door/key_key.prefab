@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1179813258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1179813259}
+  m_Layer: 0
+  m_Name: grabpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1179813259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179813258}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
+  m_LocalPosition: {x: 0.1429998, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6076423730300625030}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!1 &1399677834067539422
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +44,7 @@ GameObject:
   - component: {fileID: 9068181138581691238}
   - component: {fileID: 520531640176414829}
   - component: {fileID: 520531640176414828}
-  - component: {fileID: 520531640176414830}
+  - component: {fileID: 6852561303314235342}
   m_Layer: 0
   m_Name: key_key
   m_TagString: key
@@ -28,11 +59,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399677834067539422}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.864, y: 1.3328, z: 23.7687}
-  m_LocalScale: {x: 0.48, y: 0.48, z: 0.48}
+  m_LocalScale: {x: 0.26, y: 0.26, z: 0.26}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1179813259}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -43,7 +75,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399677834067539422}
-  m_Mesh: {fileID: 5566315593999495241, guid: af1486c5e27265f41a0687db12cf9c4a, type: 3}
+  m_Mesh: {fileID: -2907462421268956602, guid: 48a30786fd5f9584dbe490359e5116c4, type: 3}
 --- !u!23 &9068181138581691238
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +96,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4489066338913405876, guid: af1486c5e27265f41a0687db12cf9c4a, type: 3}
+  - {fileID: 2100000, guid: c54edb7a4049d3443a83fb2325c097e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -183,7 +215,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 1179813259}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
@@ -227,7 +259,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!65 &520531640176414830
+--- !u!65 &6852561303314235342
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,5 +270,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.283458, y: 0.016744656, z: 0.59974504}
-  m_Center: {x: -0.0000009983778, y: 0.008372272, z: -0.0046534985}
+  m_Size: {x: 0.60030615, y: 0.28239042, z: 0.015591392}
+  m_Center: {x: -0.15750591, y: -0.000000007450581, z: 0.008643803}
