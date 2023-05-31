@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -184,6 +184,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1badbddffa84c59469e200ac39986ab9, type: 3}
+--- !u!114 &317795668 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -3268279309862049869, guid: 3da68a8a76235164bb130f3a96380954, type: 3}
+  m_PrefabInstance: {fileID: 4490430355385596518}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c63d30c78e1a474195298d5d9766d33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &343533760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,6 +2512,54 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 3127728408121945909}
+    - target: {fileID: 2068140363951744435, guid: 3da68a8a76235164bb130f3a96380954, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2068140363951744435, guid: 3da68a8a76235164bb130f3a96380954, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2068140363951744435, guid: 3da68a8a76235164bb130f3a96380954, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2068140363951744435, guid: 3da68a8a76235164bb130f3a96380954, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2068140363951744435, guid: 3da68a8a76235164bb130f3a96380954, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2068140363951744435, guid: 3da68a8a76235164bb130f3a96380954, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 317795668}
+    - target: {fileID: 2068140363951744435, guid: 3da68a8a76235164bb130f3a96380954, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2068140363951744435, guid: 3da68a8a76235164bb130f3a96380954, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2068140363951744435, guid: 3da68a8a76235164bb130f3a96380954, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2068140363951744435, guid: 3da68a8a76235164bb130f3a96380954, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DestroyProduct
+      objectReference: {fileID: 0}
+    - target: {fileID: 2068140363951744435, guid: 3da68a8a76235164bb130f3a96380954, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Product_sy, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2068140363951744435, guid: 3da68a8a76235164bb130f3a96380954, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3da68a8a76235164bb130f3a96380954, type: 3}
 --- !u!1001 &4532213659561774534
