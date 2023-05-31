@@ -86,12 +86,12 @@ public class BallManager_sy : MonoBehaviour
             case "GoalLineTrigger":
                 {
                     GetComponent<Rigidbody>().useGravity = true;
-                    rotationSpeed = 900f;
+                    rotationSpeed = 800f;
                 }
                 break;
             case "GoalInTrigger":
                 {
-                    distance = 1f;
+                    distance = 0.2f;
                     // 전광판 오브젝트 추가(-), 점수 연동(-)
                 }
                 break;
