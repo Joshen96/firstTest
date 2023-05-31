@@ -3,7 +3,7 @@ using UnityEngine;
 public class MiniMapCamera : MonoBehaviour
 {
     public Transform player; // 캐릭터의 Transform 참조
-    public float distance = 10f; // 카메라와 캐릭터 사이의 거리
+    //public float distance = 10f; // 카메라와 캐릭터 사이의 거리
     public float height = 40f; // 카메라의 높이
 
     private void LateUpdate()
