@@ -51,7 +51,7 @@ public class BC_NPC_Random_Animation : MonoBehaviour
     private void PlayWalkAnimation()
     {
         // "walk" 애니메이션 재생
-        animator.SetBool("isWalkAnimation", false);
+        animator.SetBool("isPhoneAnimation", false);
         animator.Play(walkAnimationName);
     }
 
