@@ -2983,7 +2983,7 @@ GameObject:
   - component: {fileID: -1516177946309880963}
   - component: {fileID: 3884226818631475540}
   m_Layer: 0
-  m_Name: test_npc_bc
+  m_Name: M_npc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
