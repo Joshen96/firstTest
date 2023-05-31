@@ -67,6 +67,7 @@ public class VendingMachine_sy : MonoBehaviour
 
     public void OnClickMenu( int _btnNum, UIMenuButton_sy _menuBtn)
     {
+        Debug.Log("롸?");
         if (!productInfoList[_btnNum].CheckStock()) return;
 
         SProductInfo changeInfo = productInfoList[_btnNum];
@@ -78,7 +79,7 @@ public class VendingMachine_sy : MonoBehaviour
         if (prefab != null)
         {
             // 자판기 앞에 생성
-            Instantiate(prefab, transform.position + new Vector3 (0f, 0.5f, -1f), Quaternion.identity);
+            Instantiate(prefab, transform.position + new Vector3 (0f, 0.5f, -transform.localScale.z), Quaternion.identity);
         }
 
         // 재고 변경된 버튼 정보 초기화
