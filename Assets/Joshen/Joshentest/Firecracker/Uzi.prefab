@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2068140363951744432}
   - component: {fileID: 2068140363951744435}
   - component: {fileID: 2068140363951744433}
+  - component: {fileID: -3268279309862049869}
   m_Layer: 0
   m_Name: Uzi
   m_TagString: Untagged
@@ -101,7 +102,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -3268279309862049869}
+        m_TargetAssemblyTypeName: Product_sy, Assembly-CSharp
+        m_MethodName: DestroyProduct
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Activated:
     m_PersistentCalls:
       m_Calls:
@@ -208,6 +221,19 @@ MonoBehaviour:
   fireprefabs:
   - {fileID: 1132036261060192, guid: 98a1fd3bb8bec6f4ba9f2157d347fca6, type: 3}
   firepoint: {fileID: 4490430354397797923}
+--- !u!114 &-3268279309862049869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068140363951520146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c63d30c78e1a474195298d5d9766d33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productType: 2
 --- !u!1 &2068140363951520152
 GameObject:
   m_ObjectHideFlags: 0

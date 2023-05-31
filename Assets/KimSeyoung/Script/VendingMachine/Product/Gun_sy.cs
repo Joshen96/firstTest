@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Gun_sy : Product_sy
 {
+
     public override void Use()
     {
-        Debug.Log("Gun");
+        Debug.Log("");
     }
 }

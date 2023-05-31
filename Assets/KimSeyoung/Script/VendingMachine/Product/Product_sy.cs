@@ -11,30 +11,12 @@ public abstract class Product_sy : MonoBehaviour
 
     public abstract void Use();
 
-    public static void UseWithType(VendingMachine_sy.EVMProduct _productType)
+    public void DestroyProduct()       // ªË¡¶
     {
-        switch (_productType)
-        {
-            case VendingMachine_sy.EVMProduct.Firecracker:
-                Debug.Log("Firecracker");
-                break;
-            case VendingMachine_sy.EVMProduct.ElectricToothbrush:
-                Debug.Log("ElectricToothbrush");
-                break;
-        }
+        StartCoroutine("IDestroyProduct");
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!other.CompareTag("Player"))
-        { 
-            StartCoroutine("DestroyProduct");
-            Product_sy product = GetComponent<Product_sy>();
-            Destroy(this);
-        }
-    }
-
-    private IEnumerable DestroyProduct()
+    private IEnumerable IDestroyProduct()
     {
         yield return new WaitForSeconds(3f);
         Destroy(this);
