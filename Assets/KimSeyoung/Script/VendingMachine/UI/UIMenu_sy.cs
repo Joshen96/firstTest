@@ -16,6 +16,7 @@ public class UIMenu_sy : MonoBehaviour
     {
         if (_productInfoList == null || _productInfoList.Count == 0) return;
         if (menuBtnList != null && menuBtnList.Count > 0) ClearMenuButtonList();
+
         menuBtnList = new List<UIMenuButton_sy>();
 
         for (int i = 0; i < _productInfoList.Count; ++i)
@@ -43,16 +44,16 @@ public class UIMenu_sy : MonoBehaviour
     {
         if (_idx < 0 || _totalCnt < 1) return Vector3.zero;
 
-        const int COL_MAX = 3;
+        const int COL_MAX = 2;
 
         Vector2 bgSize = transform.GetChild(0).GetComponent<RectTransform>().sizeDelta;
         Vector2 btnSize = menuBtnPrefab.GetComponent<RectTransform>().sizeDelta;
 
-        int colCnt = Mathf.Clamp(_totalCnt, 1, COL_MAX);
+        int colCnt = Mathf.Clamp(_totalCnt, 1, COL_MAX);        // °¡·Î °¹¼ö
         float btnTotalW = colCnt * btnSize.x;
         float totalOffsetW = bgSize.x - btnTotalW;
 
-        int rowCnt = (int)Mathf.Ceil((float)_totalCnt / colCnt);
+        int rowCnt = (int)Mathf.Ceil((float)_totalCnt / colCnt); // ¼¼·Î °¹¼ö
         float btnTotalH = rowCnt * btnSize.y;
         float totalOffsetH = bgSize.y - btnTotalH;
 
@@ -62,6 +63,7 @@ public class UIMenu_sy : MonoBehaviour
 
         Vector2 btnDist = offset + btnSize;
         Vector2 startPos = new Vector2( -btnDist.x / (colCnt % 2 == 0 ? 2f : 1f), btnDist.y / (rowCnt % 2 == 0 ? 2f : 1f));
+
 
         Vector3 pos = Vector3.zero;
         if (colCnt > 1) pos.x = startPos.x + ((_idx % COL_MAX) * btnDist.x);
