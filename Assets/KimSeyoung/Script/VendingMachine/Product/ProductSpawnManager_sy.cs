@@ -10,7 +10,7 @@ public class ProductSpawnManager_sy
     {
         if (productPrefabList == null)
         {
-            GameObject[] prefabs = Resources.LoadAll<GameObject>("Prefabs\\Products");
+            GameObject[] prefabs = Resources.LoadAll<GameObject>("Products");
             productPrefabList = new List<GameObject>(prefabs);
         }
 
