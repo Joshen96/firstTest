@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager_sy : MonoBehaviour
 {
     public AudioSource BGMaudioSource = null;
     public AudioSource ESoundAudioSource = null;
