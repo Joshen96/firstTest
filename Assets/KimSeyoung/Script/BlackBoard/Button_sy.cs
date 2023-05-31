@@ -89,4 +89,9 @@ public class Button_sy : MonoBehaviour
     {
         blackboardManager.ReplayButtonClick();
     }
+
+    public void RestartButtonClick()
+    {
+        blackboardManager.RestartButtonClick();
+    }
 }

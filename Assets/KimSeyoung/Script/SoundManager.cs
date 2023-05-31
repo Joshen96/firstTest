@@ -8,7 +8,6 @@ public class SoundManager : MonoBehaviour
     public AudioSource BGMaudioSource = null;
     public AudioSource ESoundAudioSource = null;
 
-
     private void Awake()
     {
         if (BGMaudioSource == null) BGMaudioSource = this.GetComponent<AudioSource>();

@@ -19,6 +19,7 @@ public class Carmovement : MonoBehaviour
     public int i = 0;
     public float scrPlayDist = 8f;
 
+    public bool inplayer = false;
     public bool isaccord = false;
     public bool isStopcar = false;
     public bool isNoclick = false;
@@ -44,7 +45,7 @@ public class Carmovement : MonoBehaviour
         float dist = CalcDistanceWithTarget();
         
        
-        if (dist < scrPlayDist) 
+        if (dist < scrPlayDist&&!inplayer) 
         {
 
             isStopcar = true;

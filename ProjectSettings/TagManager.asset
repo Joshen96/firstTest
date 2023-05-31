@@ -9,6 +9,8 @@ TagManager:
   - Zone
   - Spawn_zone
   - Whiteboard
+  - Bus
+  - key
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - noninteractable
+  - interactable
   - 
   - 
   - 
