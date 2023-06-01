@@ -22,5 +22,7 @@ public class EastCamera : MonoBehaviour
 
         // 카메라의 회전을 고정하기
         transform.rotation = Quaternion.Euler(45f, -90f, 0f);
+
+
     }
 }
