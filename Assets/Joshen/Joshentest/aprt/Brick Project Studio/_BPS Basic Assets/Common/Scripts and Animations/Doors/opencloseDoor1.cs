@@ -55,7 +55,7 @@ namespace SojaExiles
 		public void opendoor()
 		{
 			StartCoroutine(opening());
-		}
+		}			
 
 		public void closedoor()
 		{
