@@ -4170,18 +4170,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Complete XR Origin Set Up
       objectReference: {fileID: 0}
-    - target: {fileID: 598135137826668483, guid: 1723a2759cf6aa44ba9f32fd4153f85b, type: 3}
-      propertyPath: m_CameraYOffset
-      value: 1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 598135137826668483, guid: 1723a2759cf6aa44ba9f32fd4153f85b, type: 3}
-      propertyPath: m_RequestedTrackingOriginMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5650259218460278000, guid: 1723a2759cf6aa44ba9f32fd4153f85b, type: 3}
-      propertyPath: m_MinHeight
-      value: 1.8
-      objectReference: {fileID: 0}
     - target: {fileID: 6660430309850728475, guid: 1723a2759cf6aa44ba9f32fd4153f85b, type: 3}
       propertyPath: m_RootOrder
       value: 7
