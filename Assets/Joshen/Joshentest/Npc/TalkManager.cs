@@ -32,7 +32,9 @@ public class TalkManager : MonoBehaviour
         animData.Add(1000, new string[] { "greeting", "pointing", "lookingaround", "pointing" });
 
 
-
+        talkData.Add(1001, new string[] { "이봐 학생 문제는 잘 풀었나?", "언어 실력이 형편없구만 ", "알파벳 부터 다시 배우게", "인문계쪽은 실력없으니 이공계 강의실로 가봐" });
+        lookData.Add(1001, new Transform[] { target[0], target[0], target[0], target[2] });
+        animData.Add(1001, new string[] { "greeting", "jokepose", "lookingaround", "pointing" });
 
         /*
         talkData.Add(2000, new string[] { "안녕?","여기는 교실1이에요","문을 열어봐요" ,"춤추기하하","문열어","빨리!"});
@@ -44,15 +46,15 @@ public class TalkManager : MonoBehaviour
         animData.Add(2001, new string[] { "pointing", "dancing", "greeting" });
 
 
-
+        
 
         talkData.Add(3000, new string[] { "안녕?","여기는 교실1이에요","낄낄" });
         lookData.Add(3000, new Transform[] { target[0], target[1] });
-
-        talkData.Add(9999, new string[] { "대화오류", "입니다." });
-        lookData.Add(9999, new Transform[] { target[(int)Targetname.player], target[(int)Targetname.player] });
-        animData.Add(9999, new string[] { "greeting", "pointing" });
         */
+        talkData.Add(9999, new string[] { "대화오류", "입니다." });
+        lookData.Add(9999, new Transform[] { target[0], target[0] });
+        animData.Add(9999, new string[] { "greeting", "pointing" });
+        
     }
 
     public string GetTalk(int _id, int _talkIdex)
