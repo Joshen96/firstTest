@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BC_NPC_Traffic_PedestrianSpawner : MonoBehaviour
 {
-    public GameObject pedestianPrefab;
+    public GameObject[] pedestianPrefabs;
     public int pedestriansToSpawn;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,9 @@ public class BC_NPC_Traffic_PedestrianSpawner : MonoBehaviour
         int count = 0;
         while (count < pedestriansToSpawn)
         {
-            GameObject obj = Instantiate(pedestianPrefab);
+            GameObject prefab = pedestianPrefabs[Random.Range(0, pedestianPrefabs.Length)];
+
+            GameObject obj = Instantiate(prefab);
             Transform child = transform.GetChild(Random.Range(0, transform.childCount - 1));
             obj.GetComponent<BC_NPC_Traffic_WaypointNavigator>().currentWaypoint = child.GetComponent<BC_NPC_Traffic_Waypoint>();
             obj.transform.position = child.position;
@@ -27,6 +29,7 @@ public class BC_NPC_Traffic_PedestrianSpawner : MonoBehaviour
             count++;
 
         }
+
     }
 
     // Update is called once per frame
