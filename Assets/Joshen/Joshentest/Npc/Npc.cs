@@ -110,7 +110,7 @@ public class Npc : MonoBehaviour
 
             uiMenu.gameObject.SetActive(false);
             isAction = false;
-            NPC_id.id += 1;
+            //NPC_id.id += 1;//원래 대사 끝나면 다음대사 부분
             
             return;
         }
