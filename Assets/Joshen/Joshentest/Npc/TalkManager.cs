@@ -33,7 +33,7 @@ public class TalkManager : MonoBehaviour
 
 
         talkData.Add(1001, new string[] { "이봐 학생 문제는 잘 풀었나?", "언어 실력이 형편없구만 ", "알파벳 부터 다시 배우게", "인문계쪽은 실력없으니 이공계 강의실로 가봐" });
-        lookData.Add(1001, new Transform[] { target[0], target[0], target[0], target[2] });
+        lookData.Add(1001, new Transform[] { target[0], target[4], target[0], target[3] });
         animData.Add(1001, new string[] { "greeting", "jokepose", "mmakick", "pointing" });
 
         /*

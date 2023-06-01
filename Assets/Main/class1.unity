@@ -7056,7 +7056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4155194098703192314, guid: 1723a2759cf6aa44ba9f32fd4153f85b, type: 3}
       propertyPath: m_MaxRaycastDistance
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4155194098703192314, guid: 1723a2759cf6aa44ba9f32fd4153f85b, type: 3}
       propertyPath: m_InteractionLayers.m_Bits
@@ -46240,7 +46240,7 @@ MonoBehaviour:
   - {fileID: 4562078760837702886}
   - {fileID: 300797108877999132}
   - {fileID: 2861130228801946199}
-  - {fileID: 1671218588}
+  - {fileID: 931827953}
 --- !u!4 &7863810937973079971
 Transform:
   m_ObjectHideFlags: 0
