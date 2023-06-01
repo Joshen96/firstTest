@@ -31,10 +31,14 @@ public class TalkManager : MonoBehaviour
         lookData.Add(1000, new Transform[] { target[0], target[1], target[0], target[2] });
         animData.Add(1000, new string[] { "greeting", "pointing", "lookingaround", "pointing" });
 
+        talkData.Add(1001, new string[] { "온김에 칠판에 문제를 풀어보게나", "다 풀면 저 앞 문으로 나오게" });
+        lookData.Add(1001, new Transform[] { target[5], target[6]});
+        animData.Add(1001, new string[] { "idle", "pointing" });
 
-        talkData.Add(1001, new string[] { "이봐 학생 문제는 잘 풀었나?", "언어 실력이 형편없구만 ", "알파벳 부터 다시 배우게", "인문계쪽은 실력없으니 이공계 강의실로 가봐" });
-        lookData.Add(1001, new Transform[] { target[0], target[4], target[0], target[3] });
-        animData.Add(1001, new string[] { "greeting", "jokepose", "mmakick", "pointing" });
+
+        talkData.Add(1002, new string[] { "이봐 학생 문제는 잘 풀었나?", "언어 실력이 형편없구만 ", "알파벳 부터 다시 배우게", "인문계쪽은 실력없으니 이공계 강의실로 가봐" });
+        lookData.Add(1002, new Transform[] { target[0], target[3], target[4], target[3] });
+        animData.Add(1002, new string[] { "greeting", "jokepose", "mmakick", "pointing" });
 
         /*
         talkData.Add(2000, new string[] { "안녕?","여기는 교실1이에요","문을 열어봐요" ,"춤추기하하","문열어","빨리!"});
