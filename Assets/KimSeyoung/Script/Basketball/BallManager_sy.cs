@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BallManager_sy : MonoBehaviour
 {
-    [SerializeField] private Transform goalLineTriggerGO = null;        // 골라인 가운데에 있는 트리거 오브젝트
-   // [SerializeField] private Transform goalLineTriggerGO1 = null;
+    [SerializeField] private Transform goalLineTriggerGO = null;
+
     [SerializeField, Range(500f, 1000f)] private float rotationSpeed = 800f;
     
     [SerializeField, Range(0f, 10f)] private float distance = 0.2f;
@@ -17,7 +17,12 @@ public class BallManager_sy : MonoBehaviour
     private Vector3 limitPosition = new Vector3(50f, 100f, 50f);
     private float limitDistance = 50f;
 
-    private void Start()
+    [SerializeField] private ScoreBoard_sy scoreBoard = null;
+    [SerializeField] public int score = 0;
+    private Vector3 throwPosition = Vector3.zero;
+    private float scoreGuideDist = 12f;
+
+    private void AWake()
     {
         startPosition = transform.position;
         limitPosition = startPosition + limitPosition;
@@ -25,6 +30,8 @@ public class BallManager_sy : MonoBehaviour
         if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager_sy>();
         if (goalLineTriggerGO == null) goalLineTriggerGO = GameObject.Find("GoalLineTriggerGO").transform;
 
+        if (scoreBoard == null) scoreBoard = transform.GetChild(5).gameObject.GetComponent<ScoreBoard_sy>();
+ 
     }
 
     private void Update()
@@ -91,8 +98,15 @@ public class BallManager_sy : MonoBehaviour
                 break;
             case "GoalInTrigger":
                 {
+                    // 거리에 따라 점수 다르게 얻음
+                    if (Mathf.Abs(Vector3.Distance(other.transform.position, throwPosition)) < scoreGuideDist)
+                    { score += 1; } // float throwDist = Mathf.Sqrt(Mathf.Pow((throwPosition.x + other.transform.position.x), 2) + Mathf.Pow((throwPosition.z + other.transform.position.z), 2));
+                    else { score += 1; }
+
+                    InputScoreToScoreboard();
+
+                    // 회전 반지름 초기화
                     distance = 0.2f;
-                    // 전광판 오브젝트 추가(-), 점수 연동(-)
                 }
                 break;
         }
@@ -130,5 +144,33 @@ public class BallManager_sy : MonoBehaviour
         
     }
 
+    public void Throw() // 오큘러스 기기로 던질 때 이 함수 넣기(-)
+    {
+        throwPosition = transform.position;
+    }
+
+    public void InputScoreToScoreboard()
+    {
+        string scoreStr = score.ToString();                 // score을 sting으로 변경
+        char[] scoreChar = scoreStr.ToCharArray();          // score을 char array로 변경
+
+        switch (scoreChar.Length)
+        {
+            case 1:     // 점수가 한 자리 수라면 00N
+                scoreChar[2] = scoreChar[0];
+                scoreChar[1] = '0';
+                scoreChar[0] = '0';
+                break;
+            case 2:     // 점수가 두 자리 수라면 0NN
+                scoreChar[2] = scoreChar[1];
+                scoreChar[1] = scoreChar[0];
+                scoreChar[0] = '0';
+                break;
+        }
+
+        scoreStr = scoreChar.ToString();                    // 세자릿수 값을 string으로 변경
+
+        scoreBoard.ScoreMeshChange();                       // 전광판 변경
+    }
 
 }
