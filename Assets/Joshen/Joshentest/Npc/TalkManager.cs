@@ -13,17 +13,7 @@ public class TalkManager : MonoBehaviour
     
     public Transform[] target;
 
-    enum Targetname
-    {
-        player = 0,
-        class1,
-        door,
-        busstop,
-        playground
-
-    };
-    Targetname name = Targetname.player;
-
+    
     private void Awake()
     {
         talkData = new Dictionary<int, string[]>();
@@ -35,18 +25,22 @@ public class TalkManager : MonoBehaviour
     }
 
     void GernerateData()
-    {
-        talkData.Add(1000, new string[] { "안녕?","여기는 운동장이에요" });
-        lookData.Add(1000, new Transform[] { target[(int)Targetname.player], target[(int)Targetname.playground] });
-        animData.Add(1000, new string[] { "greeting", "pointing", "pointing", "dancing", "pointing", "idle" });
+    {   
+        //class 교수님
+        talkData.Add(1000, new string[] { "거기 학생 신입생인가?","여기는 강의실인데","오늘은 수업이없는데?","저 문을 열고 들어가보게" });
+        lookData.Add(1000, new Transform[] { target[0], target[1], target[0], target[2] });
+        animData.Add(1000, new string[] { "greeting", "pointing", "lookingaround", "pointing" });
 
 
+
+
+        /*
         talkData.Add(2000, new string[] { "안녕?","여기는 교실1이에요","문을 열어봐요" ,"춤추기하하","문열어","빨리!"});
-        lookData.Add(2000, new Transform[] { target[(int)Targetname.player], target[(int)Targetname.class1], target[(int)Targetname.door] , target[(int)Targetname.player], target[(int)Targetname.door] });
+        lookData.Add(2000, new Transform[] { target[], target[], target[] , target[], target[] });
         animData.Add(2000, new string[] {"greeting","pointing","pointing","dancing","pointing","pointing" });
 
         talkData.Add(2001, new string[] { "저문을 열어봣군","너!" ,"잘했어" });
-        lookData.Add(2001, new Transform[] { target[(int)Targetname.door], target[(int)Targetname.player], target[(int)Targetname.player]});
+        lookData.Add(2001, new Transform[] { target[], target[], target[(int)]});
         animData.Add(2001, new string[] { "pointing", "dancing", "greeting" });
 
 
@@ -58,7 +52,7 @@ public class TalkManager : MonoBehaviour
         talkData.Add(9999, new string[] { "대화오류", "입니다." });
         lookData.Add(9999, new Transform[] { target[(int)Targetname.player], target[(int)Targetname.player] });
         animData.Add(9999, new string[] { "greeting", "pointing" });
-
+        */
     }
 
     public string GetTalk(int _id, int _talkIdex)
