@@ -8,6 +8,7 @@ public class DoveMove : MonoBehaviour
     public Transform Dove;
     public Transform[] paths;
     public float speed = 1.5f;
+
     public int i = 0;
     // Start is called before the first frame update
     private void Start()
