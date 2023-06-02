@@ -14,10 +14,12 @@ public class JS_day_night : MonoBehaviour
     public void dayOn()
     {
         RenderSettings.skybox = day;
+        RenderSettings.fog = false;
     }
     public void nightOn()
     {
         RenderSettings.skybox = night;
+        RenderSettings.fog = true;
     }
     
 }
