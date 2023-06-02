@@ -797,6 +797,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3680873587652874940}
+  - component: {fileID: 6569727760564048639}
   m_Layer: 0
   m_Name: Bip001
   m_TagString: Untagged
@@ -821,6 +822,19 @@ Transform:
   m_Father: {fileID: 3680873587652875032}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6569727760564048639
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3680873587653037724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.43764997, y: 0.834944, z: 1.5215037}
+  m_Center: {x: -0.054962695, y: 0.0011460506, z: 0.32051647}
 --- !u!1 &3680873587653037812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,6 +1073,7 @@ GameObject:
   - component: {fileID: 3329035041245239606}
   - component: {fileID: 1157384287488628247}
   - component: {fileID: 3517184386532990783}
+  - component: {fileID: 7158373677790019385}
   m_Layer: 0
   m_Name: TT_demo_female 1
   m_TagString: Untagged
@@ -1155,6 +1170,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWaypoint: {fileID: 0}
+--- !u!114 &7158373677790019385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3680873587653037944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858022e55ad674d44816078b1ffe2645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideDistance: 80
+  showDistance: 50
 --- !u!1 &3680873587653037948
 GameObject:
   m_ObjectHideFlags: 0
