@@ -15,12 +15,13 @@ public class BallManager_sy : MonoBehaviour
 
     private Vector3 startPosition = Vector3.zero;
     private Vector3 limitPosition = new Vector3(50f, 100f, 50f);
-    private float limitDistance = 50f;
 
-    [SerializeField] private ScoreBoard_sy scoreBoard = null;
+    public ScoreBoard_sy scoreBoard = null;
     [SerializeField] public int score = 0;
     private Vector3 throwPosition = Vector3.zero;
     private float scoreGuideDist = 12f;
+
+    [SerializeField] private LimitTime_sy limitTime = null;
 
     private void AWake()
     {
@@ -30,8 +31,8 @@ public class BallManager_sy : MonoBehaviour
         if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager_sy>();
         if (goalLineTriggerGO == null) goalLineTriggerGO = GameObject.Find("GoalLineTriggerGO").transform;
 
-        if (scoreBoard == null) scoreBoard = transform.GetChild(5).gameObject.GetComponent<ScoreBoard_sy>();
- 
+        if (scoreBoard == null) scoreBoard = GameObject.Find("ScoreBoard").GetComponent<ScoreBoard_sy>();
+        if (limitTime == null) limitTime = GameObject.Find("LimitTimeCanvas").GetComponent<LimitTime_sy>();
     }
 
     private void Update()
@@ -100,10 +101,11 @@ public class BallManager_sy : MonoBehaviour
                 {
                     // 거리에 따라 점수 다르게 얻음
                     if (Mathf.Abs(Vector3.Distance(other.transform.position, throwPosition)) < scoreGuideDist)
-                    { score += 1; } // float throwDist = Mathf.Sqrt(Mathf.Pow((throwPosition.x + other.transform.position.x), 2) + Mathf.Pow((throwPosition.z + other.transform.position.z), 2));
+                    { score += 3; } // float throwDist = Mathf.Sqrt(Mathf.Pow((throwPosition.x + other.transform.position.x), 2) + Mathf.Pow((throwPosition.z + other.transform.position.z), 2));
                     else { score += 1; }
+                    scoreBoard.score = score;
 
-                    InputScoreToScoreboard();
+                    scoreBoard.InputScoreToScoreboard();
 
                     // 회전 반지름 초기화
                     distance = 0.2f;
@@ -122,7 +124,7 @@ public class BallManager_sy : MonoBehaviour
 
     private void PositionReset() //속도
     {
-        if (transform.position.x > limitPosition.x)
+        if (Mathf.Abs(transform.position.x) > limitPosition.x)
         {
             transform.position = startPosition;
             this.GetComponent<Rigidbody>().isKinematic = true;
@@ -135,7 +137,7 @@ public class BallManager_sy : MonoBehaviour
             this.GetComponent<Rigidbody>().isKinematic = true;
             this.GetComponent<Rigidbody>().isKinematic = false;
         }
-        else if (transform.position.z > limitPosition.z)
+        else if (Mathf.Abs(transform.position.z) > limitPosition.z)
         {
             transform.position = startPosition;
             this.GetComponent<Rigidbody>().isKinematic = true;
@@ -149,28 +151,8 @@ public class BallManager_sy : MonoBehaviour
         throwPosition = transform.position;
     }
 
-    public void InputScoreToScoreboard()
+    public void PickBall()      // 집으면 시행되는 함수(-)
     {
-        string scoreStr = score.ToString();                 // score을 sting으로 변경
-        char[] scoreChar = scoreStr.ToCharArray();          // score을 char array로 변경
-
-        switch (scoreChar.Length)
-        {
-            case 1:     // 점수가 한 자리 수라면 00N
-                scoreChar[2] = scoreChar[0];
-                scoreChar[1] = '0';
-                scoreChar[0] = '0';
-                break;
-            case 2:     // 점수가 두 자리 수라면 0NN
-                scoreChar[2] = scoreChar[1];
-                scoreChar[1] = scoreChar[0];
-                scoreChar[0] = '0';
-                break;
-        }
-
-        scoreStr = scoreChar.ToString();                    // 세자릿수 값을 string으로 변경
-
-        scoreBoard.ScoreMeshChange();                       // 전광판 변경
+        limitTime.isPickBall = true;
     }
-
 }
