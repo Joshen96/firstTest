@@ -10,12 +10,9 @@ public class JS_Directional_roate : MonoBehaviour
     float dayAngle = 50f;
     void Start()
     {
-        tr = gameObject.transform;
+        tr = this.gameObject.transform;
     }
-    private void Update()
-    {
-
-    }
+    
 
 
     public void onday()
@@ -34,11 +31,11 @@ public class JS_Directional_roate : MonoBehaviour
 
         float t = 0f;
 
-        while (t < 3f)
+        while (t < 1f)
         {
-            t += Time.deltaTime;
+            t += Time.deltaTime*0.5f;
             float speed = t;
-            float xRotation = Mathf.Lerp(st, er, speed)%360;
+            float xRotation = Mathf.LerpAngle(st, er, speed)%360;
 
             tr.eulerAngles = new Vector3(xRotation, tr.eulerAngles.y, tr.eulerAngles.z);
             // Debug.Log(yRotation + " " + transform.eulerAngles.y);
@@ -53,11 +50,11 @@ public class JS_Directional_roate : MonoBehaviour
 
         float t = 0f;
 
-        while (t < 3f)
+        while (t < 1f)
         {
-            t += Time.deltaTime;
+            t += Time.deltaTime*0.5f;
             float speed = t;
-            float xRotation = Mathf.Lerp(st, er,    speed)%360;
+            float xRotation = Mathf.LerpAngle(st, er, speed)%360;
 
             tr.eulerAngles = new Vector3(xRotation, tr.eulerAngles.y, tr.eulerAngles.z);
             // Debug.Log(yRotation + " " + transform.eulerAngles.y);
