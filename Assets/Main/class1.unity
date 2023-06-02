@@ -6553,7 +6553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2061202478523406370, guid: 1badbddffa84c59469e200ac39986ab9, type: 3}
       propertyPath: sceneName
-      value: test
+      value: JS_outside
       objectReference: {fileID: 0}
     - target: {fileID: 2061202478523406373, guid: 1badbddffa84c59469e200ac39986ab9, type: 3}
       propertyPath: m_RootOrder
@@ -7240,6 +7240,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Complete XR Origin Set Up
       objectReference: {fileID: 0}
+    - target: {fileID: 1135345516701957697, guid: 1723a2759cf6aa44ba9f32fd4153f85b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135345516701957697, guid: 1723a2759cf6aa44ba9f32fd4153f85b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4155194098703192314, guid: 1723a2759cf6aa44ba9f32fd4153f85b, type: 3}
       propertyPath: m_MaxRaycastDistance
       value: 2
@@ -7254,15 +7262,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6660430309850728475, guid: 1723a2759cf6aa44ba9f32fd4153f85b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.18
+      value: 4.404
       objectReference: {fileID: 0}
     - target: {fileID: 6660430309850728475, guid: 1723a2759cf6aa44ba9f32fd4153f85b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.09500027
+      value: 0.329
       objectReference: {fileID: 0}
     - target: {fileID: 6660430309850728475, guid: 1723a2759cf6aa44ba9f32fd4153f85b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.81
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6660430309850728475, guid: 1723a2759cf6aa44ba9f32fd4153f85b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -45372,7 +45380,7 @@ RectTransform:
   m_Children:
   - {fileID: 6663156281593903379}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

@@ -23,7 +23,7 @@ public class BallManager_sy : MonoBehaviour
 
     [SerializeField] private LimitTime_sy limitTime = null;
 
-    private void AWake()
+    private void Awake()
     {
         startPosition = transform.position;
         limitPosition = startPosition + limitPosition;

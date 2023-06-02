@@ -19,13 +19,16 @@ public class JS_day_night : MonoBehaviour
     public void dayOn()
     {
         RenderSettings.skybox = day;
-        RenderSettings.fogColor = dayfog;
+        //RenderSettings.fogColor = dayfog;
+        RenderSettings.ambientLight = dayfog;
         RenderSettings.fogDensity = 0;
+
     }
     public void nightOn()
     {
         RenderSettings.skybox = night;
-        RenderSettings.fogColor = nightfog;
+        //RenderSettings.fogColor = nightfog;
+        RenderSettings.ambientLight = nightfog;
         RenderSettings.fogDensity = 0.001f;
     }
     
