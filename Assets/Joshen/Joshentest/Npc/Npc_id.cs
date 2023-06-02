@@ -6,4 +6,9 @@ public class Npc_id : MonoBehaviour
 {
     public int id;
 
+
+    public void nextTalk()
+    {
+        id += 1;
+    }
 }
