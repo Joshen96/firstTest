@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -7,6 +7,11 @@ public class JS_day_night : MonoBehaviour
 {
     public Material night = null;
     public Material day = null;
+    public GameObject dayLight;
+    public GameObject nightLight;
+
+    public Color dayfog;
+    public Color nightfog;
     // Start is called before the first frame update
    
 
@@ -14,12 +19,14 @@ public class JS_day_night : MonoBehaviour
     public void dayOn()
     {
         RenderSettings.skybox = day;
-        RenderSettings.fog = false;
+        RenderSettings.fogColor = dayfog;
+        RenderSettings.fogDensity = 0;
     }
     public void nightOn()
     {
         RenderSettings.skybox = night;
-        RenderSettings.fog = true;
+        RenderSettings.fogColor = nightfog;
+        RenderSettings.fogDensity = 0.001f;
     }
     
 }
