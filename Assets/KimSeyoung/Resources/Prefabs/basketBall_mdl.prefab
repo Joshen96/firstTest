@@ -225,6 +225,9 @@ MonoBehaviour:
   rotationSpeed: 800
   distance: 0.2
   soundManager: {fileID: 0}
+  scoreBoard: {fileID: 0}
+  score: 0
+  limitTime: {fileID: 0}
 --- !u!54 &3039724853628839144
 Rigidbody:
   m_ObjectHideFlags: 0
