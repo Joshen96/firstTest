@@ -11,7 +11,8 @@ public class BC_NPC_REMOVENPC_DISTANCE : MonoBehaviour
 
     private GameObject GetPlayer()
     {
-        if (!player) player = GameObject.FindGameObjectWithTag("Player").transform.root.gameObject;
+       // if (!player) player = GameObject.FindGameObjectWithTag("Player").transform.root.gameObject;
+        if (!player) player = GameObject.FindGameObjectWithTag("Player");
         return player;
     }
 

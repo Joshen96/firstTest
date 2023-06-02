@@ -50,7 +50,7 @@ public class JS_RoomManager : MonoBehaviour
                 }
 
 
-                y -= 1f;
+                y -=0.4f;
                 
                 player.transform.position = new Vector3(x, y, z); //이때 이동후 플레이어 위치 정해짐
                 break;
