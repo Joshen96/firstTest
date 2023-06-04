@@ -40,8 +40,9 @@ public class JS_black_box_active : MonoBehaviour
         BlackBoxCam.SetActive(false);
         BlackBoxPad.transform.position = resetPos.position;
         BlackBoxPad.transform.rotation = resetPos.rotation;
+        BlackBoxPad.transform.localEulerAngles = new Vector3(0, 90f, 0);
         BlackBoxPad.SetActive(false);
-
+        
     }
 
     public void grab_Cam_on()
