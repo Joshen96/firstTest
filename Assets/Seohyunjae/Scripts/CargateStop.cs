@@ -45,6 +45,7 @@ public class CargateStop : MonoBehaviour
     {
 
        yield return StartCoroutine(iRotationup(90f));
+
         
        yield return StartCoroutine(iRotationdown(0f));
 
