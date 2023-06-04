@@ -54,10 +54,8 @@ public class Carmovement : MonoBehaviour
             carui.SetActive(true);
             }
 
-          
 
         }
-      
 
         else
         {
