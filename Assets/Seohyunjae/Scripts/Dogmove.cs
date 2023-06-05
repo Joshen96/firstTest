@@ -4,45 +4,55 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class Turtlemove : MonoBehaviour
+public class Dogmove : MonoBehaviour
 {
 
-    public Transform turtle;
+    public Transform dog;
     public Transform[] paths;
     public Transform Player;
     public Animator animator;
+   
+
+    
 
 
     public float speed = 1.5f;
-    public float scrPlayDist = 2f;
+    public float scrPlayDist = 3f;
     public int i = 0;
     private bool isclicked = false;
 
-    // Start is called before the first frame update
 
+    // Start is called before the first frame update
+    
     private void Start()
     {
-        turtle.transform.position = paths[0].transform.position;
+        dog.transform.position = paths[0].transform.position;
         animator = GetComponent<Animator>();
+
 
     }
     public void Update()
     {
 
+
         float dist = CalcDistanceWithTarget();
         if (dist < scrPlayDist)
         {
-            //speed = 3.0f;
-            //transform.LookAt(Player.position);
-            //turtleangleturn.transform.rotation = Quaternion.Euler(Vector3.right * 180f);
+            animator.SetBool("Spin", !isclicked);
+            transform.LookAt(Player.position);
+            //dogangleturn.transform.rotation = Quaternion.Euler(Vector3.right * 180f);
             //Debug.Log(Quaternion.Euler(Vector3.right * dist));
-            animator.StopPlayback();
+
+
         }
         else
         {
-            turtle.transform.position = Vector3.MoveTowards(turtle.transform.position, paths[i].transform.position, speed * Time.deltaTime);
+
+            animator.SetBool("Spin", isclicked);
+            
+            dog.transform.position = Vector3.MoveTowards(dog.transform.position, paths[i].transform.position, speed * Time.deltaTime);
             lookingPlayer(paths[i]);
-            if (turtle.transform.position == paths[i].transform.position)
+            if (dog.transform.position == paths[i].transform.position)
             {
                 i++;
             }
@@ -55,21 +65,25 @@ public class Turtlemove : MonoBehaviour
     }
     public void lookingPlayer(Transform _nextpath)
     {
-        Vector3 dir = _nextpath.transform.position - turtle.transform.position;
-        turtle.gameObject.transform.rotation = Quaternion.Lerp(turtle.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
+        Vector3 dir = _nextpath.transform.position - dog.transform.position;
+        dog.gameObject.transform.rotation = Quaternion.Lerp(dog.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
 
     }
-     
+    
     private float CalcDistanceWithTarget()
     {
         Vector3 dirToTarget =
-            Player.position - turtle.transform.position;
+            Player.position - dog.transform.position;
         float dist = dirToTarget.magnitude;
 
         dist = Vector3.Distance(
-            Player.position, turtle.transform.position);
+            Player.position, dog.transform.position);
 
         return dist;
     }
+
+
+
+
 
 }

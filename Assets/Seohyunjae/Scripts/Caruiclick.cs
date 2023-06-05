@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class Caruiclick : MonoBehaviour
 {
+
     public GameObject carcamera;
     public GameObject carui;
     public GameObject player;
