@@ -38,13 +38,12 @@ public class Caruiclick : MonoBehaviour
         //player.SetActive(false);
 
         player.transform.parent = carin_tranform.transform; //자식으로 붙히고 탑승시작
+        player.transform.position = carin_tranform.transform.position;
+        player.transform.rotation = carin_tranform.transform.rotation;
         JS_bus_geton();
 
 
-
-        //player.transform.position = carin_tranform.transform.position;
-        
-
+       
 
         //플레이어탑승함
 
