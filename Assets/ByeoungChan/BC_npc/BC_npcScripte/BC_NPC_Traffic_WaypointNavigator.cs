@@ -24,11 +24,11 @@ public class BC_NPC_Traffic_WaypointNavigator : MonoBehaviour
     void Update()
     {
         //npc 랜덤 이동속도
-        if(controller.reachedDestination)
+        if (controller.reachedDestination)
         {
             bool ShouldBranch = false;
 
-            if(currentWaypoint.branches !=null && currentWaypoint.branches.Count > 0)
+            if (currentWaypoint.branches != null && currentWaypoint.branches.Count > 0)
             {
                 ShouldBranch = Random.Range(0f, 1f) <= currentWaypoint.branchRatio ? true : false;
             }
@@ -42,7 +42,7 @@ public class BC_NPC_Traffic_WaypointNavigator : MonoBehaviour
             {
                 if (direction == 0)
                 {
-                    if(currentWaypoint.nextWaypoint != null)
+                    if (currentWaypoint.nextWaypoint != null)
                     {
                         currentWaypoint = currentWaypoint.nextWaypoint;
                     }
@@ -54,7 +54,7 @@ public class BC_NPC_Traffic_WaypointNavigator : MonoBehaviour
                 }
                 else if (direction == 1)
                 {
-                    if(currentWaypoint.previousWaypoint!=null)
+                    if (currentWaypoint.previousWaypoint != null)
                     {
                         currentWaypoint = currentWaypoint.previousWaypoint;
                     }
@@ -67,6 +67,6 @@ public class BC_NPC_Traffic_WaypointNavigator : MonoBehaviour
                 controller.SetDestination(currentWaypoint.GetPosition());
             }
         }
-        
+
     }
 }
