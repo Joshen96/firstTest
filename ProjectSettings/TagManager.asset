@@ -11,6 +11,7 @@ TagManager:
   - Whiteboard
   - Bus
   - key
+  - Enemy
   layers:
   - Default
   - TransparentFX
