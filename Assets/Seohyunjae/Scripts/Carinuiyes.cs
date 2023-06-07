@@ -35,7 +35,7 @@ public class Carinuiyes : MonoBehaviour
         //player.transform.parent = null;
 
 
-        Invoke("delay",3f);
+       //Invoke("delaygo",4f);
 
         //플레이어 텔레포트기능과 이동 활성화부분
 
@@ -44,16 +44,17 @@ public class Carinuiyes : MonoBehaviour
     }
 
         
-    void delay()
+    void delaygo()
     {
-        player.GetComponent<TeleportationProvider>().enabled = true; //텔포허용
-        player.GetComponent<DynamicMoveProvider>().enabled = true;
-        player.GetComponentsInChildren<GrabMoveProvider>()[0].enabled = true;
-        player.GetComponentsInChildren<GrabMoveProvider>()[1].enabled = true;
+        //carmovement.inplayer = true;
     }
     public void DetachPlayer()
     {
         player.transform.parent = null;
+        player.GetComponent<TeleportationProvider>().enabled = true; //텔포허용
+        player.GetComponent<DynamicMoveProvider>().enabled = true;
+        player.GetComponentsInChildren<GrabMoveProvider>()[0].enabled = true;
+        player.GetComponentsInChildren<GrabMoveProvider>()[1].enabled = true;
     }
     public void carInNO()
     {
