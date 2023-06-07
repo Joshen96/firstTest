@@ -30,7 +30,7 @@ public class Caruiclick : MonoBehaviour
     public void yesOnClick()
     {
         Debug.Log(123);
-        carin_bool= true;
+        carin_bool = true;
         carcamera.SetActive(true);
         Debug.Log("차량ui클릭");
         Debug.Log(car.transform.position);
@@ -40,10 +40,10 @@ public class Caruiclick : MonoBehaviour
         player.transform.parent = carin_tranform.transform; //자식으로 붙히고 탑승시작
         player.transform.position = carin_tranform.transform.position;
         player.transform.rotation = carin_tranform.transform.rotation;
-        JS_bus_geton();
 
 
-       
+
+
 
         //플레이어탑승함
 
@@ -56,12 +56,12 @@ public class Caruiclick : MonoBehaviour
 
 
         carinui.SetActive(true);
-        
 
-        
+
+
         //player.transform.position = car.transform.position + new Vector3(4f, 0, 0);
     }
-    public void noOnClick() 
+    public void noOnClick()
     {
 
         carcamera.SetActive(false);
@@ -74,30 +74,7 @@ public class Caruiclick : MonoBehaviour
         //player.SetActive(true);
 
     }
-
-    void JS_bus_geton()
-    {
-
-    }
-    /*
-    IEnumerator GetOn_bus()
-    {
-
-
-        float t = 0f;
-
-        while (t < 3f)
-        {
-            t += Time.deltaTime * 0.5f;
-            float speed = t;
-            float xRotation = Mathf.LerpAngle(st, er, speed) % 360;
-
-            tr.eulerAngles = new Vector3(xRotation, tr.eulerAngles.y, tr.eulerAngles.z);
-            // Debug.Log(yRotation + " " + transform.eulerAngles.y);
-
-            yield return null;
-        }
-    }
-    */
-
 }
+
+
+   
