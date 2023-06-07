@@ -17,7 +17,7 @@ public class Catmove : MonoBehaviour
 
 
     public float speed = 1.5f;
-    public float scrPlayDist = 8f;
+    public float scrPlayDist = 4f;
     public int i = 0;
     private bool isclicked = false;
 

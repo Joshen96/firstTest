@@ -32,14 +32,16 @@ public class Turtlemove : MonoBehaviour
         float dist = CalcDistanceWithTarget();
         if (dist < scrPlayDist)
         {
+            animator.enabled = false;
             //speed = 3.0f;
             //transform.LookAt(Player.position);
             //turtleangleturn.transform.rotation = Quaternion.Euler(Vector3.right * 180f);
             //Debug.Log(Quaternion.Euler(Vector3.right * dist));
-            animator.StopPlayback();
+            
         }
         else
         {
+            animator.enabled = true;
             turtle.transform.position = Vector3.MoveTowards(turtle.transform.position, paths[i].transform.position, speed * Time.deltaTime);
             lookingPlayer(paths[i]);
             if (turtle.transform.position == paths[i].transform.position)
