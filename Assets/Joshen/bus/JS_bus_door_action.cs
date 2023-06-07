@@ -32,7 +32,15 @@ public class JS_bus_door_action : MonoBehaviour
     IEnumerator bus_opendoor()
     {
         door.Play("busdoor_Open");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
+        door.Play("busdoor_Close");
+
+    }
+    IEnumerator bus_opendoor2()
+    {
+        door.Play("busdoor_Open");
+        yield return new WaitForSeconds(5);
+        door.Play("busdoor_Close");
 
     }
     IEnumerator bus_closedoor()
