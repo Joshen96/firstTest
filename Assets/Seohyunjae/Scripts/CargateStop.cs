@@ -20,7 +20,7 @@ public class CargateStop : MonoBehaviour
         if(_other.tag == "Car")
         {
             _other.gameObject.GetComponent<Car_Speed>().speed=0f;
-            Debug.Log("차감지");
+            //Debug.Log("차감지");
 
             StartCoroutine(Rotation());
         }
