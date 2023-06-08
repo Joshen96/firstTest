@@ -7,11 +7,11 @@ public class GoalInTrigger_sy : MonoBehaviour
     [SerializeField] private GameObject particleGO = null;
     [SerializeField] private SoundManager_sy soundManager = null;
 
-    void Start()
+    void Awake()
     {
         if (particleGO == null) particleGO = GameObject.Find("GoalParticle");
-        particleGO.SetActive(false);
         if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager_sy>();
+        particleGO.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
