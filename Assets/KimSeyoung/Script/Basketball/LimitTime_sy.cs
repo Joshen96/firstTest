@@ -6,64 +6,16 @@ using TMPro;
 
 public class LimitTime_sy : MonoBehaviour
 {
-    [SerializeField] private float limitTime = 0f;
-    [SerializeField] private TextMeshProUGUI textTimer = null;
-    [SerializeField] private ScoreBoard_sy scoreBoard = null;
-
-    public bool isPickBall = false;
-
-    int min = 0;
-    float sec = 0.0f;
-
-    private void Awake()
-    {
-        limitTime = 60f;
-        textTimer.text = "도전해봐";
-    }
-    private void Update()
-    {
-        if (isPickBall)
-        {
-            TimeCountdown();
-        }
-    }
+    public float limitTime = 0f;                // 제한시간
+    public TextMeshProUGUI textTimer = null;    // 제한시간 텍스트
 
     public void TimeCountdown()
     {
         limitTime -= Time.deltaTime;
-
-        if (limitTime > 10f)
-        {
-            textTimer.color = Color.white;
-            min = (int)limitTime / 60;
-            sec = limitTime % 60;
-            textTimer.text = min + " : " + (int)sec;
-        }
-
-        if (limitTime <= 10f)
-        {
-            textTimer.color = Color.red;
-            sec = limitTime % 10;
-            textTimer.text = (int)sec + "초";
-        }
-
-        if (limitTime <= 0f)
-        {
-            textTimer.color = Color.blue;
-            textTimer.text = "끝!";
-
-            StartCoroutine("TimeReset");
-        }
     }
 
-    private IEnumerator TimeReset()
+    public void TimeReset()
     {
-        yield return new WaitForSeconds(3.0f);
-
-        isPickBall = false;
-        limitTime = 60f;
-        textTimer.color = Color.white;
-        textTimer.text = "도전해봐";
-        scoreBoard.ScoreReset();
+        limitTime = 60;
     }
 }
