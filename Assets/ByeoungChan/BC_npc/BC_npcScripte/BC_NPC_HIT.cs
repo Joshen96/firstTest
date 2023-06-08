@@ -103,6 +103,9 @@ public class BC_NPC_HIT : MonoBehaviour
         animatorC.enabled = true;
         isGrab = true;
         animatorC.SetBool(Strangled, true);
+
+        rigidbody.isKinematic = true; // 물리 시뮬레이션 적용
+        rigidbody.useGravity = false;
     }
     public void detach_npc()
     {
