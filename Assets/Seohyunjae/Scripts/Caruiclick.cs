@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class Caruiclick : MonoBehaviour
 {
+
     public GameObject carcamera;
     public GameObject carui;
     public GameObject player;
@@ -29,18 +30,21 @@ public class Caruiclick : MonoBehaviour
     public void yesOnClick()
     {
         Debug.Log(123);
-        carin_bool= true;
+        carin_bool = true;
         carcamera.SetActive(true);
         Debug.Log("차량ui클릭");
         Debug.Log(car.transform.position);
         carui.SetActive(false);
         //player.SetActive(false);
-        carmovement.inplayer = true;
 
-
-
+        player.transform.parent = carin_tranform.transform; //자식으로 붙히고 탑승시작
         player.transform.position = carin_tranform.transform.position;
-        player.transform.parent = carin_tranform.transform;
+        player.transform.rotation = carin_tranform.transform.rotation;
+
+
+
+
+
         //플레이어탑승함
 
         //플레이어 이동하고 텔포금지
@@ -52,12 +56,12 @@ public class Caruiclick : MonoBehaviour
 
 
         carinui.SetActive(true);
-        
 
-        
+
+
         //player.transform.position = car.transform.position + new Vector3(4f, 0, 0);
     }
-    public void noOnClick() 
+    public void noOnClick()
     {
 
         carcamera.SetActive(false);
@@ -70,7 +74,7 @@ public class Caruiclick : MonoBehaviour
         //player.SetActive(true);
 
     }
-
-  
-
 }
+
+
+   
