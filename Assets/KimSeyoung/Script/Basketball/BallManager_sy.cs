@@ -4,35 +4,32 @@ using UnityEngine;
 
 public class BallManager_sy : MonoBehaviour
 {
+    [Header ("- for BallSpin -")]
     [SerializeField] private Transform goalLineTriggerGO = null;
-
     [SerializeField, Range(500f, 1000f)] private float rotationSpeed = 800f;
-    
     [SerializeField, Range(0f, 10f)] private float distance = 0.2f;
-    private float angle = 0f;
-
+    [SerializeField] ScoreBoard_sy scoreBoard = null;
     [SerializeField] private SoundManager_sy soundManager = null;
-
+    private float spinAngle = 0f;
     private Vector3 startPosition = Vector3.zero;
     private Vector3 limitPosition = new Vector3(50f, 100f, 50f);
 
-    public ScoreBoard_sy scoreBoard = null;
-    [SerializeField] public int score = 0;
+    [Header("- for Backboard -")]
+    public bool isPickBall = false;
     private Vector3 throwPosition = Vector3.zero;
-    private float scoreGuideDist = 12f;
-
-    [SerializeField] private LimitTime_sy limitTime = null;
+    public float BallToBackboardDis = 0.0f;
 
     private void Awake()
     {
         startPosition = transform.position;
         limitPosition = startPosition + limitPosition;
 
-        if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager_sy>();
-        if (goalLineTriggerGO == null) goalLineTriggerGO = GameObject.Find("GoalLineTriggerGO").transform;
+        throwPosition = startPosition;
 
-        if (scoreBoard == null) scoreBoard = GameObject.Find("ScoreBoard").GetComponent<ScoreBoard_sy>();
-        if (limitTime == null) limitTime = GameObject.Find("LimitTimeCanvas").GetComponent<LimitTime_sy>();
+        if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager_sy>();
+        if (goalLineTriggerGO == null) goalLineTriggerGO = GameObject.Find("GoalLineTrigger").transform;
+
+         if (scoreBoard == null) Debug.LogError("ball에 scoreboard 설정 필요");
     }
 
     private void Update()
@@ -46,7 +43,6 @@ public class BallManager_sy : MonoBehaviour
         {
             case "GoalLineTrigger": 
                 {
-                    soundManager.ESoundAudioSource.volume = 0.7f;
                     soundManager.PlayEffectSound("WindSound_");
                 }
                 break;
@@ -63,11 +59,11 @@ public class BallManager_sy : MonoBehaviour
 
                     if (rotationSpeed > 600f)
                     {
-                        angle -= Time.deltaTime * rotationSpeed;
-                        if (angle < 0f) angle = 360f;
+                        spinAngle -= Time.deltaTime * rotationSpeed;
+                        if (spinAngle < 0f) spinAngle = 360f;
 
                         Vector3 anglePos = new Vector3();
-                        CalcAnglePosWithYaw(angle, ref anglePos);
+                        CalcAnglePosWithYaw(spinAngle, ref anglePos);
                         GetComponent<Rigidbody>().AddTorque(Vector3.down * rotationSpeed, ForceMode.Impulse);
 
                         Vector3 criterionPos = goalLineTriggerGO.position;
@@ -99,13 +95,8 @@ public class BallManager_sy : MonoBehaviour
                 break;
             case "GoalInTrigger":
                 {
-                    // 거리에 따라 점수 다르게 얻음
-                    if (Mathf.Abs(Vector3.Distance(other.transform.position, throwPosition)) < scoreGuideDist)
-                    { score += 3; } // float throwDist = Mathf.Sqrt(Mathf.Pow((throwPosition.x + other.transform.position.x), 2) + Mathf.Pow((throwPosition.z + other.transform.position.z), 2));
-                    else { score += 1; }
-                    scoreBoard.score = score;
-
-                    scoreBoard.InputScoreToScoreboard();
+                    // 골대와 공을 던진 위치의 차
+                    BallToBackboardDis = Mathf.Abs(Vector3.Distance(other.transform.position, throwPosition));
 
                     // 회전 반지름 초기화
                     distance = 0.2f;
@@ -149,10 +140,11 @@ public class BallManager_sy : MonoBehaviour
     public void Throw() // 오큘러스 기기로 던질 때 이 함수 넣기(-)
     {
         throwPosition = transform.position;
+        isPickBall = false;
     }
 
     public void PickBall()      // 집으면 시행되는 함수(-)
     {
-        limitTime.isPickBall = true;
+        isPickBall = true;
     }
 }
