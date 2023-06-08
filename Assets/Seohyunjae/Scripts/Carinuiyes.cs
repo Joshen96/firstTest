@@ -23,7 +23,7 @@ public class Carinuiyes : MonoBehaviour
     {
         
         Caruiclick.carin_bool = false;
-        camera.SetActive(false);
+        //camera.SetActive(false);
 
 
 
