@@ -8159,11 +8159,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fad1bcf9372c543a1a1e4ddad7239e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pedestianPrefabs:
-  - {fileID: 3680873587653037944, guid: 1f1dd3022049d4a48ac0dba794bbc734, type: 3}
-  - {fileID: 9119416167593904981, guid: b76adb1c3b35ec242a731618ebcfcfea, type: 3}
-  - {fileID: 3680873587653037944, guid: 1f1dd3022049d4a48ac0dba794bbc734, type: 3}
+  pedestrianPrefabs: []
   pedestriansToSpawn: 20
+  culpritPrefab: {fileID: 0}
 --- !u!1 &2485410557428624629
 GameObject:
   m_ObjectHideFlags: 0
@@ -8877,11 +8875,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fad1bcf9372c543a1a1e4ddad7239e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pedestianPrefabs:
-  - {fileID: 3680873587653037944, guid: 1f1dd3022049d4a48ac0dba794bbc734, type: 3}
-  - {fileID: 9119416167593904981, guid: b76adb1c3b35ec242a731618ebcfcfea, type: 3}
-  - {fileID: 3680873587653037944, guid: 1f1dd3022049d4a48ac0dba794bbc734, type: 3}
+  pedestrianPrefabs: []
   pedestriansToSpawn: 20
+  culpritPrefab: {fileID: 0}
 --- !u!1 &2485410557572867523
 GameObject:
   m_ObjectHideFlags: 0
