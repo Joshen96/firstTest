@@ -285,6 +285,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: parkingbreaker
       objectReference: {fileID: 0}
+    - target: {fileID: 7584707354745991896, guid: 1ea430d0d7880f64ebc7b17dba6b3fcf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ea430d0d7880f64ebc7b17dba6b3fcf, type: 3}
 --- !u!1 &215022313 stripped
@@ -771,7 +775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &431636104
 Transform:
   m_ObjectHideFlags: 0
@@ -987,8 +991,25 @@ MonoBehaviour:
   - {fileID: 1990377196}
   - {fileID: 385634169}
   - {fileID: 931204440}
+  Player: {fileID: 2470523745515778609}
+  animator: {fileID: 0}
   speed: 4
+  scrPlayDist: 3
   i: 0
+  rotationSpeed: 60
+--- !u!65 &655584344
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655584339}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.1923162, z: 1}
+  m_Center: {x: 0.0000000011337796, y: 0.09615785, z: -4.8193494e-10}
 --- !u!4 &660068448 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a6e1b293f7ed5584fa548ddde966e03e, type: 3}
@@ -1444,6 +1465,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mouse_Animations
       objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 33379e2cb78d908499747259c71391db, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 33379e2cb78d908499747259c71391db, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1595,6 +1620,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4380212773544846, guid: 1e4ce52264dc42c41845ed17eab373b4, type: 3}
   m_PrefabInstance: {fileID: 1748964591}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1175448714 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3918476540422217654, guid: a81a20e6e561e21429149b9d594a5c7a, type: 3}
+  m_PrefabInstance: {fileID: 3918476542331512284}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1182028410 stripped
 Transform:
@@ -1761,6 +1791,10 @@ PrefabInstance:
     - target: {fileID: 100012, guid: f47f8f42b058c4b40924795ef832a2b7, type: 3}
       propertyPath: m_Name
       value: Parrot_Animations
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: f47f8f42b058c4b40924795ef832a2b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: f47f8f42b058c4b40924795ef832a2b7, type: 3}
       propertyPath: m_RootOrder
@@ -2038,45 +2072,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dove_Animations
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 54cedfb49305ce8408f5d65b39634084, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54cedfb49305ce8408f5d65b39634084, type: 3}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54cedfb49305ce8408f5d65b39634084, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -43.01
+      value: -41.06402
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54cedfb49305ce8408f5d65b39634084, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.000001
+      value: 4.6278114
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54cedfb49305ce8408f5d65b39634084, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.09
+      value: -6.30231
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54cedfb49305ce8408f5d65b39634084, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.28083506
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54cedfb49305ce8408f5d65b39634084, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.03764549
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54cedfb49305ce8408f5d65b39634084, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.95051557
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54cedfb49305ce8408f5d65b39634084, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.1274151
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54cedfb49305ce8408f5d65b39634084, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 15.27
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54cedfb49305ce8408f5d65b39634084, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -147.08
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 54cedfb49305ce8408f5d65b39634084, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2160,6 +2198,10 @@ PrefabInstance:
     - target: {fileID: 100012, guid: a086d54f3a304df4597e7564ac7879e5, type: 3}
       propertyPath: m_Name
       value: Pigeon_Animations
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: a086d54f3a304df4597e7564ac7879e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: a086d54f3a304df4597e7564ac7879e5, type: 3}
       propertyPath: m_RootOrder
@@ -5006,7 +5048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3220037132328082492, guid: b14453cea3afc0d4b8fb1c8b0e76f031, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3220037132328082493, guid: b14453cea3afc0d4b8fb1c8b0e76f031, type: 3}
       propertyPath: Player
@@ -5022,15 +5064,15 @@ PrefabInstance:
       objectReference: {fileID: 2470523745515778619}
     - target: {fileID: 3220037133887544127, guid: b14453cea3afc0d4b8fb1c8b0e76f031, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5085
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3220037133887544127, guid: b14453cea3afc0d4b8fb1c8b0e76f031, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3220037133887544127, guid: b14453cea3afc0d4b8fb1c8b0e76f031, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.4915
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4147868366467803628, guid: b14453cea3afc0d4b8fb1c8b0e76f031, type: 3}
       propertyPath: player
@@ -7049,6 +7091,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3918476540422217655, guid: a81a20e6e561e21429149b9d594a5c7a, type: 3}
+      propertyPath: cat
+      value: 
+      objectReference: {fileID: 1175448714}
+    - target: {fileID: 3918476540422217655, guid: a81a20e6e561e21429149b9d594a5c7a, type: 3}
       propertyPath: animals
       value: 
       objectReference: {fileID: 7642888048079711717}
@@ -7056,10 +7102,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cat_Animations
       objectReference: {fileID: 0}
+    - target: {fileID: 3918476540422570902, guid: a81a20e6e561e21429149b9d594a5c7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3918476542335855472, guid: a81a20e6e561e21429149b9d594a5c7a, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 2470523745515778609}
+    - target: {fileID: 3918476542335855472, guid: a81a20e6e561e21429149b9d594a5c7a, type: 3}
+      propertyPath: scrPlayDist
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3918476542335855472, guid: a81a20e6e561e21429149b9d594a5c7a, type: 3}
       propertyPath: paths.Array.data[0]
       value: 
@@ -7068,6 +7122,30 @@ PrefabInstance:
       propertyPath: paths.Array.data[1]
       value: 
       objectReference: {fileID: 1579353086}
+    - target: {fileID: 3918476542335855472, guid: a81a20e6e561e21429149b9d594a5c7a, type: 3}
+      propertyPath: animationNames.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918476542335855472, guid: a81a20e6e561e21429149b9d594a5c7a, type: 3}
+      propertyPath: animationStates.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918476542335855472, guid: a81a20e6e561e21429149b9d594a5c7a, type: 3}
+      propertyPath: animationNames.Array.data[0]
+      value: Clicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918476542335855472, guid: a81a20e6e561e21429149b9d594a5c7a, type: 3}
+      propertyPath: animationNames.Array.data[1]
+      value: Spin
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918476542335855472, guid: a81a20e6e561e21429149b9d594a5c7a, type: 3}
+      propertyPath: animationStates.Array.data[0]
+      value: Swim
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918476542335855472, guid: a81a20e6e561e21429149b9d594a5c7a, type: 3}
+      propertyPath: animationStates.Array.data[1]
+      value: Sit
+      objectReference: {fileID: 0}
     - target: {fileID: 7685958776781402241, guid: a81a20e6e561e21429149b9d594a5c7a, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -8010,6 +8088,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dog_Animations
       objectReference: {fileID: 0}
+    - target: {fileID: 2758230765787841669, guid: ee147b346b1a6c14f9aea393909e2fbe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758230767303298830, guid: ee147b346b1a6c14f9aea393909e2fbe, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2758230767303298830, guid: ee147b346b1a6c14f9aea393909e2fbe, type: 3}
       propertyPath: Player
       value: 
@@ -8605,6 +8691,10 @@ PrefabInstance:
     - target: {fileID: 6586168585532530527, guid: e10f00ce6a7185343aef6a78c936946b, type: 3}
       propertyPath: m_Name
       value: racingcarpath
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586168585532530527, guid: e10f00ce6a7185343aef6a78c936946b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e10f00ce6a7185343aef6a78c936946b, type: 3}
