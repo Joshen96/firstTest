@@ -80,9 +80,9 @@ Animator:
   m_GameObject: {fileID: 139543027317611658}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: a6e1b293f7ed5584fa548ddde966e03e, type: 3}
-  m_Controller: {fileID: 9100000, guid: 0c66bee910505c04eabf638acb024741, type: 2}
+  m_Controller: {fileID: 9100000, guid: fbaaf43999b76214f8c9fa5482c6cc5d, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -134,11 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf907c34c7b6f6841812f40f13dcb6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: 100
+  stunDuration: 10
   grabInteractable: {fileID: 655175302}
   waypointNavigator: {fileID: 6364446085463885047}
   npccont: {fileID: 7504323228230539840}
-  ani: {fileID: 6648506968261237834}
+  animatorP: {fileID: 6648506968261237834}
   rigidbody: {fileID: 266973567374050708}
 --- !u!136 &-5439243927315809713
 CapsuleCollider:
@@ -1964,7 +1964,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6438411955349777985}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0.556, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2352,7 +2352,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8583242072308205834}
   serializedVersion: 2
-  m_Mass: 3.125
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -2466,7 +2466,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 2809336835211129395}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
@@ -2502,8 +2502,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
+  m_ThrowVelocityScale: 0.1
+  m_ThrowAngularVelocityScale: 0.1
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
