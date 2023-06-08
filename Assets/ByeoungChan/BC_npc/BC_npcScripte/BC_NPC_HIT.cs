@@ -10,8 +10,10 @@ public class BC_NPC_HIT : MonoBehaviour
     public BC_NPC_Traffic_WaypointNavigator waypointNavigator;
     public BC_NPC_Traffic_NavigationController npccont;
     public const string Strangled = "Strangled";
+    public const string Hit = "Hit";
+    public const string Back = "back";
     public Animator animatorP;
-    
+    public int hp = 5;
 
 
     private bool isStunned = false;
@@ -49,12 +51,22 @@ public class BC_NPC_HIT : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.gameObject.CompareTag("Player"))
+
+        if (other.gameObject.CompareTag("hammer"))
         {
+            hp--;
+
+            animatorP.SetTrigger(Hit);
+            animatorP.SetTrigger(Back);
+
             Debug.Log($"충돌: {gameObject.name}와 {other.gameObject.name}");
-            GetHit();
-        }
+
+            if (hp < 0)
+            {
+
+                GetHit();
+            }
+        }   
         
     }
 
@@ -89,7 +101,8 @@ public class BC_NPC_HIT : MonoBehaviour
     public void Release()
     {
         // NPC를 놓아주고 XR Grab Interactable을 비활성화
-        
+
+        hp = 5;
         grabInteractable.enabled = false;
         animatorP.enabled = true;
         
