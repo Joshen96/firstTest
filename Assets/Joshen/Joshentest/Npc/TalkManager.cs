@@ -25,7 +25,15 @@ public class TalkManager : MonoBehaviour
     }
 
     void GernerateData()
-    {   
+    {
+
+        //외부 선배 
+
+        talkData.Add(100, new string[] { "안녕 나는 이 학교 선배야 반갑다", "여기는 학교 입구인데 버스타고 학교로 들어가야해", "저기 버스정류장 보이지?", "학교 셔틀버스 타고 학교 농구장 으로가봐","나랑 닮은 쌍둥이 동생이 마중 나가 있을꺼야" });
+        lookData.Add(100, new Transform[] { target[0], target[0], target[1], target[1], target[0] });
+        animData.Add(100, new string[] { "greeting", "lookingaround", "pointing", "talking1","idle" });
+
+
         //class 교수님
         talkData.Add(1000, new string[] { "거기 학생 신입생인가?","여기는 강의실인데","오늘은 수업이없는데?","저 문을 열고 들어가보게" });
         lookData.Add(1000, new Transform[] { target[0], target[1], target[0], target[2] });
