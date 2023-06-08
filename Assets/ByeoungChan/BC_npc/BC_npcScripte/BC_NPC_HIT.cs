@@ -97,6 +97,7 @@ public class BC_NPC_HIT : MonoBehaviour
 
     public void grab_npc()
     {
+        animator.enabled = true;
         isGrab = true;
         animator.SetBool(Strangled, true);
     }
@@ -104,6 +105,7 @@ public class BC_NPC_HIT : MonoBehaviour
     {
         isGrab = false;
         animator.SetBool(Strangled, false);
+        animator.enabled = false;
     }
 
 }
