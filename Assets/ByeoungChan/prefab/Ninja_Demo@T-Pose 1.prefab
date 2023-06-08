@@ -82,7 +82,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: a6e1b293f7ed5584fa548ddde966e03e, type: 3}
   m_Controller: {fileID: 9100000, guid: fbaaf43999b76214f8c9fa5482c6cc5d, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -139,7 +139,6 @@ MonoBehaviour:
   waypointNavigator: {fileID: 6364446085463885047}
   npccont: {fileID: 7504323228230539840}
   animatorP: {fileID: 6648506968261237834}
-  animatorC: {fileID: 1442531977}
   rigidbody: {fileID: 266973567374050708}
 --- !u!136 &-5439243927315809713
 CapsuleCollider:
@@ -1965,7 +1964,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6438411955349777985}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0.556, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2307,7 +2306,6 @@ GameObject:
   - component: {fileID: 2371582241479402979}
   - component: {fileID: 266973567374050708}
   - component: {fileID: 655175302}
-  - component: {fileID: 1442531977}
   m_Layer: 0
   m_Name: Hips
   m_TagString: Untagged
@@ -2354,7 +2352,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8583242072308205834}
   serializedVersion: 2
-  m_Mass: 3.125
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -2504,34 +2502,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
+  m_ThrowVelocityScale: 0.1
+  m_ThrowAngularVelocityScale: 0.1
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!95 &1442531977
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8583242072308205834}
-  m_Enabled: 0
-  m_Avatar: {fileID: 9000000, guid: 3a89b32e203e0e144a84d86f57f4c033, type: 3}
-  m_Controller: {fileID: 9100000, guid: fbaaf43999b76214f8c9fa5482c6cc5d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &8922288249451490465
 GameObject:
   m_ObjectHideFlags: 0
