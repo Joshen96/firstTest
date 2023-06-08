@@ -7,11 +7,13 @@ public class SoundManager_sy : MonoBehaviour
 {
     public AudioSource BGMaudioSource = null;
     public AudioSource ESoundAudioSource = null;
+    public bool isPlayMode = false;
 
     private void Awake()
     {
         if (BGMaudioSource == null) BGMaudioSource = this.GetComponent<AudioSource>();
         BGMaudioSource.volume = 1f;
+        BGMaudioSource.loop = true;
         BGMaudioSource.clip = Resources.Load<AudioClip>("BGM/outside_Class_sound");
         BGMaudioSource.Play();
 
@@ -20,23 +22,31 @@ public class SoundManager_sy : MonoBehaviour
 
     public void PlayBGM(string _audioClipName)
     {
-        BGMaudioSource.clip = Resources.Load<AudioClip>("BGM/"+ _audioClipName);
+        StopBGM();
+        BGMaudioSource.clip = Resources.Load<AudioClip>("BGM/" + _audioClipName);
         BGMaudioSource.volume = 1f;
         BGMaudioSource.Play();
     }
 
     public void StopBGM()
     {
-        BGMaudioSource.Stop();
+        BGMaudioSource.Pause();
     }
 
     public void PlayEffectSound(string _effectSoundName)
     {
         ESoundAudioSource.clip = Resources.Load<AudioClip>("SoundEffect/" + _effectSoundName); // 클립 설정
-        ESoundAudioSource.volume = 0.5f;              // 볼륨 최대로 기본 설정
+        ESoundAudioSource.volume = 1f;
         ESoundAudioSource.Play();
-
     }
+    public void PlayEffectSound(string _effectSoundName, float _volume)
+    {
+        StopEffectSound();
+        ESoundAudioSource.clip = Resources.Load<AudioClip>("SoundEffect/" + _effectSoundName); // 클립 설정
+        ESoundAudioSource.volume = _volume;
+        ESoundAudioSource.Play();
+    }
+
     public void StopEffectSound()
     {
         ESoundAudioSource.Stop();
