@@ -80,7 +80,7 @@ Animator:
   m_GameObject: {fileID: 139543027317611658}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: a6e1b293f7ed5584fa548ddde966e03e, type: 3}
-  m_Controller: {fileID: 9100000, guid: 0c66bee910505c04eabf638acb024741, type: 2}
+  m_Controller: {fileID: 9100000, guid: fbaaf43999b76214f8c9fa5482c6cc5d, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -134,11 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf907c34c7b6f6841812f40f13dcb6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: 100
+  stunDuration: 10
   grabInteractable: {fileID: 655175302}
   waypointNavigator: {fileID: 6364446085463885047}
   npccont: {fileID: 7504323228230539840}
-  ani: {fileID: 6648506968261237834}
+  animator: {fileID: 6648506968261237834}
   rigidbody: {fileID: 266973567374050708}
 --- !u!136 &-5439243927315809713
 CapsuleCollider:
@@ -2466,7 +2466,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 2809336835211129395}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
