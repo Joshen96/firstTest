@@ -138,7 +138,8 @@ MonoBehaviour:
   grabInteractable: {fileID: 655175302}
   waypointNavigator: {fileID: 6364446085463885047}
   npccont: {fileID: 7504323228230539840}
-  animator: {fileID: 6648506968261237834}
+  animatorP: {fileID: 6648506968261237834}
+  animatorC: {fileID: 1442531977}
   rigidbody: {fileID: 266973567374050708}
 --- !u!136 &-5439243927315809713
 CapsuleCollider:
@@ -2306,6 +2307,7 @@ GameObject:
   - component: {fileID: 2371582241479402979}
   - component: {fileID: 266973567374050708}
   - component: {fileID: 655175302}
+  - component: {fileID: 1442531977}
   m_Layer: 0
   m_Name: Hips
   m_TagString: Untagged
@@ -2510,6 +2512,26 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!95 &1442531977
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8583242072308205834}
+  m_Enabled: 0
+  m_Avatar: {fileID: 9000000, guid: 3a89b32e203e0e144a84d86f57f4c033, type: 3}
+  m_Controller: {fileID: 9100000, guid: fbaaf43999b76214f8c9fa5482c6cc5d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &8922288249451490465
 GameObject:
   m_ObjectHideFlags: 0

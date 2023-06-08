@@ -10,7 +10,8 @@ public class BC_NPC_HIT : MonoBehaviour
     public BC_NPC_Traffic_WaypointNavigator waypointNavigator;
     public BC_NPC_Traffic_NavigationController npccont;
     public const string Strangled = "Strangled";
-    public Animator animator;
+    public Animator animatorP;
+    public Animator animatorC;
 
 
     private bool isStunned = false;
@@ -69,8 +70,9 @@ public class BC_NPC_HIT : MonoBehaviour
             // 기절 상태에서의 동작 처리
             waypointNavigator.enabled = false;
             npccont.enabled = false;
-            animator.enabled = false;
-       
+            animatorP.enabled = false;
+            
+
             // XR Grab Interactable을 활성화하여 NPC를 데려갈 수 있도록 설정
             grabInteractable.enabled = true;
             //animator.Play(Strangled);
@@ -89,23 +91,24 @@ public class BC_NPC_HIT : MonoBehaviour
         // NPC를 놓아주고 XR Grab Interactable을 비활성화
         
         grabInteractable.enabled = false;
-        animator.enabled = true;
+        animatorP.enabled = true;
+        animatorC.enabled = false;
         rigidbody.isKinematic = true;
-        animator.StopPlayback();
+        animatorP.StopPlayback();
 
     }
 
     public void grab_npc()
     {
-        animator.enabled = true;
+        animatorC.enabled = true;
         isGrab = true;
-        animator.SetBool(Strangled, true);
+        animatorC.SetBool(Strangled, true);
     }
     public void detach_npc()
     {
         isGrab = false;
-        animator.SetBool(Strangled, false);
-        animator.enabled = false;
+        animatorC.SetBool(Strangled, false);
+        animatorC.enabled = false;
     }
 
 }
