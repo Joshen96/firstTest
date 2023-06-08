@@ -30,8 +30,13 @@ public class TalkManager : MonoBehaviour
         //외부 선배 
 
         talkData.Add(100, new string[] { "안녕 나는 이 학교 선배야 반갑다", "여기는 학교 입구인데 버스타고 학교로 들어가야해", "저기 버스정류장 보이지?", "학교 셔틀버스 타고 학교 농구장 으로가봐","나랑 닮은 쌍둥이 동생이 마중 나가 있을꺼야" });
-        lookData.Add(100, new Transform[] { target[0], target[0], target[1], target[1], target[0] });
+        lookData.Add(100, new Transform[] { target[0], target[0], target[1], target[0], target[0] });
         animData.Add(100, new string[] { "greeting", "lookingaround", "pointing", "talking1","idle" });
+
+        talkData.Add(101, new string[] { "무사히 도착했구나 나는 아까 입구에서본 선배의 동생이야", "여기는 학교 중심이고 농구장 앞 정류장이야", "저쪽 방면에는 강의실 이야 ", "농구장에 여러가지 체험할것을 해봐!" });
+        lookData.Add(101, new Transform[] { target[0], target[2], target[4], target[2] });
+        animData.Add(101, new string[] { "greeting", "lookingaround", "pointing", "fight" });
+
 
 
         //class 교수님
