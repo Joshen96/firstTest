@@ -11,7 +11,7 @@ public class BC_NPC_HIT : MonoBehaviour
     public BC_NPC_Traffic_NavigationController npccont;
     public const string Strangled = "Strangled";
     public Animator animatorP;
-    public Animator animatorC;
+    
 
 
     private bool isStunned = false;
@@ -46,7 +46,7 @@ public class BC_NPC_HIT : MonoBehaviour
             }
         }
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         
@@ -80,7 +80,7 @@ public class BC_NPC_HIT : MonoBehaviour
 
             rigidbody.isKinematic = false; // 물리 시뮬레이션 적용
             rigidbody.useGravity = true; // 중력 적용
-            rigidbody.constraints = RigidbodyConstraints.None;
+            //rigidbody.constraints = RigidbodyConstraints.None;
 
 
         }
@@ -92,7 +92,7 @@ public class BC_NPC_HIT : MonoBehaviour
         
         grabInteractable.enabled = false;
         animatorP.enabled = true;
-        animatorC.enabled = false;
+        
         rigidbody.isKinematic = true;
         animatorP.StopPlayback();
 
@@ -100,18 +100,23 @@ public class BC_NPC_HIT : MonoBehaviour
 
     public void grab_npc()
     {
-        animatorC.enabled = true;
+        animatorP.enabled = true;
+       
         isGrab = true;
-        animatorC.SetBool(Strangled, true);
+        animatorP.SetBool(Strangled, true);
 
         rigidbody.isKinematic = true; // 물리 시뮬레이션 적용
+        
         rigidbody.useGravity = false;
     }
     public void detach_npc()
     {
+        rigidbody.useGravity = true;
         isGrab = false;
-        animatorC.SetBool(Strangled, false);
-        animatorC.enabled = false;
+        animatorP.SetBool(Strangled, false);
+        animatorP.enabled = false;
+       
+        rigidbody.isKinematic = false;
     }
 
 }
