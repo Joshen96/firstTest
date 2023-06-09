@@ -15,6 +15,7 @@ TagManager:
   - Enemy
   - hammer
   - Bench
+  - BenchSeat
   layers:
   - Default
   - TransparentFX
