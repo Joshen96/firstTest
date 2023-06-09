@@ -12,6 +12,8 @@ TagManager:
   - Bus
   - key
   - Animals
+  - Enemy
+  - Playground
   layers:
   - Default
   - TransparentFX

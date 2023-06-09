@@ -55,15 +55,15 @@ public class ScoreBoard_sy : MonoBehaviour
     {
         GameObject FirstNumGO = Instantiate(NumberGO[_FirstNum]);
         FirstNumGO.transform.SetParent(this.transform, false);
-        FirstNumGO.transform.position += new Vector3(0.2f, 0.35f, 0f);
+        FirstNumGO.transform.localPosition += new Vector3(0.3f, 0.5f, 0f);
 
         GameObject SecondNumGO = Instantiate(NumberGO[_SecondNum]);
         SecondNumGO.transform.SetParent(this.transform, false);
-        SecondNumGO.transform.position += Vector3.up * 0.35f;
+        SecondNumGO.transform.localPosition += Vector3.up * 0.5f;
 
         GameObject ThirdNumGO = Instantiate(NumberGO[_ThirdNum]);
         ThirdNumGO.transform.SetParent(this.transform, false);
-        ThirdNumGO.transform.position += new Vector3(-0.2f, 0.35f, 0f);
+        ThirdNumGO.transform.localPosition += new Vector3(-0.3f, 0.5f, 0f);
 
         // 자식으로 넣기 (-)
 
