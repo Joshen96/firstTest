@@ -1074,9 +1074,11 @@ GameObject:
   - component: {fileID: 1157384287488628247}
   - component: {fileID: 3517184386532990783}
   - component: {fileID: 7158373677790019385}
+  - component: {fileID: -594965551309349273}
+  - component: {fileID: -1615918977571190021}
   m_Layer: 0
   m_Name: TT_demo_female 1
-  m_TagString: Untagged
+  m_TagString: Npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1177,13 +1179,43 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3680873587653037944}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 858022e55ad674d44816078b1ffe2645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hideDistance: 80
   showDistance: 50
+--- !u!65 &-594965551309349273
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3680873587653037944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 1.09, z: -0}
+--- !u!114 &-1615918977571190021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3680873587653037944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c6c8ed163dcf342bfdfbd209473eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sittingDuration: 10
+  animator: {fileID: 3680873587662404958}
+  waypointNavigator: {fileID: 3517184386532990783}
+  npcController: {fileID: 1157384287488628247}
+  ranDomAni: {fileID: 3329035041245239606}
 --- !u!1 &3680873587653037948
 GameObject:
   m_ObjectHideFlags: 0
