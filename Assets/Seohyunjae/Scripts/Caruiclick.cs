@@ -31,7 +31,7 @@ public class Caruiclick : MonoBehaviour
     {
         Debug.Log(123);
         carin_bool = true;
-        carcamera.SetActive(true);
+        //carcamera.SetActive(true);
         Debug.Log("차량ui클릭");
         Debug.Log(car.transform.position);
         carui.SetActive(false);
