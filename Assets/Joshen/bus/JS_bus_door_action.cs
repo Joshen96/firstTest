@@ -15,7 +15,7 @@ public class JS_bus_door_action : MonoBehaviour
        // StartCoroutine(opendelay());
     }
 
-  public void open()
+    public void open()
     {
         StartCoroutine(bus_opendoor());
     }
