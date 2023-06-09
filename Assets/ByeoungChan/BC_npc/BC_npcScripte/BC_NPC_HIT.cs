@@ -10,8 +10,10 @@ public class BC_NPC_HIT : MonoBehaviour
     public BC_NPC_Traffic_WaypointNavigator waypointNavigator;
     public BC_NPC_Traffic_NavigationController npccont;
     public const string Strangled = "Strangled";
+    public const string Hit = "Hit";
+    public const string Back = "back";
     public Animator animatorP;
-    public Animator animatorC;
+    public int hp = 5;
 
 
     private bool isStunned = false;
@@ -46,15 +48,25 @@ public class BC_NPC_HIT : MonoBehaviour
             }
         }
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.gameObject.CompareTag("Player"))
+
+        if (other.gameObject.CompareTag("hammer"))
         {
+            hp--;
+
+            animatorP.SetTrigger(Hit);
+            animatorP.SetTrigger(Back);
+
             Debug.Log($"충돌: {gameObject.name}와 {other.gameObject.name}");
-            GetHit();
-        }
+
+            if (hp < 0)
+            {
+
+                GetHit();
+            }
+        }   
         
     }
 
@@ -80,7 +92,7 @@ public class BC_NPC_HIT : MonoBehaviour
 
             rigidbody.isKinematic = false; // 물리 시뮬레이션 적용
             rigidbody.useGravity = true; // 중력 적용
-            rigidbody.constraints = RigidbodyConstraints.None;
+            //rigidbody.constraints = RigidbodyConstraints.None;
 
 
         }
@@ -89,10 +101,11 @@ public class BC_NPC_HIT : MonoBehaviour
     public void Release()
     {
         // NPC를 놓아주고 XR Grab Interactable을 비활성화
-        
+
+        hp = 5;
         grabInteractable.enabled = false;
         animatorP.enabled = true;
-        animatorC.enabled = false;
+        
         rigidbody.isKinematic = true;
         animatorP.StopPlayback();
 
@@ -100,18 +113,23 @@ public class BC_NPC_HIT : MonoBehaviour
 
     public void grab_npc()
     {
-        animatorC.enabled = true;
+        animatorP.enabled = true;
+       
         isGrab = true;
-        animatorC.SetBool(Strangled, true);
+        animatorP.SetBool(Strangled, true);
 
         rigidbody.isKinematic = true; // 물리 시뮬레이션 적용
+        
         rigidbody.useGravity = false;
     }
     public void detach_npc()
     {
+        rigidbody.useGravity = true;
         isGrab = false;
-        animatorC.SetBool(Strangled, false);
-        animatorC.enabled = false;
+        animatorP.SetBool(Strangled, false);
+        animatorP.enabled = false;
+       
+        rigidbody.isKinematic = false;
     }
 
 }

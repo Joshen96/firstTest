@@ -13,7 +13,7 @@ TagManager:
   - key
   - Animals
   - Enemy
-  - Playground
+  - hammer
   layers:
   - Default
   - TransparentFX
