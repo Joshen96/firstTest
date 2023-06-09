@@ -75,7 +75,7 @@ public class Catmove : MonoBehaviour
     public void lookingPlayer(Transform _nextpath)
     {
         Vector3 dir = _nextpath.transform.position - cat.transform.position;
-        cat.gameObject.transform.rotation = Quaternion.Lerp(cat.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
+        cat.gameObject.transform.rotation = Quaternion.Lerp(cat.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 5f);
 
     }
   
