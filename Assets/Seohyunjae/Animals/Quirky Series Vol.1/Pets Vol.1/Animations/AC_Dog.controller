@@ -359,7 +359,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle_C
+  m_Name: CC
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -664,7 +664,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -5689656569772249665}
-    m_Position: {x: 520, y: 720, z: 0}
+    m_Position: {x: 510, y: 410, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 383304295653004693}
     m_Position: {x: 470, y: -40, z: 0}
@@ -673,7 +673,7 @@ AnimatorStateMachine:
     m_Position: {x: 240, y: 70, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -925901338038812261}
-    m_Position: {x: 460, y: 10, z: 0}
+    m_Position: {x: 790, y: -140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5142505042681697028}
     m_Position: {x: 240, y: 120, z: 0}
@@ -697,19 +697,19 @@ AnimatorStateMachine:
     m_Position: {x: 240, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1553456131157579400}
-    m_Position: {x: 500, y: 460, z: 0}
+    m_Position: {x: 500, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5351946769512866323}
     m_Position: {x: 240, y: 320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 150307074563827941}
-    m_Position: {x: 460, y: 310, z: 0}
+    m_Position: {x: 800, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3784333053050042727}
     m_Position: {x: 240, y: 370, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1469838646175419130}
-    m_Position: {x: 340, y: 590, z: 0}
+    m_Position: {x: 280, y: 500, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7544215169296235434}
     m_Position: {x: 240, y: 420, z: 0}
@@ -1020,7 +1020,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle_A
+  m_Name: AA
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -1046,7 +1046,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle_B
+  m_Name: BB
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
