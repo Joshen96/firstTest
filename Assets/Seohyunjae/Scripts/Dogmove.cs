@@ -11,40 +11,49 @@ public class Dogmove : MonoBehaviour
     public Transform[] paths;
     public Transform Player;
     public Animator animator;
-   
 
 
+    public string[] animationStates;
     public float speed = 2.5f;
     public float scrPlayDist = 3f;
     public int i = 0;
     private bool isclicked = false;
+    private bool aniselect = false;
 
 
     // Start is called before the first frame update
-    
+
     private void Start()
     {
         dog.transform.position = paths[0].transform.position;
         animator = GetComponent<Animator>();
+
+        if (animator == null || animationStates.Length == 0)
+            return;
 
 
     }
     public void Update()
     {
 
-
         float dist = CalcDistanceWithTarget();
         if (dist < scrPlayDist)
         {
-            animator.SetBool("Spin", !isclicked);
+            //animator.SetBool("Spin", !isclicked);
             transform.LookAt(Player.position);
             //dogangleturn.transform.rotation = Quaternion.Euler(Vector3.right * 180f);
             //Debug.Log(Quaternion.Euler(Vector3.right * dist));
+            if (!aniselect)
+            {
+                PlayRandomAnimation();
+            }
 
         }
         else
         {
-            animator.SetBool("Spin", isclicked);
+            aniselect = false;
+            animator.Play("Walk");
+            
             
             dog.transform.position = Vector3.MoveTowards(dog.transform.position, paths[i].transform.position, speed * Time.deltaTime);
             lookingPlayer(paths[i]);
@@ -78,5 +87,16 @@ public class Dogmove : MonoBehaviour
         return dist;
     }
 
+    private void PlayRandomAnimation()
+    {
+
+        if (animator != null && animationStates.Length > 0)
+        {
+            int randomIndex = Random.Range(0, animationStates.Length);
+            string randomState = animationStates[randomIndex];
+            animator.Play(randomState, -1, 1f);
+            aniselect = true;
+        }
+    }
 
 }

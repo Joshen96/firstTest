@@ -137,7 +137,22 @@ MonoBehaviour:
   - {fileID: 0}
   Player: {fileID: 0}
   animator: {fileID: 0}
-  speed: 4
+  animationStates:
+  - Clicked
+  - Eat
+  - Fly
+  - AA
+  - CC
+  - Roll
+  - Sit
+  - Swim
+  - Spin
+  - Fear
+  - Hit
+  - BB
+  - Jump
+  - Attack
+  speed: 3
   scrPlayDist: 3
   i: 0
 --- !u!65 &5046600193001060325

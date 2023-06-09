@@ -12,7 +12,7 @@ public class Turtlemove : MonoBehaviour
     public Transform Player;
     public Animator animator;
 
-
+    public string[] animationStates;
     public float speed = 1.5f;
     public float scrPlayDist = 2f;
     public int i = 0;

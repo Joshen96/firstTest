@@ -2481,6 +2481,7 @@ MonoBehaviour:
   car: {fileID: 8544139816494502692}
   carinui: {fileID: 6586168583915776271}
   getoff: {fileID: 6586168583497824468}
+  busoutpositon: {fileID: 0}
 --- !u!1 &6586168583779093275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3079,6 +3080,7 @@ MonoBehaviour:
   car: {fileID: 8544139816494502692}
   carinui: {fileID: 6586168583915776271}
   getoff: {fileID: 0}
+  busoutpositon: {fileID: 0}
 --- !u!1 &6586168584378730231
 GameObject:
   m_ObjectHideFlags: 0
@@ -4057,6 +4059,7 @@ MonoBehaviour:
   speed: 3
   i: 0
   scrPlayDist: 8
+  inplayer: 0
   isaccord: 0
   isStopcar: 0
   isNoclick: 0

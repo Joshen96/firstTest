@@ -12,11 +12,14 @@ public class backboard_sy : MonoBehaviour
     [SerializeField] private GoalInTrigger_sy goalInTrigger = null;
     [SerializeField] private LimitTime_sy limitTime = null;
     [SerializeField] private ScoreBoard_sy scoreBoard = null;
+    [SerializeField] private Playground_sy playground = null;
+   // [SerializeField] private BallCountdown_sy ballCountdown = null;
 
     public bool isPickBall = false;
     public bool isStartGame = false;
     public int score = 0;
     private float scoreGuideDist = 12f;
+    private bool isComeInPlayground = false;
 
 
     private void Awake()
@@ -26,6 +29,8 @@ public class backboard_sy : MonoBehaviour
         if (goalInTrigger == null) goalInTrigger = GameObject.Find("GoalInTrigger").GetComponent<GoalInTrigger_sy>();
         if (limitTime == null) limitTime = GameObject.Find("LimitTimeCanvas").GetComponent<LimitTime_sy>();
         if (scoreBoard == null) scoreBoard = GameObject.Find("scoreboard").GetComponent<ScoreBoard_sy>();
+        if (playground == null) playground = GameObject.Find("Playground").GetComponent<Playground_sy>();
+        //if (ballCountdown == null) ballCountdown = GameObject.Find("BallCountdown").GetComponent<BallCountdown_sy>();
     }
 
     private void Update()
@@ -39,6 +44,7 @@ public class backboard_sy : MonoBehaviour
                         score = 0;
                         scoreBoard.InputScoreToScoreboard(score);
                     }
+                    if (soundManager.ESoundAudioSource.isPlaying) soundManager.StopEffectSound();
 
                     if (soundManager.BGMaudioSource.clip.name != "outside_Class_sound")
                         soundManager.PlayBGM("outside_Class_sound");
@@ -48,10 +54,11 @@ public class backboard_sy : MonoBehaviour
                     limitTime.textTimer.text = "도전해봐";
 
                     isPickBall = ballManager.isPickBall;
-                    if (isPickBall)
+                    isComeInPlayground = playground.isComeInPlayground;
+
+                    if (isPickBall && isComeInPlayground)
                     { 
                         state = State.Start;
-
                     }
                     
                 }
@@ -65,7 +72,6 @@ public class backboard_sy : MonoBehaviour
                         soundManager.PlayEffectSound("BasketballCountdown");
                     }
 
-                    // 카운트다운 화면에 나타내기(-)
                     if (score != 0) score = 0;
                     StartCoroutine(ChangeState(State.Playing));
                 }
@@ -90,7 +96,7 @@ public class backboard_sy : MonoBehaviour
                         int sec = (int)LT % 10;
                         limitTime.textTimer.text = sec + "초";
 
-                        soundManager.BGMaudioSource.volume -= Time.deltaTime * 0.25f;
+                        soundManager.BGMaudioSource.volume -= Time.deltaTime * 0.15f;
                         if (LT < 5f)
                         {
                             soundManager.StopBGM();
