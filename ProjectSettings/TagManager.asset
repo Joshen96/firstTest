@@ -14,6 +14,7 @@ TagManager:
   - Animals
   - Enemy
   - hammer
+  - Bench
   layers:
   - Default
   - TransparentFX
