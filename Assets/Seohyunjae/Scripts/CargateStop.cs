@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CargateStop : MonoBehaviour
 {
-    public float carspeed = 10f;
+    public float carspeed = 3f;
     [SerializeField]
     GameObject pivot;
     private Transform tr;
@@ -32,7 +32,7 @@ public class CargateStop : MonoBehaviour
         {
             StartCoroutine(delaycarmove(_other.gameObject));
             Debug.Log("Â÷¶³¾îÁü");
-            carspeed =15;
+            
         }
     }
     IEnumerator delaycarmove(GameObject _other)
@@ -43,8 +43,8 @@ public class CargateStop : MonoBehaviour
 
     IEnumerator Rotation()
     {
-
-       yield return StartCoroutine(iRotationup(90f));
+        StartCoroutine(iRotationup(90f));
+        yield return new WaitForSeconds(5f);
 
         
        yield return StartCoroutine(iRotationdown(0f));
