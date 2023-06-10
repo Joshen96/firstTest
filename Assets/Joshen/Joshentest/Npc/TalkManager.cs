@@ -34,7 +34,7 @@ public class TalkManager : MonoBehaviour
         animData.Add(100, new string[] { "greeting", "lookingaround", "pointing", "talking1","idle" });
 
         talkData.Add(101, new string[] { "무사히 도착했구나 나는 아까 입구에서 본 선배의 동생이야", "여기는 학교 중심이고 농구장 앞 정류장이야", "저쪽 방면에는 강의실 이야 ", "농구장에 여러가지 체험할것을 해봐!" });
-        lookData.Add(101, new Transform[] { target[0], target[2], target[4], target[2] });
+        lookData.Add(101, new Transform[] { target[0], target[2], target[4], target[0] });
         animData.Add(101, new string[] { "greeting", "lookingaround", "pointing", "fight" });
 
 

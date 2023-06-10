@@ -121,7 +121,7 @@ public class Carmovement : MonoBehaviour
     public void lookingPlayer(Transform _nextpath)
     {
         Vector3 dir = _nextpath.transform.position - car.transform.position;
-        car.gameObject.transform.rotation = Quaternion.Lerp(car.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 3f);
+        car.gameObject.transform.rotation = Quaternion.Lerp(car.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 5f);
 
     }
   
