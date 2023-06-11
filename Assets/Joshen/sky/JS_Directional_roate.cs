@@ -5,7 +5,7 @@ using UnityEngine;
 public class JS_Directional_roate : MonoBehaviour
 {
     Transform tr;
-
+    
     float nightAngle = 265f;
     float dayAngle = 50f;
     void Start()
@@ -17,10 +17,12 @@ public class JS_Directional_roate : MonoBehaviour
 
     public void onday()
     {
+        this.GetComponent<Light>().enabled = true;
         StartCoroutine(dayRotation());
     }
     public void onnight()
     {
+        
         StartCoroutine(nightRotation());
     }
 
@@ -40,14 +42,18 @@ public class JS_Directional_roate : MonoBehaviour
             tr.eulerAngles = new Vector3(xRotation, tr.eulerAngles.y, tr.eulerAngles.z);
             // Debug.Log(yRotation + " " + transform.eulerAngles.y);
 
-            yield return null;
+            
+
         }
+        yield return new WaitForSeconds(2f);
+        this.GetComponent<Light>().enabled = false;
+
     }
     IEnumerator dayRotation()
     {
         float st = tr.eulerAngles.x;
         float er = dayAngle;
-
+        
         float t = 0f;
 
         while (t < 1f)
