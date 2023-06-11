@@ -9,6 +9,7 @@ public class JS_sky_system : MonoBehaviour
 {
     [SerializeField]
     float degree;
+    public float speed=1f;
     //[SerializeField]
     //float light;
 
@@ -20,7 +21,7 @@ public class JS_sky_system : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        degree += Time.deltaTime;
+        degree += Time.deltaTime*speed;
 
         if (degree >= 360)
             degree = 0;
