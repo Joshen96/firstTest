@@ -39,6 +39,16 @@ public class TalkManager : MonoBehaviour
 
 
 
+        //외부 경찰
+        talkData.Add(200, new string[] { "학교 캠퍼스 내에 신고가 접수되었는데", "혹시 칼을 든 수상한 자가 보이면 알려주게나", "아니면 잡아오면 더욱 좋고", "그럼 수고하게나",});
+        lookData.Add(200, new Transform[] { target[0], target[0], target[0], target[0] });
+        animData.Add(200, new string[] { "talking1", "lookingaround", "fight", "greeting" });
+
+        talkData.Add(201, new string[] { "범인을 검거까지 하다니 엄청나구만 ", "캠퍼스의 안전에 도움을 주었구나", "고생 많았네 조만간 표창장을 받으러 연락이 갈걸세 "});
+        lookData.Add(201, new Transform[] { target[0], target[2],  target[0] });
+        animData.Add(201, new string[] { "talking1", "lookingaround", "greeting" });
+
+
         //class 교수님
         talkData.Add(1000, new string[] { "거기 학생 신입생인가?","여기는 강의실인데","오늘은 수업이없는데?","저 문을 열고 들어가보게" });
         lookData.Add(1000, new Transform[] { target[0], target[1], target[0], target[2] });
