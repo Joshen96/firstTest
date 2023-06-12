@@ -6,10 +6,6 @@ public class BallCountdown_sy : MonoBehaviour
 {
     [SerializeField] private GameObject[] countdownNumGO = new GameObject[4];
 
-    private bool isInstantiateGO = true;
-
-    public float fadeDuration = 1f;
-    private float fadeTimer = 0.0f; 
     private SpriteRenderer spriteRenderer = null; 
 
 
@@ -19,40 +15,24 @@ public class BallCountdown_sy : MonoBehaviour
         countdownNumGO[2] = Resources.Load<GameObject>("BallCountdown/count2");
         countdownNumGO[1] = Resources.Load<GameObject>("BallCountdown/count1");
         countdownNumGO[0] = Resources.Load<GameObject>("BallCountdown/go");
-
-        fadeTimer = fadeDuration;
     }
 
     public void CountdownBallNum()
     {
-        if (!isInstantiateGO) return;
-        isInstantiateGO = false;
+        StartCoroutine(WaitForCountdown(3));
+    }
 
-        fadeTimer -= Time.deltaTime;
+    private IEnumerator WaitForCountdown(int i)
+    {
+        GameObject number = Instantiate(countdownNumGO[i], transform.position, Quaternion.identity);
+        number.transform.localScale = number.transform.localScale - new Vector3(0.7f,0.7f,0);
+        spriteRenderer = number.GetComponent<SpriteRenderer>();
+        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
 
-        for (int i = 3; i >= 0; i--)
-        {
-            countdownNumGO[i].SetActive(true);
+        yield return new WaitForSeconds(1.3f);
+        Destroy(number);
 
-            spriteRenderer = countdownNumGO[i].GetComponent<SpriteRenderer>();
-
-            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
-
-            if (fadeTimer <= 0f) 
-            {
-                gameObject.SetActive(false);
-            }
-            else 
-            {
-                float alpha = fadeTimer / fadeDuration;
-                Color spriteColor = spriteRenderer.color;
-                spriteColor.a = alpha;
-                spriteRenderer.color = spriteColor;
-            }
-        }
-
-
-
+        if (i - 1 >= 0) StartCoroutine(WaitForCountdown(i - 1));
     }
 
 }

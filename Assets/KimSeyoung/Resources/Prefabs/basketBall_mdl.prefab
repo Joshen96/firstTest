@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326841571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownNumGO:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6177306883524135743, guid: 9c42612beb6b49943bab00d23f471116, type: 3}
+  - {fileID: 1669261353116503161, guid: 92a33d6e5747a584b9f1d8d91ca6424b, type: 3}
+  - {fileID: 7069815739801330090, guid: bfe3763aaf23f80428d09efe28ffc9f3, type: 3}
+  - {fileID: 1829197388447568714, guid: 635c2de21002f1c42bb0cd4118b0a477, type: 3}
 --- !u!1 &3357980551233940672
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +273,6 @@ MonoBehaviour:
   goalLineTriggerGO: {fileID: 0}
   rotationSpeed: 800
   distance: 0.2
-  scoreBoard: {fileID: 0}
   soundManager: {fileID: 0}
   isPickBall: 0
   BallToBackboardDis: 0

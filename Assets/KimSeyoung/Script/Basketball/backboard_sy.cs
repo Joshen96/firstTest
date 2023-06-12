@@ -11,9 +11,10 @@ public class backboard_sy : MonoBehaviour
     [SerializeField] private BallManager_sy ballManager = null;
     [SerializeField] private GoalInTrigger_sy goalInTrigger = null;
     [SerializeField] private LimitTime_sy limitTime = null;
-    [SerializeField] private ScoreBoard_sy scoreBoard = null;
+    [SerializeField] private ScoreBoard_sy scoreBoard1 = null;
+    [SerializeField] private ScoreBoard_sy scoreBoard2 = null;
     [SerializeField] private Playground_sy playground = null;
-   // [SerializeField] private BallCountdown_sy ballCountdown = null;
+    [SerializeField] private BallCountdown_sy ballCountdown = null;
 
     public bool isPickBall = false;
     public bool isStartGame = false;
@@ -28,9 +29,9 @@ public class backboard_sy : MonoBehaviour
         if (ballManager == null) ballManager = GameObject.Find("basketBall_mdl").GetComponent<BallManager_sy>();
         if (goalInTrigger == null) goalInTrigger = GameObject.Find("GoalInTrigger").GetComponent<GoalInTrigger_sy>();
         if (limitTime == null) limitTime = GameObject.Find("LimitTimeCanvas").GetComponent<LimitTime_sy>();
-        if (scoreBoard == null) scoreBoard = GameObject.Find("scoreboard").GetComponent<ScoreBoard_sy>();
+        if (scoreBoard1 == null || scoreBoard2 == null) Debug.LogError("scoreboard ³Ö¾î");
         if (playground == null) playground = GameObject.Find("Playground").GetComponent<Playground_sy>();
-        //if (ballCountdown == null) ballCountdown = GameObject.Find("BallCountdown").GetComponent<BallCountdown_sy>();
+        if (ballCountdown == null) ballCountdown = GameObject.Find("BallCountdown").GetComponent<BallCountdown_sy>();
     }
 
     private void Update()
@@ -42,7 +43,8 @@ public class backboard_sy : MonoBehaviour
                     if (score != 0)
                     {
                         score = 0;
-                        scoreBoard.InputScoreToScoreboard(score);
+                        scoreBoard1.InputScoreToScoreboard(score);
+                        scoreBoard2.InputScoreToScoreboard(score);
                     }
                     if (soundManager.ESoundAudioSource.isPlaying) soundManager.StopEffectSound();
 
@@ -70,11 +72,10 @@ public class backboard_sy : MonoBehaviour
                     if(!soundManager.ESoundAudioSource.isPlaying)
                     {
                         soundManager.PlayEffectSound("BasketballCountdown");
+                        ballCountdown.CountdownBallNum();
                     }
 
                     if (score != 0) score = 0;
-
-                    // ballCountdown.CountdownBallNum();
 
                     StartCoroutine(ChangeState(State.Playing));
                 }
@@ -119,12 +120,14 @@ public class backboard_sy : MonoBehaviour
                         if (ballManager.BallToBackboardDis > scoreGuideDist)
                         { 
                             score += 3;
-                            scoreBoard.InputScoreToScoreboard(score);
+                            scoreBoard1.InputScoreToScoreboard(score);
+                            scoreBoard2.InputScoreToScoreboard(score);
                         }
                         else if (ballManager.BallToBackboardDis <= scoreGuideDist)
                         {
                             score += 1;
-                            scoreBoard.InputScoreToScoreboard(score);
+                            scoreBoard1.InputScoreToScoreboard(score);
+                            scoreBoard2.InputScoreToScoreboard(score);
                         }
 
                         ballManager.BallToBackboardDis = 0;
