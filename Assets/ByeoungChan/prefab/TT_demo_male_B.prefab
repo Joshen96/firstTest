@@ -1043,6 +1043,8 @@ GameObject:
   - component: {fileID: 5001328868283872486}
   - component: {fileID: 5905779774933502548}
   - component: {fileID: 625780093667666091}
+  - component: {fileID: 5247913490469135887}
+  - component: {fileID: -6611966641683840402}
   m_Layer: 0
   m_Name: TT_demo_male_B
   m_TagString: Untagged
@@ -1152,6 +1154,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hideDistance: 80
   showDistance: 50
+--- !u!65 &5247913490469135887
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9119416167593904981}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0.89, z: 0}
+--- !u!114 &-6611966641683840402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9119416167593904981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c6c8ed163dcf342bfdfbd209473eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sittingDuration: 30
+  animator: {fileID: 9119416167603304819}
+  waypointNavigator: {fileID: 7207582844858429680}
+  npcController: {fileID: 5001328868283872486}
+  ranDomAni: {fileID: 5905779774933502548}
 --- !u!1 &9119416167593904987
 GameObject:
   m_ObjectHideFlags: 0

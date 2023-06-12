@@ -13,7 +13,7 @@ public class backboard_sy : MonoBehaviour
     [SerializeField] private LimitTime_sy limitTime = null;
     [SerializeField] private ScoreBoard_sy scoreBoard = null;
     [SerializeField] private Playground_sy playground = null;
-    [SerializeField] private BallCountdown_sy ballCountdown = null;
+   // [SerializeField] private BallCountdown_sy ballCountdown = null;
 
     public bool isPickBall = false;
     public bool isStartGame = false;
@@ -30,7 +30,7 @@ public class backboard_sy : MonoBehaviour
         if (limitTime == null) limitTime = GameObject.Find("LimitTimeCanvas").GetComponent<LimitTime_sy>();
         if (scoreBoard == null) scoreBoard = GameObject.Find("scoreboard").GetComponent<ScoreBoard_sy>();
         if (playground == null) playground = GameObject.Find("Playground").GetComponent<Playground_sy>();
-        if (ballCountdown == null) ballCountdown = GameObject.Find("BallCountdown").GetComponent<BallCountdown_sy>();
+        //if (ballCountdown == null) ballCountdown = GameObject.Find("BallCountdown").GetComponent<BallCountdown_sy>();
     }
 
     private void Update()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class JS_elevator_button : MonoBehaviour
 {
     public Animator elevator;
-
+    public AudioSource sound;
     public bool isup= false;
     public bool isdown= true;
 
@@ -14,12 +14,14 @@ public class JS_elevator_button : MonoBehaviour
         isup = false;
         isdown = true;
 
+
     }
     public void upElevator()
     {
         if (isdown)
         {
             StartCoroutine(elevator_up_co());
+            sound.Play();
         }
     }
 
@@ -27,6 +29,7 @@ public class JS_elevator_button : MonoBehaviour
     {
         if (isup)
         {
+            sound.Play();
             StartCoroutine(elevator_down_co());
         }
         
