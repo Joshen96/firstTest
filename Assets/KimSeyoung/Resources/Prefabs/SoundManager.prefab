@@ -141,5 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017dff059d053774fa01341b2d16bf8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGMaudioSource: {fileID: 0}
+  BGMaudioSource: {fileID: 1228212599564083352}
   ESoundAudioSource: {fileID: 0}
+  isPlayMode: 0

@@ -73,6 +73,9 @@ public class backboard_sy : MonoBehaviour
                     }
 
                     if (score != 0) score = 0;
+
+                    // ballCountdown.CountdownBallNum();
+
                     StartCoroutine(ChangeState(State.Playing));
                 }
                 break;
