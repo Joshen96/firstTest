@@ -26,6 +26,7 @@ public class UIMenu_sy : MonoBehaviour
             RectTransform rectTr = go.GetComponent<RectTransform>();
             rectTr.SetParent(GetComponent<RectTransform>());
             rectTr.localPosition = CalcLocalPositionWithIndex(i, _productInfoList.Count);
+            rectTr.localRotation = Quaternion.Euler(0, 0, 0);
 
             // 버튼 내 내용 설정
             UIMenuButton_sy btn = go.GetComponent<UIMenuButton_sy>();

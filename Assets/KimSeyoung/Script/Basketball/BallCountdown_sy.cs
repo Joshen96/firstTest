@@ -6,6 +6,9 @@ public class BallCountdown_sy : MonoBehaviour
 {
     [SerializeField] private GameObject[] countdownNumGO = new GameObject[4];
 
+    private SpriteRenderer spriteRenderer = null; 
+
+
     private void Awake()
     {
         countdownNumGO[3] = Resources.Load<GameObject>("BallCountdown/count3");
@@ -14,10 +17,22 @@ public class BallCountdown_sy : MonoBehaviour
         countdownNumGO[0] = Resources.Load<GameObject>("BallCountdown/go");
     }
 
-    private IEnumerator CountdownInterval() 
+    public void CountdownBallNum()
     {
-        yield return new WaitForSeconds(1f);
+        StartCoroutine(WaitForCountdown(3));
+    }
 
+    private IEnumerator WaitForCountdown(int i)
+    {
+        GameObject number = Instantiate(countdownNumGO[i], transform.position, Quaternion.identity);
+        number.transform.localScale = number.transform.localScale - new Vector3(0.7f,0.7f,0);
+        spriteRenderer = number.GetComponent<SpriteRenderer>();
+        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
+
+        yield return new WaitForSeconds(1.3f);
+        Destroy(number);
+
+        if (i - 1 >= 0) StartCoroutine(WaitForCountdown(i - 1));
     }
 
 }
