@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BallManager_sy : MonoBehaviour
 {
-    [Header ("- for BallSpin -")]
+    [Header("- for BallSpin -")]
     [SerializeField] private Transform goalLineTriggerGO = null;
     [SerializeField, Range(500f, 1000f)] private float rotationSpeed = 800f;
     [SerializeField, Range(0f, 10f)] private float distance = 0.2f;
-    [SerializeField] ScoreBoard_sy scoreBoard = null;
     [SerializeField] private SoundManager_sy soundManager = null;
     private float spinAngle = 0f;
     private Vector3 startPosition = Vector3.zero;
@@ -27,9 +24,8 @@ public class BallManager_sy : MonoBehaviour
         throwPosition = startPosition;
 
         if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager_sy>();
-        if (goalLineTriggerGO == null) goalLineTriggerGO = GameObject.Find("GoalLineTrigger").transform;
+        // if (goalLineTriggerGO == null) goalLineTriggerGO = GameObject.Find("GoalLineTrigger").transform;
 
-         if (scoreBoard == null) Debug.LogError("ball에 scoreboard 설정 필요");
     }
 
     private void Update()
@@ -41,7 +37,7 @@ public class BallManager_sy : MonoBehaviour
     {
         switch (other.gameObject.name)
         {
-            case "GoalLineTrigger": 
+            case "GoalLineTrigger":
                 {
                     soundManager.PlayEffectSound("WindSound_");
                 }
@@ -66,7 +62,8 @@ public class BallManager_sy : MonoBehaviour
                         CalcAnglePosWithYaw(spinAngle, ref anglePos);
                         GetComponent<Rigidbody>().AddTorque(Vector3.down * rotationSpeed, ForceMode.Impulse);
 
-                        Vector3 criterionPos = goalLineTriggerGO.position;
+                        //Vector3 criterionPos = goalLineTriggerGO.position;
+                        Vector3 criterionPos = other.transform.position;
 
                         rotationSpeed -= (Time.deltaTime * 100f);
                         this.transform.position = criterionPos + (anglePos * distance);
@@ -134,7 +131,7 @@ public class BallManager_sy : MonoBehaviour
             this.GetComponent<Rigidbody>().isKinematic = true;
             this.GetComponent<Rigidbody>().isKinematic = false;
         }
-        
+
     }
 
     public void Throw() // 오큘러스 기기로 던질 때 이 함수 넣기(-)
