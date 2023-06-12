@@ -1179,7 +1179,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3680873587653037944}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 858022e55ad674d44816078b1ffe2645, type: 3}
   m_Name: 
@@ -1211,7 +1211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c6c8ed163dcf342bfdfbd209473eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sittingDuration: 10
+  sittingDuration: 30
   animator: {fileID: 3680873587662404958}
   waypointNavigator: {fileID: 3517184386532990783}
   npcController: {fileID: 1157384287488628247}
