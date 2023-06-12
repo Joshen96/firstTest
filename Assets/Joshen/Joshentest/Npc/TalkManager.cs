@@ -39,16 +39,16 @@ public class TalkManager : MonoBehaviour
 
         //교실앞 착한 선배
         talkData.Add(110, new string[] { "안녕 동엽아 교수님은 만나보았니?", "저기 강의실 문 보이지 저기로 들어가서 인사드려", "교수님은 영어 못하면 실망하실 수 있으니 조심해!", "앞으로 너의 한학기 시간표도 있으니 게시판에서 확인해봐", "그럼 몸 조심해 아맞다 옆에 아트실은 <color=#FF0000> 절대! </color>들어가지마.... 뭔가있어.." });
-        lookData.Add(110, new Transform[] { target[0], target[4], target[0], target[0], target[5] });
+        lookData.Add(110, new Transform[] { target[0], target[4], target[0], target[0], target[0] });
         animData.Add(110, new string[] { "greeting", "pointing", "talking1", "lookingaround", "talking1"});
 
 
 
         //아트실 나쁜선배
 
-        talkData.Add(120, new string[] { "어어 너 일로와봐 너 처음보네? ㅋ", "이씨배람아 뭘보노 ", "내가 ㅈ으로보이냐?", "옆에 지나다니는 고양이 랑 쥐새끼 잡아와라", "장난이고 ㅋㅋ 옆에 강의실에 꼭들어가라 지켜본다ㅋㅋ" });
+        talkData.Add(120, new string[] { "어어 너 일로와봐 너 처음보네? ㅋ", "야이 친구야 뭘 처다보니 죽고싶어? ㅎㅎ ", "내가 착한선배처럼 보이냐?", "옆에 지나다니는 고양이 랑 쥐새끼 잡아와라", "장난이고 ㅋㅋ 옆에 강의실에 꼭들어가라 지켜본다ㅋㅋ" });
         lookData.Add(120, new Transform[] { target[0], target[0], target[0], target[0], target[0] });
-        animData.Add(120, new string[] { "greeting", "lookingaround", "pointing", "talking1", "idle" });
+        animData.Add(120, new string[] { "greeting", "killyou", "onetwopunch", "talking1", "pointing" });
 
 
         //외부 경찰
