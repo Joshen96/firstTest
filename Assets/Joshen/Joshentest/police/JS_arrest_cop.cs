@@ -10,7 +10,8 @@ public class JS_arrest_cop : MonoBehaviour
         if(other.CompareTag("Enemy"))
         {
             other.gameObject.SetActive(false);
+            police.id = 201;
         }
-        police.id = 201;
+        
     }
 }

@@ -12,7 +12,7 @@ public class SoundManager_sy : MonoBehaviour
     private void Awake()
     {
         if (BGMaudioSource == null) BGMaudioSource = this.GetComponent<AudioSource>();
-        BGMaudioSource.volume = 1f;
+        BGMaudioSource.volume = 0.4f;
         BGMaudioSource.loop = true;
         BGMaudioSource.clip = Resources.Load<AudioClip>("BGM/outside_Class_sound");
         BGMaudioSource.Play();
@@ -24,7 +24,7 @@ public class SoundManager_sy : MonoBehaviour
     {
         StopBGM();
         BGMaudioSource.clip = Resources.Load<AudioClip>("BGM/" + _audioClipName);
-        BGMaudioSource.volume = 1f;
+        BGMaudioSource.volume = 0.4f;
         BGMaudioSource.Play();
     }
 
