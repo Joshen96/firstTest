@@ -27,7 +27,7 @@ public class TalkManager : MonoBehaviour
     void GernerateData()
     {
 
-        //외부 선배 
+        //외부 버스 안내 선배 
 
         talkData.Add(100, new string[] { "안녕 나는 이 학교 선배야 반갑다", "여기는 학교 입구인데 버스타고 학교로 들어가야해", "저기 버스정류장 보이지?", "학교 셔틀버스 타고 학교 농구장으로 가봐","나랑 닮은 쌍둥이 동생이 마중 나가 있을꺼야" });
         lookData.Add(100, new Transform[] { target[0], target[0], target[1], target[0], target[0] });
@@ -37,6 +37,18 @@ public class TalkManager : MonoBehaviour
         lookData.Add(101, new Transform[] { target[0], target[2], target[4], target[0] });
         animData.Add(101, new string[] { "greeting", "lookingaround", "pointing", "fight" });
 
+        //교실앞 착한 선배
+        talkData.Add(110, new string[] { "안녕 동엽아 교수님은 만나보았니?", "저기 강의실 문 보이지 저기로 들어가서 인사드려", "교수님은 영어 못하면 실망하실 수 있으니 조심해!", "앞으로 너의 한학기 시간표도 있으니 게시판에서 확인해봐", "그럼 몸 조심해 아맞다 옆에 아트실은 <color=#FF0000> 절대! </color>들어가지마.... 뭔가있어.." });
+        lookData.Add(110, new Transform[] { target[0], target[4], target[0], target[0], target[5] });
+        animData.Add(110, new string[] { "greeting", "pointing", "talking1", "lookingaround", "talking1"});
+
+
+
+        //아트실 나쁜선배
+
+        talkData.Add(120, new string[] { "어어 너 일로와봐 너 처음보네? ㅋ", "이씨배람아 뭘보노 ", "내가 ㅈ으로보이냐?", "옆에 지나다니는 고양이 랑 쥐새끼 잡아와라", "장난이고 ㅋㅋ 옆에 강의실에 꼭들어가라 지켜본다ㅋㅋ" });
+        lookData.Add(120, new Transform[] { target[0], target[0], target[0], target[0], target[0] });
+        animData.Add(120, new string[] { "greeting", "lookingaround", "pointing", "talking1", "idle" });
 
 
         //외부 경찰
