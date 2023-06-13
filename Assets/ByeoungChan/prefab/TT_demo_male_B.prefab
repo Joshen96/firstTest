@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9119416167593904981}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 858022e55ad674d44816078b1ffe2645, type: 3}
   m_Name: 
@@ -1181,14 +1181,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sittingDuration: 30
   animator: {fileID: 9119416167603304819}
-  SitAnimationName: Stand To Sit
-  SitOneAnimationName: Sitting
-  SitTwoAnimationName: SittingTwo
-  SitThreeAnimationName: SittingThree
   waypointNavigator: {fileID: 7207582844858429680}
   npcController: {fileID: 5001328868283872486}
   ranDomAni: {fileID: 5905779774933502548}
-  SitAnimationProbability: 0.5
+  randomAnimation: 0
 --- !u!1 &9119416167593904987
 GameObject:
   m_ObjectHideFlags: 0
