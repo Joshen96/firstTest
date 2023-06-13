@@ -110,7 +110,7 @@ public class BlackBoardManager_sy : MonoBehaviour
 
     public void CheckTheAnswer(string _input, string _answer) // 정답 확인
     {
-        if (!ReportCard_sy.ReportCard.isSolvingProblem) ReportCard_sy.ReportCard.isSolvingProblem = true;
+        if (!Mission_imfo.isSolvingProblem) Mission_imfo.isSolvingProblem = true;
         
         if (_input == _answer) RightAnswerClick();
         else  WrongAnswerClick();

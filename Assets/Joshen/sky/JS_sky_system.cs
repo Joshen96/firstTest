@@ -15,6 +15,7 @@ public class JS_sky_system : MonoBehaviour
 
     void Start()
     {
+        RenderSettings.skybox.SetFloat("_Rotation", 0f);
         degree = 0f;
 
     }
