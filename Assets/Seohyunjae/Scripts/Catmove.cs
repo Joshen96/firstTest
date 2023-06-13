@@ -43,7 +43,7 @@ public class Catmove : MonoBehaviour
         // 거리가 가까우면
         if (dist < scrPlayDist)
         {
-            if (!ReportCard_sy.ReportCard.isFindingCat) ReportCard_sy.ReportCard.isFindingCat = true;
+            //if (!ReportCard_sy.ReportCard.isFindingCat) ReportCard_sy.ReportCard.isFindingCat = true;
 
             transform.LookAt(Player.position);
 
