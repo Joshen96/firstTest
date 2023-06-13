@@ -29,7 +29,7 @@ public class TalkManager : MonoBehaviour
 
         //외부 버스 안내 선배 
 
-        talkData.Add(100, new string[] { "안녕 나는 이 학교 선배야 반갑다", "여기는 학교 입구인데 버스타고 학교로 들어가야해", "저기 버스정류장 보이지?", "학교 셔틀버스 타고 학교 농구장으로 가봐","나랑 닮은 쌍둥이 동생이 마중 나가 있을꺼야" });
+        talkData.Add(100, new string[] { "안녕 나는 이 학교 선배야 반갑다", "여기는 학교 입구인데 버스타고 학교로 들어가야해", "여기 바로 앞 버스정류장 보이지? ", "학교 셔틀버스 타고 학교 농구장으로 가봐","나랑 닮은 쌍둥이 동생이 마중 나가 있을꺼야" });
         lookData.Add(100, new Transform[] { target[0], target[0], target[1], target[0], target[0] });
         animData.Add(100, new string[] { "greeting", "lookingaround", "pointing", "talking1","idle" });
 
@@ -62,18 +62,18 @@ public class TalkManager : MonoBehaviour
 
 
         //class 교수님
-        talkData.Add(1000, new string[] { "거기 학생 신입생인가?","여기는 강의실인데","오늘은 수업이없는데?","저 문을 열고 들어가보게" });
+        talkData.Add(1000, new string[] { "거기 학생 신입생인가? ","여기가 인문계 강의실이네","지각을 하면 어쩌나 허허 ","얼른 저 문을 열고 들어가보게" });
         lookData.Add(1000, new Transform[] { target[0], target[1], target[0], target[2] });
         animData.Add(1000, new string[] { "greeting", "pointing", "lookingaround", "pointing" });
 
-        talkData.Add(1001, new string[] { "온김에 칠판에 문제를 풀어보게나", "다 풀면 저 앞 문으로 나오게" });
+        talkData.Add(1001, new string[] { "지각을 한 벌로 칠판에 문제를 풀어보게", "다 풀면 저 앞 문으로 나오게" });
         lookData.Add(1001, new Transform[] { target[5], target[6]});
         animData.Add(1001, new string[] { "idle", "pointing" });
 
 
-        talkData.Add(1002, new string[] { "이봐 학생 문제는 잘 풀었나?", "언어 실력이 형편없구만 ", "알파벳 부터 다시 배우게", "인문계쪽은 실력없으니 이공계 강의실로 가봐" });
-        lookData.Add(1002, new Transform[] { target[0], target[3], target[4], target[3] });
-        animData.Add(1002, new string[] { "greeting", "jokepose", "mmakick", "pointing" });
+        talkData.Add(1002, new string[] { "이봐 학생 문제는 잘 풀었나?", "언어 실력이 형편없구만 ", "알파벳 부터 다시 배우게", "저기에 게시판 보이나? 저기서 시간표를 확인하고오게","그러고 제 2강의실에 가서 칠판에 문제도 풀어보게", "앞 문이 잠겨있으면 서랍속에 열쇠가 있을거야 열고 들어가게나" });
+        lookData.Add(1002, new Transform[] { target[0], target[0], target[0], target[7] ,target[0],target[4]});
+        animData.Add(1002, new string[] { "greeting", "jokepose", "mmakick", "pointing","talking1","pointing" });
 
         /*
         talkData.Add(2000, new string[] { "안녕?","여기는 교실1이에요","문을 열어봐요" ,"춤추기하하","문열어","빨리!"});
