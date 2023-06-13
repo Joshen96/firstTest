@@ -9,7 +9,7 @@ public class BallManager_sy : MonoBehaviour
     [SerializeField] private SoundManager_sy soundManager = null;
     private float spinAngle = 0f;
     private Vector3 startPosition = Vector3.zero;
-    private Vector3 limitPosition = new Vector3(50f, 100f, 50f);
+    private Vector3 limitPosition = new Vector3(25f, 50f, 25f);
 
     [Header("- for Backboard -")]
     public bool isPickBall = false;
@@ -24,7 +24,6 @@ public class BallManager_sy : MonoBehaviour
         throwPosition = startPosition;
 
         if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager_sy>();
-        // if (goalLineTriggerGO == null) goalLineTriggerGO = GameObject.Find("GoalLineTrigger").transform;
 
     }
 
@@ -110,7 +109,7 @@ public class BallManager_sy : MonoBehaviour
         _pos.z = Mathf.Sin(angle2Rad);
     }
 
-    private void PositionReset() //속도
+    private void PositionReset()
     {
         if (Mathf.Abs(transform.position.x) > limitPosition.x)
         {
@@ -134,14 +133,15 @@ public class BallManager_sy : MonoBehaviour
 
     }
 
-    public void Throw() // 오큘러스 기기로 던질 때 이 함수 넣기(-)
+    public void Throw()
     {
         throwPosition = transform.position;
         isPickBall = false;
     }
 
-    public void PickBall()      // 집으면 시행되는 함수(-)
+    public void PickBall()
     {
         isPickBall = true;
+        if (!ReportCard_sy.ReportCard.isPlayingBasketball) ReportCard_sy.ReportCard.isPlayingBasketball = true;
     }
 }

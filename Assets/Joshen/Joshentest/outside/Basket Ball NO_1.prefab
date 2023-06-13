@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091682621612b9f459baa901850fbf1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isComeInPlayground: 1
+  isComeInPlayground: 0
 --- !u!1 &314341133339291028
 GameObject:
   m_ObjectHideFlags: 0

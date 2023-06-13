@@ -76,7 +76,7 @@ public class SimpleShoot : MonoBehaviour
     }
     public void firegun()
     {
-        
+        if (!ReportCard_sy.ReportCard.isShootingFirecraker) ReportCard_sy.ReportCard.isShootingFirecraker = true;
         if (currentammo > 0)
         {
             gunAnimator.SetTrigger("Fire");
