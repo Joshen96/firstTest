@@ -1076,7 +1076,6 @@ GameObject:
   - component: {fileID: 7158373677790019385}
   - component: {fileID: -594965551309349273}
   - component: {fileID: -1615918977571190021}
-  - component: {fileID: 3547209349996163405}
   m_Layer: 0
   m_Name: TT_demo_female 1
   m_TagString: Npc
@@ -1210,24 +1209,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0c6c8ed163dcf342bfdfbd209473eaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sittingDuration: 30
-  animator: {fileID: 3680873587662404958}
-  waypointNavigator: {fileID: 3517184386532990783}
-  npcController: {fileID: 1157384287488628247}
-  ranDomAni: {fileID: 3329035041245239606}
-  randomAnimation: 0
---- !u!114 &3547209349996163405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3680873587653037944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05f7c89ba8fde2b4094d4926b696e895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sittingDuration: 30
