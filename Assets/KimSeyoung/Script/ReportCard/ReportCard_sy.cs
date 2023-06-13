@@ -4,27 +4,18 @@ using UnityEngine;
 
 public class ReportCard_sy : MonoBehaviour
 {
-    public static ReportCard_sy ReportCard = null;
 
-    public bool isSolvingProblem = false;
-    public bool isFindingCat = false;
-    public bool isShootingFirecraker = false;
-    public bool isPlayingBasketball = false;
-    public bool isCatchingThief = false;
-    public bool isFindingEasteregg = false;
 
     public GameObject[] checkPoints = new GameObject[8];
 
     public void Awake()
     {
-        var obj = FindObjectsOfType<ReportCard_sy>();
-
-        if (obj.Length == 1) DontDestroyOnLoad(gameObject);
-        else Destroy(gameObject);
-
-        ReportCard = this;
+        
 
         for (int i = 0; i < checkPoints.Length; i++) checkPoints[i].SetActive(false);
+
+
+
     }
 
     public void ShowReportCard() // 플레이어가 특정 키 눌리면 (-)
@@ -32,31 +23,31 @@ public class ReportCard_sy : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(true);
         checkPoints[0].SetActive(true);
 
-        if (isSolvingProblem)
+        if (Mission_imfo.isSolvingProblem)
         {
             checkPoints[1].SetActive(true);
         }
-        if (isFindingCat)
+        if (Mission_imfo.isFindingCat)
         {
             checkPoints[2].SetActive(true);
         }
-        if (isShootingFirecraker)
+        if (Mission_imfo.isShootingFirecraker)
         {
             checkPoints[3].SetActive(true);
         }
-        if (isPlayingBasketball)
+        if (Mission_imfo.isPlayingBasketball)
         {
             checkPoints[4].SetActive(true);
         }
-        if (isCatchingThief)
+        if (Mission_imfo.isCatchingThief)
         {
             checkPoints[5].SetActive(true);
         }
-        if (isFindingEasteregg)
+        if (Mission_imfo.isFindingEasteregg)
         {
             checkPoints[6].SetActive(true);
         }
-        if (isSolvingProblem && isFindingCat && isShootingFirecraker && isPlayingBasketball && isCatchingThief && isFindingEasteregg)
+        if (Mission_imfo.isSolvingProblem && Mission_imfo.isFindingCat && Mission_imfo.isShootingFirecraker && Mission_imfo.isPlayingBasketball && Mission_imfo.isCatchingThief && Mission_imfo.isFindingEasteregg)
         {
             checkPoints[7].SetActive(true);
         }
