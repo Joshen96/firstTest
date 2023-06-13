@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class VendingMachine_sy : MonoBehaviour
 {
+    [SerializeField] private GameObject SpawnPoint = null;
+
     public enum EVMProduct
     {
-        Firecracker, ElectricToothbrush, Gun
+        Firecracker, buttonPushHammer
     }
 
     [System.Serializable] public struct SProductInfo
@@ -29,6 +31,8 @@ public class VendingMachine_sy : MonoBehaviour
             Debug.LogError("UIMenu is missing!");
             return;
         }
+
+        if (SpawnPoint == null) SpawnPoint = GameObject.Find("SpawnPoint");
     }
 
     private void OnTriggerEnter(Collider _other)
@@ -59,15 +63,13 @@ public class VendingMachine_sy : MonoBehaviour
         switch (_product)
         {
             case EVMProduct.Firecracker: return "ÆøÁ×ÃÑ";
-            case EVMProduct.ElectricToothbrush: return "ÆÄ¿öÄ©¼Ö";
-            case EVMProduct.Gun: return "ÃÑ";
+            case EVMProduct.buttonPushHammer: return "¹öÆ°¸ÁÄ¡";
             default: return "·Ö???";
         }
     }
 
     public void OnClickMenu( int _btnNum, UIMenuButton_sy _menuBtn)
     {
-        Debug.Log("·Ö?");
         if (!productInfoList[_btnNum].CheckStock()) return;
 
         SProductInfo changeInfo = productInfoList[_btnNum];
@@ -79,7 +81,7 @@ public class VendingMachine_sy : MonoBehaviour
         if (prefab != null)
         {
             // ÀÚÆÇ±â ¾Õ¿¡ »ý¼º
-            Instantiate(prefab, transform.position + new Vector3 (0f, 0.1f, -transform.localScale.z), Quaternion.identity);
+            Instantiate(prefab, SpawnPoint.transform.position, Quaternion.identity);
         }
 
         // Àç°í º¯°æµÈ ¹öÆ° Á¤º¸ ÃÊ±âÈ­

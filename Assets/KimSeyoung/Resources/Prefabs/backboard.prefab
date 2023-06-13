@@ -878,9 +878,11 @@ MonoBehaviour:
   state: 0
   soundManager: {fileID: 0}
   ballManager: {fileID: 0}
-  goalInTrigger: {fileID: 9223348940014203527}
-  limitTime: {fileID: 688438010}
-  scoreBoard1: {fileID: 5723886224788067933}
+  goalInTrigger: {fileID: 0}
+  limitTime:
+  - {fileID: 688438010}
+  - {fileID: 0}
+  scoreBoard1: {fileID: 0}
   scoreBoard2: {fileID: 0}
   playground: {fileID: 0}
   ballCountdown: {fileID: 0}

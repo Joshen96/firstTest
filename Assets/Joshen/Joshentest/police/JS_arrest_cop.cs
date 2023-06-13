@@ -9,6 +9,8 @@ public class JS_arrest_cop : MonoBehaviour
     {
         if(other.CompareTag("Enemy"))
         {
+            if (!Mission_imfo.isCatchingThief) Mission_imfo.isCatchingThief = true;
+
             other.gameObject.SetActive(false);
             police.id = 201;
         }
