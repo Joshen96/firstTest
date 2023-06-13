@@ -16,6 +16,7 @@ TagManager:
   - hammer
   - Bench
   - BenchSeat
+  - TalkNpc
   layers:
   - Default
   - TransparentFX
