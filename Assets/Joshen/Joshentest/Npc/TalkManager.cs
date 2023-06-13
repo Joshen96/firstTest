@@ -33,9 +33,9 @@ public class TalkManager : MonoBehaviour
         lookData.Add(100, new Transform[] { target[0], target[0], target[1], target[0], target[0] });
         animData.Add(100, new string[] { "greeting", "lookingaround", "pointing", "talking1","idle" });
 
-        talkData.Add(101, new string[] { "무사히 도착했구나 나는 아까 입구에서 본 선배의 동생이야", "여기는 학교 중심이고 농구장 앞 정류장이야", "저쪽 방면에는 강의실 이야 ", "농구장에 여러가지 체험할것을 해봐!" });
-        lookData.Add(101, new Transform[] { target[0], target[2], target[4], target[0] });
-        animData.Add(101, new string[] { "greeting", "lookingaround", "pointing", "fight" });
+        talkData.Add(101, new string[] { "무사히 도착했구나 나는 아까 입구에서 본 선배의 동생이야", "여기는 학교 중심이고 농구장 앞 정류장이야", "너의 오른손을 밑으로 내리고 잡기 키를 누르면 너가 해야하는 일정을 확인할수있어","주변에 초록 포탈이나 파랑 포탈을 보면 교실로 들어갈 수 있을거야", "한번 확인하고 체험 할 것을 해봐" });
+        lookData.Add(101, new Transform[] { target[0], target[2], target[0], target[4], target[0] });
+        animData.Add(101, new string[] { "greeting", "lookingaround", "pointing","talking1", "fight" });
 
         //교실앞 착한 선배
         talkData.Add(110, new string[] { "안녕 동엽아 교수님은 만나보았니?", "저기 강의실 문 보이지 저기로 들어가서 인사드려", "교수님은 영어 못하면 실망하실 수 있으니 조심해!", "앞으로 너의 한학기 시간표도 있으니 게시판에서 확인해봐", "그럼 몸 조심해 아맞다 옆에 아트실은 <color=#FF0000> 절대! </color>들어가지마.... 뭔가있어.." });
