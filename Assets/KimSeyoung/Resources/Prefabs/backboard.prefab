@@ -880,10 +880,10 @@ MonoBehaviour:
   ballManager: {fileID: 0}
   goalInTrigger: {fileID: 0}
   limitTime:
-  - {fileID: 688438010}
   - {fileID: 0}
+  - {fileID: 688438010}
   scoreBoard1: {fileID: 0}
-  scoreBoard2: {fileID: 0}
+  scoreBoard2: {fileID: 5723886224788067933}
   playground: {fileID: 0}
   ballCountdown: {fileID: 0}
   isPickBall: 0
