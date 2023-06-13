@@ -18,6 +18,7 @@ TagManager:
   - BenchSeat
   - Playground
   - MissionBoard
+  - TalkNpc
   layers:
   - Default
   - TransparentFX
