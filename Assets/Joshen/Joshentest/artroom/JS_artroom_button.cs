@@ -20,7 +20,6 @@ public class JS_artroom_button : MonoBehaviour
     {
         if (isPP == false)
         {
-            if (!Mission_imfo.isFindingEasteregg) Mission_imfo.isFindingEasteregg = true;
             sky.enabled = true;
             RenderSettings.skybox = horrorSky;
             this.gameObject.SetActive(true);
