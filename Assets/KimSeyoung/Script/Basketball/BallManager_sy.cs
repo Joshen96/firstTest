@@ -142,6 +142,6 @@ public class BallManager_sy : MonoBehaviour
     public void PickBall()
     {
         isPickBall = true;
-        if (!Mission_imfo.isPlayingBasketball) Mission_imfo.isPlayingBasketball = true;
+        if (!ReportCard_sy.ReportCard.isPlayingBasketball) ReportCard_sy.ReportCard.isPlayingBasketball = true;
     }
 }

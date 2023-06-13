@@ -16,6 +16,8 @@ TagManager:
   - hammer
   - Bench
   - BenchSeat
+  - Playground
+  - MissionBoard
   - TalkNpc
   layers:
   - Default
@@ -53,4 +55,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1
+    uniqueID: 96317225
     locked: 0

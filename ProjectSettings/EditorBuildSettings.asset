@@ -23,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/artroom.unity
     guid: ce921ff2e7481cc43b07540aa1f098ff
-  - enabled: 1
-    path: Assets/Main/main.unity
-    guid: a21f8fc18f26a324f888d121d0bb4a11
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b2aec3857f4d7b14ab9eda2cebbe4e4f, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a92680cfbf05fa840932c39f0299e7c3, type: 2}
