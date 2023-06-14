@@ -1185,8 +1185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858022e55ad674d44816078b1ffe2645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hideDistance: 800
-  showDistance: 500
+  hideDistance: 80
+  showDistance: 50
 --- !u!65 &-594965551309349273
 BoxCollider:
   m_ObjectHideFlags: 0
