@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 
 public class BC_NPC_bench_or_chair : MonoBehaviour
@@ -96,7 +97,7 @@ public class BC_NPC_bench_or_chair : MonoBehaviour
         animator.SetBool("IsSitting", false);
 
         // NPC 이동 및 제어 스크립트 다시 활성화
-        waypointNavigator.enabled = true;
+        this.gameObject.transform.position -= transform.up*0.1f; 
         npcController.enabled = true;
         ranDomAni.enabled = true;
         /*benchiRandom.enabled = false*/;
