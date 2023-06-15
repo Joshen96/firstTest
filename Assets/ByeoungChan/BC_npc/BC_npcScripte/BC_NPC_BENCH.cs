@@ -51,7 +51,7 @@ public class BC_NPC_BENCH : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Two BenchSeat objects with the 'BenchSeat' tag are required.");
+            //Debug.LogError("Two BenchSeat objects with the 'BenchSeat' tag are required.");
         }
         isSeatAvailable = true;
     }

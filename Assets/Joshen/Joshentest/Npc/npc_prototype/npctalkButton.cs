@@ -15,7 +15,7 @@ public class npctalkButton : MonoBehaviour
     
     public void inclick()
     {
-        Debug.Log("클릭");
+        //Debug.Log("클릭");
         isclick = true;
         //callback();
     }

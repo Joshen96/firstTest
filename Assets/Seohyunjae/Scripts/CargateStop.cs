@@ -31,7 +31,7 @@ public class CargateStop : MonoBehaviour
         if (_other.tag == "Car")
         {
             StartCoroutine(delaycarmove(_other.gameObject));
-            Debug.Log("Â÷¶³¾îÁü");
+           // Debug.Log("Â÷¶³¾îÁü");
             
         }
     }

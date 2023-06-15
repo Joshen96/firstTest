@@ -58,14 +58,14 @@ public class JS_push_button : MonoBehaviour
     {
         _isPressed = true;
         onPressed.Invoke();
-        Debug.Log("´­¸²");
+        //Debug.Log("´­¸²");
     }
 
     private void Released()
     {
         _isPressed = false;
         onReleased.Invoke();
-        Debug.Log("¶¼Áü");
+        //Debug.Log("¶¼Áü");
 
     }
 }

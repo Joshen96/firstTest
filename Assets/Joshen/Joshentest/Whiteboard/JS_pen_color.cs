@@ -14,7 +14,7 @@ public class JS_pen_color : MonoBehaviour
     {
         tipRenderer = GetComponent<MeshRenderer>();
 
-        Debug.Log(colors.Length);
+        //Debug.Log(colors.Length);
     }
     
    public void tset() //ÆæÃË ¹Ù²Ù´Â ÇÔ¼ö
@@ -29,6 +29,6 @@ public class JS_pen_color : MonoBehaviour
         }
         tipRenderer.material = colors[number];
        
-        Debug.Log("»§¾ß");
+       // Debug.Log("»§¾ß");
     }
 }

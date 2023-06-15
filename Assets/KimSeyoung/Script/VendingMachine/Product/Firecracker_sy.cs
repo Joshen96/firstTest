@@ -8,6 +8,6 @@ public class Firecracker_sy : Product_sy
 {
     public override void Use()
     {
-        Debug.Log("Firecracker");
+       // Debug.Log("Firecracker");
     }
 }

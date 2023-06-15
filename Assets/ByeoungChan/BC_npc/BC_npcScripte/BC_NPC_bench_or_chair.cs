@@ -119,7 +119,7 @@ public class BC_NPC_bench_or_chair : MonoBehaviour
 
             if (benchScript != null && !benchScript.IsOccupied())
             {
-                Debug.Log("여기는 앉은지 검사하는곳" + benchScript.IsOccupied());
+                //Debug.Log("여기는 앉은지 검사하는곳" + benchScript.IsOccupied());
                 SitOnBench(benchScript.GetSittingPosition());
                 benchScript.SetOccupied(true);
 
@@ -127,7 +127,7 @@ public class BC_NPC_bench_or_chair : MonoBehaviour
 
 
             }
-            Debug.Log("검사안한곳" + benchScript.IsOccupied());
+            //Debug.Log("검사안한곳" + benchScript.IsOccupied());
         }
     }
 

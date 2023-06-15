@@ -6,6 +6,6 @@ public class buttonPushHammer_sy : Product_sy
 {
     public override void Use()
     {
-        Debug.Log("buttonPushHammer");
+       // Debug.Log("buttonPushHammer");
     }
 }

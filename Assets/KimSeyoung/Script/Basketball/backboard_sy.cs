@@ -28,10 +28,10 @@ public class backboard_sy : MonoBehaviour
         if (soundManager == null) soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager_sy>();
         if (ballManager == null) ballManager = GameObject.Find("basketBall_mdl").GetComponent<BallManager_sy>();
         if (goalInTrigger == null) goalInTrigger = GameObject.Find("GoalInTrigger").GetComponent<GoalInTrigger_sy>();
-        if (limitTime == null) Debug.LogError("limitTime 持绢!");
+        if (limitTime == null) //Debug.LogError("limitTime 持绢!");
             //limitTime[0] = GameObject.Find("LimitTimeCanvas").GetComponent<LimitTime_sy>();
 
-        if (scoreBoard1 == null || scoreBoard2 == null) Debug.LogError("scoreboard 持绢!");
+        if (scoreBoard1 == null || scoreBoard2 == null)// Debug.LogError("scoreboard 持绢!");
         if (playground == null) playground = GameObject.Find("Playground").GetComponent<Playground_sy>();
         if (ballCountdown == null) ballCountdown = GameObject.Find("BallCountdown").GetComponent<BallCountdown_sy>();
     }
