@@ -24,7 +24,7 @@ public class Example_sy : MonoBehaviour
                 break;
             case 1:
                 this.gameObject.GetComponent<TextMeshProUGUI>().fontSize = 7;
-                this.gameObject.GetComponent<TextMeshProUGUI>().text = "N  W  H  O  L (?)";
+                this.gameObject.GetComponent<TextMeshProUGUI>().text = "N  W  H  O  I (?)";
                 break;
             case 2:
                 this.gameObject.GetComponent<TextMeshProUGUI>().fontSize = 7;
