@@ -65,7 +65,7 @@ public class JS_RoomManager : MonoBehaviour
         doorNumber = doorNum;
         // SceneManager.LoadScene(sceneName);
         LodingSceneController.LoadScene(sceneName); //로딩창 + 함수와 다음씬 이름을 가져감
-        Debug.Log(doorNumber);
+        //Debug.Log(doorNumber);
     }
 
   

@@ -22,7 +22,7 @@ public class Carcamera : MonoBehaviour
            
             player.transform.position = this.gameObject.transform.position + new Vector3(-2f, 1f, 0);
             player.SetActive(true);
-            Debug.Log("차 시점 카메라 해제");
+           // Debug.Log("차 시점 카메라 해제");
 
         }
     }

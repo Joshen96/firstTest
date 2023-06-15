@@ -28,7 +28,7 @@ public class VendingMachine_sy : MonoBehaviour
     {
         if (uiMenu == null)
         {
-            Debug.LogError("UIMenu is missing!");
+            //Debug.LogError("UIMenu is missing!");
             return;
         }
 

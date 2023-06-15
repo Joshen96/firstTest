@@ -59,7 +59,7 @@ public class BC_NPC_HIT : MonoBehaviour
             animatorP.SetTrigger(Hit);
             animatorP.SetTrigger(Back);
 
-            Debug.Log($"충돌: {gameObject.name}와 {other.gameObject.name}");
+            //Debug.Log($"충돌: {gameObject.name}와 {other.gameObject.name}");
 
             if (hp < 0)
             {

@@ -17,7 +17,7 @@ public class animaltrigger : MonoBehaviour
     {
         if (_other.gameObject.tag == "Animals")
         {
-            Debug.Log("동물과의 만남");
+           // Debug.Log("동물과의 만남");
 
         }
 

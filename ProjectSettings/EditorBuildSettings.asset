@@ -12,14 +12,20 @@ EditorBuildSettings:
     path: Assets/Joshen/Joshentest/test2.unity
     guid: 71e379f1d1c26b3438f1d176e160f5c7
   - enabled: 1
-    path: Assets/Joshen/Joshentest/Loding/LodingScene.unity
-    guid: f2038999700a69b428613c698eeb66d2
+    path: Assets/Main/main.unity
+    guid: a21f8fc18f26a324f888d121d0bb4a11
   - enabled: 1
     path: Assets/Main/JS_outside.unity
     guid: ccba5b83c2acf2341abeb7c38a0b7892
   - enabled: 1
+    path: Assets/Joshen/Joshentest/Loding/LodingScene.unity
+    guid: f2038999700a69b428613c698eeb66d2
+  - enabled: 1
     path: Assets/Main/class1.unity
-    guid: 494b3ec5574b77048b7f4bf65d07cfcd
+    guid: 4e458274e3a16b8498f3c83f856324f2
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Main/artroom.unity
     guid: ce921ff2e7481cc43b07540aa1f098ff

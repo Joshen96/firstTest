@@ -20,7 +20,7 @@ public class Noparkingsetstop : MonoBehaviour
         CalcDistanceWithTarget();
         DebugDistance();
         float dist = CalcDistanceWithTarget();
-        Debug.Log(dist);
+        //Debug.Log(dist);
 
         if (dist > scrPlayDist)
         {

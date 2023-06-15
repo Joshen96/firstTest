@@ -12,7 +12,7 @@ public class Busstop : MonoBehaviour
         if (_other.tag == "Bus")
         {
             speedcontrol.GetComponent<Scrollbar>().value= 0;
-            Debug.Log("차감지1");
+           // Debug.Log("차감지1");
             StartCoroutine(pass());
         }
 

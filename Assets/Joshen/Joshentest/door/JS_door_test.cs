@@ -6,7 +6,7 @@ public class JS_door_test : MonoBehaviour
 {
     public void test()
     {
-        Debug.Log("業業");
+       // Debug.Log("業業");
     }
    
 }

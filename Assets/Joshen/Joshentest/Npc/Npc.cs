@@ -127,7 +127,7 @@ public class Npc : MonoBehaviour
         uiMenu.GetComponentInChildren<Text>().text = talkData;
 
 
-        Debug.Log("테스트" + animData);
+        //Debug.Log("테스트" + animData);
         animator.SetTrigger(animData);
 
 

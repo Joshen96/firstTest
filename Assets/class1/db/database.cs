@@ -45,11 +45,11 @@ public class database : MonoBehaviour
 
             if (www.result == UnityWebRequest.Result.ProtocolError)
             {
-                Debug.Log(www.error);
+                //Debug.Log(www.error);
             }
             else
             {
-                Debug.Log("핸들러 " + www.downloadHandler.text);
+                //Debug.Log("핸들러 " + www.downloadHandler.text);
                 string data = www.downloadHandler.text; //텍스트로 받아온다
 
                 List<Dataschedule> datainfos =
@@ -58,7 +58,7 @@ public class database : MonoBehaviour
 
                 foreach (Dataschedule datainfo in datainfos)
                 {
-                    Debug.Log(datainfo.subject + " : " + datainfo.teacher + " : " + datainfo.classroom);
+                   // Debug.Log(datainfo.subject + " : " + datainfo.teacher + " : " + datainfo.classroom);
 
 
 
