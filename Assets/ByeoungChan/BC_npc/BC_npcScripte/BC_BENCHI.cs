@@ -30,6 +30,7 @@ public class BC_BENCHI : MonoBehaviour
             time += Time.deltaTime;
             if (time >= sittime)
             {
+                this.gameObject.GetComponent<BoxCollider>().enabled = true;
                 isOccupied = false;
                 time = 0f;
             }
@@ -54,13 +55,14 @@ public class BC_BENCHI : MonoBehaviour
                     {
 
                         npcScript.SitOnBench(sittingPosition);
+                        this.gameObject.GetComponent<BoxCollider>().enabled = false;
                         isOccupied = true;
                     }
                 
             }
         }
     }
-
+    /*
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Npc"))
@@ -71,9 +73,11 @@ public class BC_BENCHI : MonoBehaviour
                 if (npcScript.IsSitting()) // 앉아있는 NPC인 경우에만 일어나게 함
                 {
                     npcScript.StandUpFromBench();
+                    
                     isOccupied = false;
                 }
             }
         }
     }
+    */
 }
