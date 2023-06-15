@@ -14,6 +14,7 @@ public class BC_NPC_bench_or_chair : MonoBehaviour
     public int randomAnimation;
 
     private bool isSitting = false;
+    private bool issitpos = false;
 
     private void Start()
     {
@@ -85,7 +86,7 @@ public class BC_NPC_bench_or_chair : MonoBehaviour
 
         StandUpFromBench();
 
-        isSitting = false;
+        
 
         // 걷는 애니메이션 재개
 
@@ -97,11 +98,17 @@ public class BC_NPC_bench_or_chair : MonoBehaviour
         animator.SetBool("IsSitting", false);
 
         // NPC 이동 및 제어 스크립트 다시 활성화
-        this.gameObject.transform.position -= transform.up*0.1f; 
+        if (isSitting)
+        {
+            this.gameObject.transform.position -= transform.up * 0.1f;
+        }
         npcController.enabled = true;
         ranDomAni.enabled = true;
         waypointNavigator.enabled = true;
-        /*benchiRandom.enabled = false*/;
+
+        isSitting = false;
+        /*benchiRandom.enabled = false*/
+        ;
     }
 
     private void OnTriggerEnter(Collider other)
