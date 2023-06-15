@@ -100,6 +100,7 @@ public class BC_NPC_bench_or_chair : MonoBehaviour
         this.gameObject.transform.position -= transform.up*0.1f; 
         npcController.enabled = true;
         ranDomAni.enabled = true;
+        waypointNavigator.enabled = true;
         /*benchiRandom.enabled = false*/;
     }
 
